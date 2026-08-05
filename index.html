@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio profesional Wisnu Agus Wicaksono, Software Engineer, UI/UX Enthusiast, dan System Development."
+    />
+    <title>Wisnu Agus Wicaksono | Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#030303",
+              mist: "rgba(255,255,255,0.14)",
+              leaf: "#19d66f",
+            },
+            fontFamily: {
+              helvetica: ["Helvetica"],
+              jakarta: ["Plus Jakarta Sans"],
+              miracle: ["Miracle History"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="min-h-screen overflow-x-hidden bg-ink font-jakarta text-white antialiased">
+    <!-- Navbar -->
+    <header class="site-header sticky top-0 z-50 h-0 w-full pt-6">
+      <nav
+        class="mx-auto flex w-[min(88vw,503px)] items-center justify-between rounded-full border border-white/20 bg-white/[0.16] px-7 py-2.5 text-[14px] font-normal text-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl transition-all duration-300 md:px-8"
+        aria-label="Navigasi utama"
+      >
+        <a class="nav-link active" href="#beranda">Beranda</a>
+        <a class="nav-link" href="#tentang-saya">Tentang Saya</a>
+        <a class="nav-link" href="#sertifikasi">Sertifikasi</a>
+        <a class="nav-link" href="#kontak">Kontak</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="beranda"
+        class="hero-section relative isolate min-h-screen overflow-hidden bg-ink"
+      >
+        <div class="hero-scene relative min-h-screen w-full">
+          <div
+            class="hero-layout mx-auto grid min-h-screen w-full max-w-[1440px] grid-cols-1 items-center px-6 pb-20 pt-20 sm:px-10 sm:pb-24 sm:pt-24 lg:grid-cols-[minmax(350px,0.82fr)_minmax(420px,1.18fr)_minmax(310px,0.76fr)] lg:px-[50px] lg:pb-0 lg:pt-0"
+          >
+            <!-- Intro Content -->
+            <article class="z-20 max-w-[485px] self-center lg:-mt-12">
+              <p class="reveal-name font-miracle text-[42px] font-normal leading-none text-white sm:text-[46px] lg:text-[48px]">
+                Hello,
+              </p>
+
+              <h1
+                class="reveal-name mt-2 font-helvetica text-[56px] font-bold leading-[0.92] tracking-normal text-white sm:text-[72px] lg:text-[88px]"
+              >
+                Wisnu Agus<br />
+                Wicaksono
+              </h1>
+
+              <div class="reveal-copy mt-8 text-[17px] leading-[1.18] text-white sm:text-[18px] lg:text-[18px]">
+                <p><strong class="font-bold">Software</strong> Engineer</p>
+                <p>UI/UX <strong class="font-bold">Enthusiast</strong></p>
+                <p><strong class="font-bold">System</strong> Development</p>
+              </div>
+
+              <p
+                class="reveal-copy mt-7 max-w-[445px] text-[16px] font-normal leading-[1.35] text-white/95 sm:text-[17px] lg:text-[18px]"
+              >
+                Saya adalah lulusan Informatika yang memiliki minat pada pengembangan perangkat lunak, UI/UX Design, serta
+                membangun solusi digital yang modern dan bermanfaat.
+              </p>
+            </article>
+
+            <!-- Hero Image -->
+            <div class="pointer-events-none relative z-10 order-first flex h-[48vh] items-end justify-center lg:order-none lg:h-full">
+              <img
+                class="hero-person h-full max-h-[850px] w-auto max-w-none object-contain object-bottom sm:max-h-[920px] lg:h-[86vh] lg:min-h-[760px] xl:min-h-[820px]"
+                src="assets/images/Hero-LandingPage.png"
+                alt="Portrait Wisnu Agus Wicaksono"
+                width="842"
+                height="932"
+                decoding="async"
+              />
+            </div>
+
+            <!-- CTA Content -->
+            <aside
+              class="reveal-button z-20 mt-8 flex flex-col items-start justify-center gap-4 justify-self-start text-left lg:mt-[330px] lg:items-end lg:justify-self-end lg:text-right"
+              aria-label="Ajakan mengenal profil"
+            >
+              <p class="whitespace-nowrap text-[18px] font-normal leading-none text-white sm:text-[19px]">
+                <span class="font-miracle text-[40px] leading-none sm:text-[42px]">Mari</span>
+                mengenal saya lebih dekat
+              </p>
+              <a
+                href="#tentang-saya"
+                class="glass-button inline-flex min-w-[145px] items-center justify-center rounded-full border border-white/20 bg-white/[0.18] px-7 py-2.5 text-[14px] font-medium text-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-xl transition duration-300 ease-out hover:scale-105 hover:border-leaf/60 hover:bg-white/[0.22] hover:shadow-[0_0_30px_rgba(25,214,111,0.48)] focus:outline-none focus:ring-2 focus:ring-leaf/70 focus:ring-offset-2 focus:ring-offset-black"
+              >
+                Tentang Saya
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anchor Targets -->
+      <section id="tentang-saya" class="min-h-screen scroll-mt-28 bg-black" aria-label="Tentang Saya"></section>
+      <section id="sertifikasi" class="min-h-screen scroll-mt-28 bg-black" aria-label="Sertifikasi"></section>
+      <section id="kontak" class="min-h-screen scroll-mt-28 bg-black" aria-label="Kontak"></section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
