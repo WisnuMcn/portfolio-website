@@ -123,6 +123,478 @@ body {
   will-change: transform, box-shadow;
 }
 
+/* About */
+.about-section {
+  min-height: 1024px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.about-inner {
+  position: relative;
+  min-height: 1024px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 112px 60px 0 73px;
+  display: grid;
+  grid-template-columns: 733px 51px 523px;
+  align-items: start;
+}
+
+.about-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.about-heading {
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+}
+
+.about-title-main {
+  margin-top: 5px;
+  padding-bottom: 4px;
+  font-family: "Helvetica";
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  background: linear-gradient(169.04deg, #ffffff 8.02%, #a4cfbb 91.98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-title-script {
+  margin-left: 9px;
+  font-family: "Miracle History";
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.about-description {
+  margin-top: 28px;
+  width: 733px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.about-description p+p {
+  margin-top: 26px;
+}
+
+.about-actions {
+  display: flex;
+  gap: 17px;
+  margin-top: 28px;
+}
+
+.about-pill,
+.about-portfolio-button {
+  width: 146px;
+  height: 36px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(217, 217, 217, 0.2);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 400;
+  line-height: 1.31;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.about-pill {
+  font-size: 17px;
+}
+
+.about-pill:hover,
+.about-portfolio-button:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(217, 217, 217, 0.3);
+  transform: translateY(-1px);
+}
+
+.about-pill.active {
+  border-color: #19d66f;
+  background: rgba(25, 214, 111, 0.16);
+  box-shadow: 0 0 20px rgba(25, 214, 111, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.about-pill.active:hover {
+  border-color: #19d66f;
+  background: rgba(25, 214, 111, 0.22);
+}
+
+.about-info-container {
+  margin-top: 32px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.about-info-container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-portrait {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  width: 523px;
+  height: 523px;
+  margin-top: 139px;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.about-portfolio-cta {
+  position: absolute;
+  top: 845px;
+  right: 60px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #ffffff;
+  text-align: right;
+}
+
+.about-portfolio-cta p {
+  font-family: "Plus Jakarta Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+}
+
+.about-portfolio-cta span {
+  display: block;
+  font-family: "Miracle History";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.31;
+  color: #ffffff;
+}
+
+.about-portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 19px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Portfolio */
+.portfolio-section {
+  min-height: 1024px;
+  overflow: hidden;
+  background: #f8f8ff;
+  color: #030303;
+}
+
+.portfolio-section *,
+.portfolio-section *::before,
+.portfolio-section *::after {
+  box-sizing: border-box;
+}
+
+.portfolio-inner {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 42px clamp(24px, 3vw, 43px) 72px;
+}
+
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-family: "Helvetica";
+  font-size: clamp(54px, 6.67vw, 96px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+  background: linear-gradient(169.04deg, #000000 8.02%, #17804f 91.98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.portfolio-slogan {
+  margin-top: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-size: clamp(20px, 2.22vw, 32px);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: 0;
+  color: #030303;
+}
+
+.portfolio-slogan span {
+  font-family: "Miracle History";
+  font-size: clamp(34px, 2.78vw, 40px);
+  line-height: 1;
+}
+
+.portfolio-grid {
+  display: grid;
+  width: 100%;
+  max-width: 1353px;
+  margin: 24px auto 0;
+  grid-template-columns: minmax(0, 823fr) minmax(320px, 504fr);
+  grid-template-rows: 405px 310px;
+  gap: 29px 26px;
+}
+
+.portfolio-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(3, 3, 3, 0.08);
+  border-radius: 44px;
+  background: #101612;
+  color: #ffffff;
+  padding: 0;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(28px);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.portfolio-card::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: 3;
+  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(23, 128, 79, 0.18), transparent 34%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 320ms ease;
+}
+
+.portfolio-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-card.is-selected {
+  border-color: rgba(23, 128, 79, 0.56);
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-visible {
+  border-color: rgba(23, 128, 79, 0.72);
+  box-shadow: 0 22px 55px rgba(3, 3, 3, 0.16), 0 0 0 1px rgba(23, 128, 79, 0.2),
+    0 0 42px rgba(23, 128, 79, 0.28);
+  transform: translateY(-4px) scale(1.006);
+}
+
+.portfolio-card:hover::after,
+.portfolio-card:focus-visible::after {
+  opacity: 1;
+}
+
+.portfolio-card:focus-visible {
+  outline: 2px solid rgba(23, 128, 79, 0.7);
+  outline-offset: 5px;
+}
+
+.portfolio-card--frontend {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.portfolio-card--data {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.portfolio-card--graphic {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.portfolio-card-fallback,
+.portfolio-card-cover,
+.portfolio-card-overlay,
+.portfolio-card-content {
+  position: absolute;
+  inset: 0;
+}
+
+.portfolio-card-fallback {
+  z-index: 0;
+  background: linear-gradient(135deg, #111815 0%, #263c31 50%, #0a0f0d 100%);
+}
+
+.portfolio-card-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.14), transparent 38%, rgba(23, 128, 79, 0.2)),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 18px);
+  opacity: 0.34;
+}
+
+.portfolio-card-cover {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 360ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.portfolio-card.has-cover .portfolio-card-cover {
+  opacity: 1;
+}
+
+.portfolio-card:hover .portfolio-card-cover,
+.portfolio-card:focus-visible .portfolio-card-cover {
+  transform: scale(1.045);
+}
+
+.portfolio-card-overlay {
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.54) 58%, rgba(0, 0, 0, 0.76) 100%),
+    linear-gradient(112deg, rgba(0, 0, 0, 0.38) 0%, transparent 55%);
+}
+
+.portfolio-card-content {
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 9px;
+  padding: clamp(28px, 3.2vw, 45px) clamp(28px, 3.45vw, 50px);
+}
+
+.portfolio-card-title {
+  max-width: 650px;
+  font-family: "Helvetica";
+  font-size: clamp(30px, 2.78vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.portfolio-card-description {
+  max-width: 410px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.portfolio-category-status {
+  min-height: 22px;
+  max-width: 1353px;
+  margin: 14px auto 0;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(3, 3, 3, 0.62);
+}
+
+.portfolio-certification-cta {
+  max-width: 1353px;
+  margin: 28px auto 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 18px;
+  color: #030303;
+  text-align: right;
+}
+
+.portfolio-certification-cta p {
+  max-width: 390px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+}
+
+.portfolio-certification-cta span {
+  display: block;
+  font-family: "Miracle History";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.portfolio-certification-button {
+  display: inline-flex;
+  min-width: 146px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(3, 3, 3, 0.58);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease, box-shadow 240ms ease;
+}
+
+.portfolio-certification-button:hover,
+.portfolio-certification-button:focus-visible {
+  border-color: rgba(23, 128, 79, 0.72);
+  background: rgba(3, 3, 3, 0.72);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2), 0 0 28px rgba(23, 128, 79, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.portfolio-certification-button:focus-visible {
+  outline: 2px solid rgba(23, 128, 79, 0.7);
+  outline-offset: 4px;
+}
 @keyframes navDrop {
   from {
     opacity: 0;
@@ -190,6 +662,50 @@ body {
   .hero-person {
     max-width: min(78vw, 520px);
   }
+
+  .about-section {
+    min-height: auto;
+  }
+
+  .about-inner {
+    min-height: auto;
+    padding: 112px 40px 88px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-left,
+  .about-heading,
+  .about-description,
+  .about-actions,
+  .about-portrait {
+    width: 100%;
+  }
+
+  .about-heading {
+    min-height: auto;
+  }
+
+  .about-description {
+    max-width: 733px;
+  }
+
+  .about-actions {
+    flex-wrap: wrap;
+  }
+
+  .about-portrait {
+    width: min(523px, 100%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 56px auto 0;
+  }
+
+  .about-portfolio-cta {
+    position: static;
+    width: 100%;
+    margin-top: 64px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -200,8 +716,172 @@ body {
   .nav-link {
     font-size: 12px;
   }
+
+  .about-inner {
+    padding: 104px 24px 72px;
+  }
+
+  .about-heading {
+    flex-wrap: wrap;
+  }
+
+  .about-title-main,
+  .about-title-script {
+    font-size: 64px;
+  }
+
+  .about-title-script {
+    margin-left: 7px;
+  }
+
+  .about-description {
+    font-size: 16px;
+  }
+
+  .about-description p+p {
+    margin-top: 21px;
+  }
+
+  .about-actions {
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .about-pill,
+  .about-portfolio-button {
+    width: 136px;
+  }
+
+  .about-portfolio-cta {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
+@media (max-width: 1179px) and (min-width: 1024px) {
+  .portfolio-inner {
+    padding-top: 76px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: minmax(0, 1.42fr) minmax(300px, 0.9fr);
+    grid-template-rows: 360px 292px;
+  }
+
+  .portfolio-card-content {
+    padding: 34px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .portfolio-section {
+    min-height: auto;
+  }
+
+  .portfolio-inner {
+    padding: 104px 40px 76px;
+  }
+
+  .portfolio-grid {
+    max-width: 760px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  .portfolio-card--frontend,
+  .portfolio-card--data,
+  .portfolio-card--graphic {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .portfolio-card--frontend {
+    min-height: 340px;
+  }
+
+  .portfolio-card--data {
+    min-height: 300px;
+  }
+
+  .portfolio-card--graphic {
+    min-height: 420px;
+  }
+
+  .portfolio-category-status,
+  .portfolio-certification-cta {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-inner {
+    padding: 96px 24px 68px;
+  }
+
+  .portfolio-slogan {
+    max-width: 320px;
+  }
+
+  .portfolio-grid {
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .portfolio-card {
+    border-radius: 30px;
+  }
+
+  .portfolio-card--frontend {
+    min-height: 290px;
+  }
+
+  .portfolio-card--data {
+    min-height: 260px;
+  }
+
+  .portfolio-card--graphic {
+    min-height: 320px;
+  }
+
+  .portfolio-card-content {
+    padding: 26px;
+  }
+
+  .portfolio-card-title {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .portfolio-card-description {
+    font-size: 15px;
+  }
+
+  .portfolio-certification-cta {
+    margin-top: 30px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 430px) {
+  .portfolio-title {
+    font-size: clamp(45px, 13vw, 54px);
+  }
+
+  .portfolio-slogan {
+    font-size: 18px;
+  }
+
+  .portfolio-slogan span {
+    font-size: 32px;
+  }
+
+  .portfolio-card-content {
+    padding: 24px 22px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
 
   *,
