@@ -410,3 +410,75 @@ if (document.readyState === "loading") {
 } else {
   initializePortfolioSection();
 }
+
+// Certification Section Controller
+const initializeCertificationSection = () => {
+  const certificationSection = document.getElementById("sertifikasi");
+  const certificationCards = [...document.querySelectorAll(".certification-card")];
+
+  if (!certificationSection) return;
+
+  const revealSection = () => {
+    certificationSection.classList.add("is-visible");
+  };
+
+  certificationCards.forEach((card) => {
+    const image = card.querySelector(".certification-card-image[data-src]");
+    const imagePath = image?.dataset.src;
+
+    if (!image || !imagePath) return;
+
+    const loader = new Image();
+    loader.onload = () => {
+      image.src = imagePath;
+      card.classList.add("has-image");
+    };
+    loader.onerror = () => {
+      image.removeAttribute("src");
+      card.classList.add("has-fallback-image");
+    };
+    loader.src = imagePath;
+  });
+
+  const isCertificationInView = () => {
+    const rect = certificationSection.getBoundingClientRect();
+
+    return rect.top < window.innerHeight * 0.82 && rect.bottom > window.innerHeight * 0.12;
+  };
+
+  const revealIfInView = () => {
+    if (window.location.hash === "#sertifikasi" || isCertificationInView()) revealSection();
+  };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealSection();
+    return;
+  }
+
+  if ("IntersectionObserver" in window) {
+    const certificationObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          revealSection();
+          observer.unobserve(certificationSection);
+        }
+      },
+      {
+        rootMargin: "0px 0px -18% 0px",
+        threshold: 0.18,
+      }
+    );
+
+    certificationObserver.observe(certificationSection);
+    requestAnimationFrame(revealIfInView);
+    window.setTimeout(revealIfInView, 250);
+  } else {
+    revealSection();
+  }
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeCertificationSection);
+} else {
+  initializeCertificationSection();
+}

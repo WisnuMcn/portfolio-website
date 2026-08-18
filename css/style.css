@@ -595,6 +595,304 @@ body {
   outline: 2px solid rgba(23, 128, 79, 0.7);
   outline-offset: 4px;
 }
+
+/* Certification */
+.certification-section {
+  min-height: 1024px;
+  overflow: hidden;
+  background: #f5f6f8;
+  color: #030303;
+}
+
+.certification-section *,
+.certification-section *::before,
+.certification-section *::after {
+  box-sizing: border-box;
+}
+
+.certification-inner {
+  width: min(100%, 1440px);
+  min-height: 1024px;
+  margin: 0 auto;
+  padding: 38px clamp(24px, 3vw, 43px) 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.certification-header {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.certification-title {
+  flex: 0 0 auto;
+  font-family: "Helvetica";
+  font-size: clamp(58px, 6.67vw, 96px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+  background: linear-gradient(169.04deg, #000000 8.02%, #17804f 91.98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.certification-slogan {
+  font-family: "Plus Jakarta Sans";
+  font-size: clamp(22px, 2.22vw, 32px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0;
+  color: #000000;
+  opacity: 0;
+}
+
+.certification-slogan span {
+  font-family: "Miracle History";
+  font-size: clamp(34px, 2.78vw, 40px);
+  line-height: 1;
+}
+
+.certification-list {
+  width: 100%;
+  max-width: 1353px;
+  margin-top: 26px;
+}
+
+.certification-card {
+  position: relative;
+  width: 100%;
+  min-height: 192px;
+  overflow: hidden;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #d4bc07 46.63%, rgba(98, 93, 0, 0) 100%), #d4bc07;
+  box-shadow: 24px 25px 80.2px 32px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 320ms ease;
+  will-change: transform, box-shadow;
+}
+
+.certification-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 46%);
+  pointer-events: none;
+}
+
+.certification-card-media {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: 1;
+  width: 48.8%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.certification-card-placeholder,
+.certification-card-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.certification-card-placeholder {
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(212, 188, 7, 0.34) 0%, rgba(245, 246, 248, 0.72) 42%, rgba(255, 255, 255, 0.92) 100%),
+    repeating-linear-gradient(90deg, rgba(98, 93, 0, 0.08) 0 1px, transparent 1px 42px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.48) 0 34%, rgba(137, 83, 154, 0.55) 34% 49%, rgba(255, 230, 59, 0.7) 49% 64%, rgba(255, 255, 255, 0.7) 64% 100%);
+}
+
+.certification-card-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  right: 128px;
+  width: 285px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(98, 93, 0, 0.52);
+  box-shadow: 0 23px 0 rgba(98, 93, 0, 0.22), 0 47px 0 rgba(98, 93, 0, 0.16);
+}
+
+.certification-card-placeholder::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: -28px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 28px solid rgba(137, 83, 154, 0.78);
+  border-left-color: rgba(255, 230, 59, 0.85);
+  transform: rotate(10deg);
+}
+
+.certification-card-image {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 420ms ease, transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.certification-card.has-image .certification-card-image {
+  opacity: 1;
+}
+
+.certification-card-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, #d4bc07 0%, #d4bc07 46.63%, rgba(212, 188, 7, 0.72) 61%, rgba(98, 93, 0, 0.24) 78%, rgba(98, 93, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.certification-card-content {
+  position: relative;
+  z-index: 4;
+  width: min(55%, 720px);
+  min-height: 192px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px 32px 35px 32px;
+}
+
+.certification-card-content h3 {
+  font-family: "Helvetica";
+  font-size: clamp(28px, 2.78vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.certification-card-content p {
+  max-width: 690px;
+  margin-top: 4px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.certification-card-provider {
+  position: absolute;
+  z-index: 4;
+  right: clamp(34px, 5vw, 72px);
+  bottom: 32px;
+  margin: 0;
+  font-family: "Helvetica";
+  font-size: clamp(30px, 2.78vw, 40px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #ffffff;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.certification-section.is-visible .certification-title {
+  animation: fadeUp 820ms 80ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.certification-section.is-visible .certification-slogan {
+  animation: fadeIn 780ms 230ms ease both;
+}
+
+.certification-section.is-visible .certification-card {
+  animation: fadeUp 860ms 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.certification-card:hover,
+.certification-card:focus-within {
+  box-shadow: 24px 25px 80.2px 32px rgba(0, 0, 0, 0.24), 0 0 48px rgba(212, 188, 7, 0.42);
+  transform: translateY(-5px) scale(1.006);
+}
+
+.certification-card:hover .certification-card-image,
+.certification-card:focus-within .certification-card-image {
+  transform: scale(1.045);
+}
+
+.certification-contact-cta {
+  width: 100%;
+  max-width: 1353px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  color: #000000;
+  text-align: right;
+  opacity: 0;
+}
+
+.certification-section.is-visible .certification-contact-cta {
+  animation: fadeIn 820ms 520ms ease both;
+}
+
+.certification-contact-cta p {
+  font-family: "Plus Jakarta Sans";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.certification-contact-cta span {
+  font-family: "Miracle History";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.certification-contact-button {
+  display: inline-flex;
+  min-width: 146px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(49, 49, 49, 0.41);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: #000000;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 240ms ease, background 240ms ease, box-shadow 240ms ease;
+}
+
+.certification-contact-button:hover,
+.certification-contact-button:focus-visible {
+  background: rgba(49, 49, 49, 0.52);
+  box-shadow: 0 0 28px rgba(212, 188, 7, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.certification-contact-button:focus-visible {
+  outline: 2px solid rgba(23, 128, 79, 0.68);
+  outline-offset: 4px;
+}
 @keyframes navDrop {
   from {
     opacity: 0;
@@ -880,6 +1178,166 @@ body {
 
   .portfolio-card-content {
     padding: 24px 22px;
+  }
+}
+
+@media (max-width: 1179px) and (min-width: 1024px) {
+  .certification-inner {
+    padding-top: 76px;
+  }
+
+  .certification-card-content {
+    width: 60%;
+    padding-right: 24px;
+  }
+
+  .certification-card-media {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .certification-section {
+    min-height: auto;
+  }
+
+  .certification-inner {
+    min-height: 860px;
+    padding: 104px 40px 76px;
+  }
+
+  .certification-header {
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .certification-list {
+    margin-top: 34px;
+  }
+
+  .certification-card {
+    min-height: 214px;
+  }
+
+  .certification-card-media {
+    width: 43%;
+  }
+
+  .certification-card-content {
+    width: 62%;
+    min-height: 214px;
+    padding: 36px 30px;
+  }
+
+  .certification-card-content p {
+    font-size: 15px;
+  }
+
+  .certification-card-provider {
+    right: 30px;
+    bottom: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .certification-inner {
+    min-height: auto;
+    padding: 96px 24px 68px;
+  }
+
+  .certification-header {
+    align-items: flex-start;
+  }
+
+  .certification-title {
+    font-size: clamp(45px, 13vw, 64px);
+  }
+
+  .certification-slogan {
+    max-width: 340px;
+    font-size: 18px;
+  }
+
+  .certification-slogan span {
+    font-size: 32px;
+  }
+
+  .certification-list {
+    margin-top: 30px;
+  }
+
+  .certification-card {
+    min-height: auto;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .certification-card-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(170px, 50vw, 230px);
+  }
+
+  .certification-card-gradient {
+    background: linear-gradient(180deg, rgba(212, 188, 7, 0.04) 0%, rgba(212, 188, 7, 0.46) 45%, #d4bc07 68%, #d4bc07 100%);
+  }
+
+  .certification-card-content {
+    width: 100%;
+    min-height: auto;
+    padding: 28px 24px 14px;
+  }
+
+  .certification-card-content h3 {
+    font-size: clamp(27px, 8.5vw, 34px);
+  }
+
+  .certification-card-content p {
+    max-width: none;
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .certification-card-provider {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 0 24px 30px auto;
+    font-size: 34px;
+  }
+
+  .certification-contact-cta {
+    margin-top: 80px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .certification-contact-button {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 430px) {
+  .certification-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .certification-card {
+    border-radius: 28px;
+  }
+
+  .certification-card-content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .certification-card-provider {
+    margin-right: 22px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
