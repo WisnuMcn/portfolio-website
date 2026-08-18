@@ -482,3 +482,46 @@ if (document.readyState === "loading") {
 } else {
   initializeCertificationSection();
 }
+
+// Kontak Section Controller
+const initializeKontakSection = () => {
+  const kontakSection = document.getElementById("kontak");
+  const kontakCard = document.querySelector(".kontak-card");
+
+  if (!kontakSection || !kontakCard) return;
+
+  const revealSection = () => {
+    kontakCard.classList.add("kontak-animate-visible");
+  };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealSection();
+    return;
+  }
+
+  if ("IntersectionObserver" in window) {
+    const kontakObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          revealSection();
+          observer.unobserve(kontakSection);
+        }
+      },
+      {
+        rootMargin: "0px 0px -15% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    kontakObserver.observe(kontakSection);
+  } else {
+    revealSection();
+  }
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeKontakSection);
+} else {
+  initializeKontakSection();
+}
+
