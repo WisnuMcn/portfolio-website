@@ -51,16 +51,16 @@
         <div
           class="hero-layout mx-auto grid min-h-screen w-full max-w-[1440px] grid-cols-1 items-center px-6 pb-20 pt-20 sm:px-10 sm:pb-24 sm:pt-24 lg:grid-cols-[minmax(350px,0.82fr)_minmax(420px,1.18fr)_minmax(310px,0.76fr)] lg:px-[50px] lg:pb-0 lg:pt-0">
           <!-- Intro Content -->
-          <article class="z-20 max-w-[485px] self-center lg:-mt-12">
+          <article class="relative z-10 w-full max-w-none overflow-visible self-center lg:-mt-12">
             <p
               class="reveal-name font-miracle text-[42px] font-normal leading-none text-white sm:text-[46px] lg:text-[48px]">
               Hello,
             </p>
 
             <h1
-              class="reveal-name mt-2 font-helvetica text-[56px] font-bold leading-[0.92] tracking-normal text-white sm:text-[72px] lg:text-[88px]">
-              Wisnu Agus<br />
-              Wicaksono
+              class="reveal-name hero-title mt-2 font-helvetica text-[56px] leading-[0.92] sm:text-[72px] lg:text-[88px]">
+              <span>Wisnu Agus</span><br />
+              <span>Wicaksono</span>
             </h1>
 
             <div class="reveal-copy mt-8 text-[17px] leading-[1.18] text-white sm:text-[18px] lg:text-[18px]">
@@ -78,7 +78,7 @@
 
           <!-- Hero Image -->
           <div
-            class="pointer-events-none relative z-10 order-first flex h-[48vh] items-end justify-center lg:order-none lg:h-full">
+            class="pointer-events-none relative z-20 order-first flex h-[48vh] items-end justify-center lg:order-none lg:h-full">
             <img
               class="hero-person h-full max-h-[850px] w-auto max-w-none object-contain object-bottom sm:max-h-[920px] lg:h-[86vh] lg:min-h-[760px] xl:min-h-[820px]"
               src="assets/images/Hero-LandingPage.png" alt="Portrait Wisnu Agus Wicaksono" width="842" height="932"
@@ -227,14 +227,14 @@
     <section id="sertifikasi" class="certification-section scroll-mt-28" aria-labelledby="certification-title">
       <div class="certification-inner">
         <header class="certification-header">
-          <h2 id="certification-title" class="certification-title">Sertifikasi</h2>
+          <h2 id="certification-title" class="certification-title">Pelatihan</h2>
           <p class="certification-slogan">
             <span>Proof</span>
             of learning, growth, and progress.
           </p>
         </header>
 
-        <div class="certification-list" aria-label="Daftar sertifikasi">
+        <div class="certification-list" aria-label="Daftar pelatihan">
           <article class="certification-card certification-card--gold" style="--certification-theme: #d4bc07;"
             data-provider="RevoU">
             <div class="certification-card-media" aria-hidden="true">
@@ -251,6 +251,114 @@
               </p>
             </div>
             <p class="certification-card-provider">RevoU</p>
+          </article>
+
+          <!-- 1. KarirNex - Microsoft Office -->
+          <article class="certification-card certification-card--orange" style="--certification-theme: #e65c00;"
+            data-provider="KarirNex">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/KarirNex-MicrosoftOffice.png"
+                alt="" loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Bootcamp Sertifikasi Microsoft Office Excel, Word & Power Point Specialist</h3>
+              <p>
+                Completed an Intermediate-level Microsoft Office Certification Bootcamp covering Microsoft Excel, Word, and PowerPoint, including data processing, formulas and functions, VLOOKUP, INDEX MATCH, Pivot Tables, reporting and interactive dashboards, VBA Macros, and a mini project.
+              </p>
+            </div>
+            <p class="certification-card-provider">KarirNex</p>
+          </article>
+
+          <!-- 2. MySkill - Lovable AI -->
+          <article class="certification-card certification-card--tosca" style="--certification-theme: #0d9488;"
+            data-provider="MySkill">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/MySkill-1.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Building Website with Lovable AI</h3>
+              <p>
+                Completed a short class focused on building websites with Lovable AI, exploring the use of artificial intelligence in the web development process.
+              </p>
+            </div>
+            <p class="certification-card-provider">MySkill</p>
+          </article>
+
+          <!-- 3. MySkill - Excel Lookup Functions -->
+          <article class="certification-card certification-card--tosca" style="--certification-theme: #0d9488;"
+            data-provider="MySkill">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/MySkill-2.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Index Match, Vlookup and Hlookup in Ms. Excel</h3>
+              <p>
+                MySkill Short Class focused on Index Match, VLOOKUP, and HLOOKUP functions in Microsoft Excel for data lookup and analysis.
+              </p>
+            </div>
+            <p class="certification-card-provider">MySkill</p>
+          </article>
+
+          <!-- 4. MySkill - Python Introduction for Data Analysis -->
+          <article class="certification-card certification-card--tosca" style="--certification-theme: #0d9488;"
+            data-provider="MySkill">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/MySkill-3.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Python Introduction for Data Analysis</h3>
+              <p>
+                Completed a MySkill Short Class focused on using Python for data analysis, covering Python syntax, lists, tuples, sets, dictionaries, conditional statements,
+              </p>
+            </div>
+            <p class="certification-card-provider">MySkill</p>
+          </article>
+
+          <!-- 5. RevoU - Mini Course Data Analytics -->
+          <article class="certification-card certification-card--yellow" style="--certification-theme: #d4bc07;"
+            data-provider="RevoU">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/Revou-2.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Mini Course Data Analytics</h3>
+              <p>
+                Completed the RevoU Mini Course Data Analytics, covering the fundamentals of data analysis, Big Data, data analysis types and processes, spreadsheet-based analysis, the implementation of Big Data in industry, and the role of AI and automation in the future of data analytics careers.
+              </p>
+            </div>
+            <p class="certification-card-provider">RevoU</p>
+          </article>
+
+          <!-- 6. Edugate Indonesia - SAP Overview -->
+          <article class="certification-card certification-card--red" style="--certification-theme: #c5221f;"
+            data-provider="Edugate Indonesia">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/SAP.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>SAP01 - SAP Overview</h3>
+              <p>
+                Completed the SAP01 – SAP Overview course through the SAP University Partnership Program, gaining foundational knowledge of SAP and an overview of its business processes and enterprise solutions.
+              </p>
+            </div>
+            <p class="certification-card-provider">Edugate Indonesia</p>
           </article>
         </div>
 
@@ -286,7 +394,7 @@
           <!-- WhatsApp Button -->
           <a href="https://wa.me/6287830334005" target="_blank" rel="noopener noreferrer"
             class="kontak-btn kontak-btn-animate" aria-label="WhatsApp">
-            <img src="assets/images/Whatsapp.png" alt="WhatsApp" class="kontak-icon"
+            <img src="assets/images/Whatsapp copy.png" alt="WhatsApp" class="kontak-icon"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <svg class="kontak-svg-icon" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor"
               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;"
@@ -300,7 +408,7 @@
           <!-- Telegram Button -->
           <a href="https://t.me/+6287830334005" target="_blank" rel="noopener noreferrer"
             class="kontak-btn kontak-btn-animate" aria-label="Telegram">
-            <img src="assets/images/Telegram.png" alt="Telegram" class="kontak-icon"
+            <img src="assets/images/Telegram copy.png" alt="Telegram" class="kontak-icon"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <svg class="kontak-svg-icon" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor"
               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;"
@@ -313,7 +421,7 @@
           <!-- LinkedIn Button -->
           <a href="https://www.linkedin.com/in/wisnu-agus-wicaksono-29970541b" target="_blank" rel="noopener noreferrer"
             class="kontak-btn kontak-btn-animate" aria-label="LinkedIn">
-            <img src="assets/images/Linkedin.png" alt="LinkedIn" class="kontak-icon"
+            <img src="assets/images/Linkedin copy.png" alt="LinkedIn" class="kontak-icon"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <svg class="kontak-svg-icon" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor"
               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;"

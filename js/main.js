@@ -420,6 +420,11 @@ const initializeCertificationSection = () => {
 
   const revealSection = () => {
     certificationSection.classList.add("is-visible");
+    certificationCards.forEach((card, index) => {
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        card.style.animationDelay = `${300 + index * 100}ms`;
+      }
+    });
   };
 
   certificationCards.forEach((card) => {
