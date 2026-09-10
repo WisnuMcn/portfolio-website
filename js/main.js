@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </ul>
         </div>
 
-        <!-- Panitia Ngupit Fest 2025 Ã¢â‚¬â€ Penanggung Jawab Media -->
+        <!-- Panitia Ngupit Fest 2025 – Penanggung Jawab Media -->
         <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
           <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="text-sm font-medium text-white/75 mt-1">Penanggung Jawab Media</p>
             </div>
             <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
-              31 Agustus 2025 Ã¢â‚¬â€œ 13 Desember 2025
+              31 Agustus 2025 – 13 Desember 2025
             </div>
           </div>
           <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
@@ -266,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (activeCategory === null) {
       // First click: render immediately and trigger fade-in
       aboutInfoContainer.innerHTML = aboutInfoData[category] || "";
-      // Request animation frame to ensure innerHTML changes are applied before class transition starts
       requestAnimationFrame(() => {
         aboutInfoContainer.classList.add("active");
       });
@@ -275,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Subsequent clicks: transition fade-out -> update html -> transition fade-in
       aboutInfoContainer.classList.remove("active");
 
-      // Wait for CSS transition opacity to drop (250ms in CSS, 250ms here is perfect)
       setTimeout(() => {
         aboutInfoContainer.innerHTML = aboutInfoData[category] || "";
         aboutInfoContainer.classList.add("active");
@@ -303,6 +301,11 @@ const initializePortfolioSection = () => {
   const portfolioSection = document.getElementById("portofolio");
   const portfolioCards = [...document.querySelectorAll(".portfolio-card[data-category]")];
   const statusText = document.querySelector(".portfolio-category-status");
+  const gridView = document.getElementById("portfolio-grid-view");
+  const detailView = document.getElementById("portfolio-detail-view");
+  const backBtn = document.getElementById("portfolio-back-btn");
+  const prevBtn = document.getElementById("portfolio-btn-prev");
+  const nextBtn = document.getElementById("portfolio-btn-next");
 
   if (!portfolioSection || !portfolioCards.length) return;
 
@@ -311,6 +314,81 @@ const initializePortfolioSection = () => {
     "data-analysis": "Data Analysis",
     "graphic-design": "Graphic Design",
   };
+
+  // Data list for Web Development portfolio items
+  const webDevItems = [
+    {
+      title: "Kuliner Klaten",
+      description:
+        "Sistem rekomendasi kuliner berbasis web yang membantu pengguna menemukan tempat makan di Kabupaten Klaten sesuai dengan preferensi mereka. Dikembangkan menggunakan Flask dengan pendekatan hybrid switching yang menggabungkan Popularity-Based Filtering dan Content-Based Filtering untuk menghasilkan rekomendasi yang lebih relevan.",
+      technologies: "Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn",
+      githubUrl: "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
+      demoUrl: "#",
+      image: "assets/images/Cap-KulinerKlaten.png",
+    },
+  ];
+
+  let currentWebDevIndex = 0;
+
+  const renderWebDevItem = (index) => {
+    const item = webDevItems[index];
+    if (!item) return;
+
+    const titleEl = document.getElementById("webdev-title");
+    const descEl = document.getElementById("webdev-description");
+    const techEl = document.getElementById("webdev-tech");
+    const githubEl = document.getElementById("webdev-github");
+    const demoEl = document.getElementById("webdev-demo");
+    const imgEl = document.getElementById("webdev-screenshot");
+
+    if (titleEl) titleEl.textContent = item.title;
+    if (descEl) descEl.textContent = item.description;
+    if (techEl) techEl.textContent = item.technologies;
+    if (githubEl) githubEl.href = item.githubUrl;
+    if (demoEl) demoEl.href = item.demoUrl;
+    if (imgEl && item.image) {
+      imgEl.src = item.image;
+      imgEl.alt = `Screenshot ${item.title}`;
+    }
+  };
+
+  const showDetailView = () => {
+    if (!gridView || !detailView) return;
+    renderWebDevItem(currentWebDevIndex);
+    gridView.classList.add("hidden");
+    detailView.classList.remove("hidden");
+
+    // Scroll to portfolio section smoothly
+    const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({
+      top: Math.max(scrollTop, 0),
+      behavior: "smooth",
+    });
+  };
+
+  const showGridView = () => {
+    if (!gridView || !detailView) return;
+    detailView.classList.add("hidden");
+    gridView.classList.remove("hidden");
+  };
+
+  if (backBtn) {
+    backBtn.addEventListener("click", showGridView);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentWebDevIndex = (currentWebDevIndex + 1) % webDevItems.length;
+      renderWebDevItem(currentWebDevIndex);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentWebDevIndex = (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
+      renderWebDevItem(currentWebDevIndex);
+    });
+  }
 
   let hasRevealedPortfolio = false;
 
@@ -360,8 +438,12 @@ const initializePortfolioSection = () => {
       portfolioCards.forEach((item) => item.classList.toggle("is-selected", item === card));
       portfolioSection.dataset.activeCategory = category;
 
-      if (statusText) {
-        statusText.textContent = `${label} dipilih. Tampilan detail kategori akan dikembangkan pada tahap berikutnya.`;
+      if (category === "frontend") {
+        showDetailView();
+      } else {
+        if (statusText) {
+          statusText.textContent = `${label} dipilih. Tampilan detail kategori akan dikembangkan pada tahap berikutnya.`;
+        }
       }
 
       portfolioSection.dispatchEvent(

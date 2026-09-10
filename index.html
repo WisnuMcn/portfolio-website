@@ -166,61 +166,142 @@
     <!-- Portfolio Section -->
     <section id="portofolio" class="portfolio-section scroll-mt-28" aria-labelledby="portfolio-title">
       <div class="portfolio-inner">
-        <header class="portfolio-header">
-          <h2 id="portfolio-title" class="portfolio-title">Portofolio</h2>
-          <p class="portfolio-slogan">
-            <span>Where</span>
-            ideas become meaningful work.
-          </p>
-        </header>
+        <!-- Category Grid View Container -->
+        <div id="portfolio-grid-view" class="portfolio-view">
+          <header class="portfolio-header">
+            <h2 id="portfolio-title" class="portfolio-title">Portofolio</h2>
+            <p class="portfolio-slogan">
+              <span>Where</span>
+              ideas become meaningful work.
+            </p>
+          </header>
 
-        <div class="portfolio-grid" aria-label="Kategori portofolio">
-          <button class="portfolio-card portfolio-card--frontend" type="button" data-category="frontend"
-            aria-label="Pilih kategori Front-End Development">
-            <span class="portfolio-card-fallback" aria-hidden="true"></span>
-            <img class="portfolio-card-cover" data-src="assets/images/portfolio/frontend-cover.png"
-              alt="Cover Front-End Development" loading="lazy" decoding="async" />
-            <span class="portfolio-card-overlay" aria-hidden="true"></span>
-            <span class="portfolio-card-content">
-              <span class="portfolio-card-title">Front-End Development</span>
-              <span class="portfolio-card-description">Turning ideas into interactive experiences.</span>
-            </span>
-          </button>
+          <div class="portfolio-grid" aria-label="Kategori portofolio">
+            <button class="portfolio-card portfolio-card--frontend" type="button" data-category="frontend"
+              aria-label="Pilih kategori Front-End Development">
+              <span class="portfolio-card-fallback" aria-hidden="true"></span>
+              <img class="portfolio-card-cover" data-src="assets/images/portfolio/frontend-cover.png"
+                alt="Cover Front-End Development" loading="lazy" decoding="async" />
+              <span class="portfolio-card-overlay" aria-hidden="true"></span>
+              <span class="portfolio-card-content">
+                <span class="portfolio-card-title">Front-End Development</span>
+                <span class="portfolio-card-description">Turning ideas into interactive experiences.</span>
+              </span>
+            </button>
 
-          <button class="portfolio-card portfolio-card--data" type="button" data-category="data-analysis"
-            aria-label="Pilih kategori Data Analysis">
-            <span class="portfolio-card-fallback" aria-hidden="true"></span>
-            <img class="portfolio-card-cover" data-src="assets/images/portfolio/data-analysis-cover.png"
-              alt="Cover Data Analysis" loading="lazy" decoding="async" />
-            <span class="portfolio-card-overlay" aria-hidden="true"></span>
-            <span class="portfolio-card-content">
-              <span class="portfolio-card-title">Data Analysis</span>
-              <span class="portfolio-card-description">From raw data to clear insights.</span>
-            </span>
-          </button>
+            <button class="portfolio-card portfolio-card--data" type="button" data-category="data-analysis"
+              aria-label="Pilih kategori Data Analysis">
+              <span class="portfolio-card-fallback" aria-hidden="true"></span>
+              <img class="portfolio-card-cover" data-src="assets/images/portfolio/data-analysis-cover.png"
+                alt="Cover Data Analysis" loading="lazy" decoding="async" />
+              <span class="portfolio-card-overlay" aria-hidden="true"></span>
+              <span class="portfolio-card-content">
+                <span class="portfolio-card-title">Data Analysis</span>
+                <span class="portfolio-card-description">From raw data to clear insights.</span>
+              </span>
+            </button>
 
-          <button class="portfolio-card portfolio-card--graphic" type="button" data-category="graphic-design"
-            aria-label="Pilih kategori Graphic Design">
-            <span class="portfolio-card-fallback" aria-hidden="true"></span>
-            <img class="portfolio-card-cover" data-src="assets/images/portfolio/graphic-design-cover.png"
-              alt="Cover Graphic Design" loading="lazy" decoding="async" />
-            <span class="portfolio-card-overlay" aria-hidden="true"></span>
-            <span class="portfolio-card-content">
-              <span class="portfolio-card-title">Graphic Design</span>
-              <span class="portfolio-card-description">Turning concepts into visual stories.</span>
-            </span>
-          </button>
+            <button class="portfolio-card portfolio-card--graphic" type="button" data-category="graphic-design"
+              aria-label="Pilih kategori Graphic Design">
+              <span class="portfolio-card-fallback" aria-hidden="true"></span>
+              <img class="portfolio-card-cover" data-src="assets/images/portfolio/graphic-design-cover.png"
+                alt="Cover Graphic Design" loading="lazy" decoding="async" />
+              <span class="portfolio-card-overlay" aria-hidden="true"></span>
+              <span class="portfolio-card-content">
+                <span class="portfolio-card-title">Graphic Design</span>
+                <span class="portfolio-card-description">Turning concepts into visual stories.</span>
+              </span>
+            </button>
+          </div>
+
+          <p class="portfolio-category-status" aria-live="polite"></p>
+
+          <aside class="portfolio-certification-cta" aria-label="Ajakan melihat sertifikasi">
+            <p>
+              <span>Mari</span>
+              lihat bagaimana saya terus mengembangkan diri.
+            </p>
+            <a class="portfolio-certification-button" href="#sertifikasi">Sertifikasi</a>
+          </aside>
         </div>
 
-        <p class="portfolio-category-status" aria-live="polite"></p>
+        <!-- Web Development Category Detail View Container -->
+        <div id="portfolio-detail-view" class="portfolio-detail-view hidden" aria-label="Detail Portofolio Web Development">
+          <!-- Top Right Header / Slogan -->
+          <header class="portfolio-detail-header">
+            <p class="portfolio-detail-slogan">
+              Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.
+            </p>
+          </header>
 
-        <aside class="portfolio-certification-cta" aria-label="Ajakan melihat sertifikasi">
-          <p>
-            <span>Mari</span>
-            lihat bagaimana saya terus mengembangkan diri.
-          </p>
-          <a class="portfolio-certification-button" href="#sertifikasi">Sertifikasi</a>
-        </aside>
+          <!-- Main Field Wrapper with Side Navigation Controls -->
+          <div class="portfolio-detail-main-wrapper">
+            <!-- Left Navigation Circle Button -->
+            <button type="button" class="portfolio-icon-btn portfolio-btn-prev" id="portfolio-btn-prev" aria-label="Portfolio Sebelumnya">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <!-- 3D Stacked Rotated Cards Container -->
+            <div class="portfolio-stacked-container">
+              <!-- Glass Layer 1 (Bottom-most rotated layer) -->
+              <div class="portfolio-layer portfolio-layer-1" aria-hidden="true"></div>
+              <!-- Glass Layer 2 (Middle rotated layer) -->
+              <div class="portfolio-layer portfolio-layer-2" aria-hidden="true"></div>
+
+              <!-- Main Dark Field -->
+              <article class="portfolio-main-card">
+                <!-- Title inside main dark field -->
+                <h3 class="portfolio-item-title" id="webdev-title">Klaten kuliner</h3>
+
+                <!-- Screenshot Area -->
+                <div class="portfolio-screenshot-wrapper">
+                  <img id="webdev-screenshot" class="portfolio-screenshot-img" src="assets/images/Cap-KulinerKlaten.png"
+                    alt="Screenshot Sistem Rekomendasi Kuliner Klaten" loading="lazy" decoding="async" />
+                </div>
+
+                <!-- Bottom Content Area: Description & Tech + Links -->
+                <div class="portfolio-card-footer">
+                  <!-- Left: Description -->
+                  <p class="portfolio-item-description" id="webdev-description">
+                    Sistem rekomendasi kuliner berbasis web yang membantu pengguna menemukan tempat makan di Kabupaten Klaten sesuai dengan preferensi mereka. Dikembangkan menggunakan Flask dengan pendekatan hybrid switching yang menggabungkan Popularity-Based Filtering dan Content-Based Filtering untuk menghasilkan rekomendasi yang lebih relevan.
+                  </p>
+
+                  <!-- Right: Technologies & Action Buttons -->
+                  <div class="portfolio-item-meta">
+                    <p class="portfolio-tech-stack" id="webdev-tech">
+                      Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn
+                    </p>
+                    <div class="portfolio-actions-row">
+                      <a id="webdev-github" href="https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git"
+                        target="_blank" rel="noopener noreferrer" class="portfolio-action-btn" aria-label="Repository Github Kuliner Klaten">
+                        Github
+                      </a>
+                      <a id="webdev-demo" href="#" target="_blank" rel="noopener noreferrer" class="portfolio-action-btn" aria-label="Demo Kuliner Klaten">
+                        Demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Right Navigation Circle Button -->
+            <button type="button" class="portfolio-icon-btn portfolio-btn-next" id="portfolio-btn-next" aria-label="Portfolio Berikutnya">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Bottom Control: Back Button Centered -->
+          <div class="portfolio-detail-bottom-controls">
+            <button type="button" class="portfolio-back-btn" id="portfolio-back-btn">
+              Kembali
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Certification Section -->
