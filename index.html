@@ -39,7 +39,7 @@
       <a class="nav-link active" href="#beranda">Beranda</a>
       <a class="nav-link" href="#tentang-saya">Tentang Saya</a>
       <a class="nav-link" href="#portofolio">Portofolio</a>
-      <a class="nav-link" href="#sertifikasi">Sertifikasi</a>
+      <a class="nav-link" href="#sertifikasi">Pelatihan</a>
       <a class="nav-link" href="#kontak">Kontak</a>
     </nav>
   </header>
@@ -178,13 +178,13 @@
 
           <div class="portfolio-grid" aria-label="Kategori portofolio">
             <button class="portfolio-card portfolio-card--frontend" type="button" data-category="frontend"
-              aria-label="Pilih kategori Front-End Development">
+              aria-label="Pilih kategori Web Development">
               <span class="portfolio-card-fallback" aria-hidden="true"></span>
               <img class="portfolio-card-cover" data-src="assets/images/portfolio/frontend-cover.png"
-                alt="Cover Front-End Development" loading="lazy" decoding="async" />
+                alt="Cover Web Development" loading="lazy" decoding="async" />
               <span class="portfolio-card-overlay" aria-hidden="true"></span>
               <span class="portfolio-card-content">
-                <span class="portfolio-card-title">Front-End Development</span>
+                <span class="portfolio-card-title">Web Development</span>
                 <span class="portfolio-card-description">Turning ideas into interactive experiences.</span>
               </span>
             </button>
@@ -200,28 +200,16 @@
                 <span class="portfolio-card-description">From raw data to clear insights.</span>
               </span>
             </button>
-
-            <button class="portfolio-card portfolio-card--graphic" type="button" data-category="graphic-design"
-              aria-label="Pilih kategori Graphic Design">
-              <span class="portfolio-card-fallback" aria-hidden="true"></span>
-              <img class="portfolio-card-cover" data-src="assets/images/portfolio/graphic-design-cover.png"
-                alt="Cover Graphic Design" loading="lazy" decoding="async" />
-              <span class="portfolio-card-overlay" aria-hidden="true"></span>
-              <span class="portfolio-card-content">
-                <span class="portfolio-card-title">Graphic Design</span>
-                <span class="portfolio-card-description">Turning concepts into visual stories.</span>
-              </span>
-            </button>
           </div>
 
           <p class="portfolio-category-status" aria-live="polite"></p>
 
-          <aside class="portfolio-certification-cta" aria-label="Ajakan melihat sertifikasi">
+          <aside class="portfolio-certification-cta" aria-label="Ajakan melihat pelatihan">
             <p>
               <span>Mari</span>
               lihat bagaimana saya terus mengembangkan diri.
             </p>
-            <a class="portfolio-certification-button" href="#sertifikasi">Sertifikasi</a>
+            <a class="portfolio-certification-button" href="#sertifikasi">Pelatihan</a>
           </aside>
         </div>
 
@@ -257,8 +245,15 @@
 
                 <!-- Screenshot Area -->
                 <div class="portfolio-screenshot-wrapper">
+                  <!-- Fallback visual shown when project image is unavailable -->
+                  <div class="portfolio-screenshot-fallback" id="webdev-screenshot-fallback" aria-hidden="true">
+                    <svg class="portfolio-screenshot-fallback-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.8" stroke="currentColor" width="72" height="72">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                    <span class="portfolio-screenshot-fallback-text">Preview coming soon</span>
+                  </div>
                   <img id="webdev-screenshot" class="portfolio-screenshot-img" src="assets/images/Cap-KulinerKlaten.png"
-                    alt="Screenshot Sistem Rekomendasi Kuliner Klaten" loading="lazy" decoding="async" />
+                    alt="Screenshot Kuliner Klaten" loading="lazy" decoding="async" />
                 </div>
 
                 <!-- Bottom Content Area: Description & Tech + Links -->

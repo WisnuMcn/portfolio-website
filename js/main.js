@@ -310,28 +310,91 @@ const initializePortfolioSection = () => {
   if (!portfolioSection || !portfolioCards.length) return;
 
   const categoryLabels = {
-    frontend: "Front-End Development",
+    frontend: "Web Development",
     "data-analysis": "Data Analysis",
     "graphic-design": "Graphic Design",
   };
 
-  // Data list for Web Development portfolio items
+  // =====================================================================
+  // DATA PROJECT WEB DEVELOPMENT
+  // Untuk menambah project baru: duplikat objek di bawah, isi datanya.
+  // Untuk mengisi URL GitHub/Demo: lihat field github & demo di tiap project.
+  // =====================================================================
   const webDevItems = [
+
+    // ─── PROJECT 1 ─── Kuliner Klaten ────────────────────────────────────
     {
       title: "Kuliner Klaten",
       description:
         "Sistem rekomendasi kuliner berbasis web yang membantu pengguna menemukan tempat makan di Kabupaten Klaten sesuai dengan preferensi mereka. Dikembangkan menggunakan Flask dengan pendekatan hybrid switching yang menggabungkan Popularity-Based Filtering dan Content-Based Filtering untuk menghasilkan rekomendasi yang lebih relevan.",
       technologies: "Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn",
-      githubUrl: "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
-      demoUrl: "#",
+      github: "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
+      demo: "",  // ← Tambahkan URL Demo di sini jika sudah tersedia
       image: "assets/images/Cap-KulinerKlaten.png",
     },
+
+    // ─── PROJECT 2 ─── Encre Nocturne ────────────────────────────────────
+    // CATATAN:
+    //   image  → simpan file gambar ke path di bawah, lalu image otomatis tampil.
+    //   github → isi URL repository GitHub jika sudah tersedia.
+    //   demo   → isi URL TikTok/demo jika sudah tersedia.
+    {
+      title: "Encre Nocturne",
+      description:
+        "Website tattoo studio yang dirancang untuk memperkenalkan Encre Nocturne, menampilkan informasi layanan serta etalase kategori tattoo, dan memudahkan pengguna dalam melakukan booking. Menghadirkan visual elegan dengan animasi interaktif pada landing page untuk menciptakan pengalaman yang lebih imersif dan berkarakter.",
+      technologies: "HTML · CSS · JavaScript",
+      github: "https://wisnumcn.github.io/encre-nocturne/",  // ← Tambahkan URL GitHub di sini jika sudah tersedia
+      demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
+      image: "assets/images/Cap-EncreNocturne.png", // ← Simpan file gambar ke path ini
+    },
+
+    // ─── PROJECT 3 ─── Vogency ───────────────────────────────────────────
+    // CATATAN:
+    //   demo → isi URL TikTok/demo jika sudah tersedia.
+    {
+      title: "Vogency",
+      description:
+        "Website toko pakaian online yang menghadirkan pengalaman berbelanja lebih personal melalui sistem rekomendasi berbasis Content-Based Filtering. Sistem menampilkan rekomendasi produk berdasarkan karakteristik dan preferensi pengguna, sehingga membantu menemukan pakaian yang lebih sesuai dengan minat mereka.",
+      technologies: "PHP · Bootstrap",
+      github: "https://github.com/WisnuMcn/Vogency.git",
+      demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
+      image: "assets/images/Cap-Vogency.png",
+    },
+
+    // ─── PROJECT 4 ─── Semedulur Coffee ──────────────────────────────────
+    // CATATAN:
+    //   demo → isi URL TikTok/demo jika sudah tersedia.
+    {
+      title: "Semedulur Coffee",
+      description:
+        "Website pemesanan kopi secara online untuk Semedulur Coffee di Klaten yang memudahkan pelanggan menjelajahi menu dan melakukan pemesanan dengan lebih praktis. Website dirancang dengan tampilan yang sederhana dan responsif untuk memberikan pengalaman pemesanan yang nyaman.",
+      technologies: "PHP · Bootstrap",
+      github: "https://github.com/bernadustoro/Walawe_Coffee.git",
+      demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
+      image: "assets/images/Cap-Semedulur.png",
+    },
+    // ─── PROJECT 5 ─── USD Guide ──────────────────────────────────────────
+    // TODO: Tambahkan URL demo USD Guide ketika link sudah tersedia
+    //   github → isi URL repository GitHub jika sudah tersedia.
+    //   demo   → isi URL TikTok/demo jika sudah tersedia.
+    {
+      title: "USD Guide",
+      description:
+        "USD Guide merupakan aplikasi Augmented Reality (AR) untuk membantu pengguna mengenal lingkungan Universitas Sanata Dharma secara interaktif. Pengguna dapat memindai marker yang tersedia di berbagai gedung, monumen, laboratorium, dan ruang kampus untuk menampilkan objek 3D beserta informasi dan audio penjelasan terkait lokasi tersebut.",
+      technologies: "HTML · Unity Hub · Augmented Reality (AR) · 3D Object",
+      github: "",  // ← Tambahkan URL GitHub di sini jika sudah tersedia
+      demo:   "",  // ← TODO: Tambahkan URL Demo (TikTok/link demo) di sini jika sudah tersedia
+      image: "assets/images/Cap-USDGuide.png",
+    },
+
   ];
 
   let currentWebDevIndex = 0;
+  let isWebDevAnimating = false;
 
-  const renderWebDevItem = (index) => {
-    const item = webDevItems[index];
+  // Perbarui konten DOM dengan data project pada index tertentu (tanpa animasi)
+  const updateWebDevContent = () => {
+    const item = webDevItems[currentWebDevIndex];
     if (!item) return;
 
     const titleEl = document.getElementById("webdev-title");
@@ -340,25 +403,146 @@ const initializePortfolioSection = () => {
     const githubEl = document.getElementById("webdev-github");
     const demoEl = document.getElementById("webdev-demo");
     const imgEl = document.getElementById("webdev-screenshot");
+    const fallbackEl = document.getElementById("webdev-screenshot-fallback");
 
     if (titleEl) titleEl.textContent = item.title;
     if (descEl) descEl.textContent = item.description;
     if (techEl) techEl.textContent = item.technologies;
-    if (githubEl) githubEl.href = item.githubUrl;
-    if (demoEl) demoEl.href = item.demoUrl;
-    if (imgEl && item.image) {
-      imgEl.src = item.image;
-      imgEl.alt = `Screenshot ${item.title}`;
+
+    // Tombol GitHub — disabled jika URL kosong
+    if (githubEl) {
+      if (item.github) {
+        githubEl.href = item.github;
+        githubEl.removeAttribute("aria-disabled");
+        githubEl.classList.remove("portfolio-action-btn--disabled");
+        githubEl.onclick = null;
+      } else {
+        githubEl.href = "#";
+        githubEl.setAttribute("aria-disabled", "true");
+        githubEl.classList.add("portfolio-action-btn--disabled");
+        githubEl.onclick = (e) => e.preventDefault();
+      }
+      githubEl.setAttribute("aria-label", `Repository Github ${item.title}`);
     }
+
+    // Tombol Demo — disabled jika URL kosong
+    if (demoEl) {
+      if (item.demo) {
+        demoEl.href = item.demo;
+        demoEl.removeAttribute("aria-disabled");
+        demoEl.classList.remove("portfolio-action-btn--disabled");
+        demoEl.onclick = null;
+      } else {
+        demoEl.href = "#";
+        demoEl.setAttribute("aria-disabled", "true");
+        demoEl.classList.add("portfolio-action-btn--disabled");
+        demoEl.onclick = (e) => e.preventDefault();
+      }
+      demoEl.setAttribute("aria-label", `Demo ${item.title}`);
+    }
+
+    // Gambar project dengan fallback jika file belum tersedia
+    if (imgEl && fallbackEl) {
+      imgEl.style.opacity = "0";
+      fallbackEl.classList.remove("is-visible");
+
+      if (item.image) {
+        const loader = new Image();
+        loader.onload = () => {
+          imgEl.src = item.image;
+          imgEl.alt = `Screenshot ${item.title}`;
+          imgEl.style.opacity = "1";
+          fallbackEl.classList.remove("is-visible");
+        };
+        loader.onerror = () => {
+          imgEl.src = "";
+          imgEl.style.opacity = "0";
+          fallbackEl.classList.add("is-visible");
+        };
+        loader.src = item.image;
+      } else {
+        imgEl.src = "";
+        imgEl.style.opacity = "0";
+        fallbackEl.classList.add("is-visible");
+      }
+    }
+  };
+
+  // Navigasi antar project dengan animasi slide horizontal
+  // direction: "next" → slide kiri; direction: "prev" → slide kanan
+  const navigateWebDev = (newIndex, direction) => {
+    if (isWebDevAnimating) return;
+    isWebDevAnimating = true;
+
+    const card = document.querySelector(".portfolio-main-card");
+    if (!card) {
+      // Fallback tanpa animasi jika card tidak ditemukan
+      currentWebDevIndex = newIndex;
+      updateWebDevContent();
+      isWebDevAnimating = false;
+      return;
+    }
+
+    // Tentukan class animasi berdasarkan arah navigasi
+    const exitClass = direction === "next" ? "is-exiting-next" : "is-exiting-prev";
+    const enterClass = direction === "next" ? "is-entering-next" : "is-entering-prev";
+
+    // Fase 1: slide exit — card saat ini bergerak keluar
+    card.classList.add(exitClass);
+
+    setTimeout(() => {
+      card.classList.remove(exitClass);
+      currentWebDevIndex = newIndex;
+      updateWebDevContent();
+
+      // Force reflow agar browser mereset animasi sebelum enter dimulai
+      void card.offsetWidth;
+
+      // Fase 2: slide enter — project baru masuk dari sisi berlawanan
+      card.classList.add(enterClass);
+
+      const onEnterEnd = () => {
+        card.classList.remove(enterClass);
+        isWebDevAnimating = false;
+      };
+
+      card.addEventListener("animationend", onEnterEnd, { once: true });
+
+      // Safety timeout — pastikan flag direset meski animationend tidak terpanggil
+      setTimeout(() => {
+        card.classList.remove(enterClass);
+        isWebDevAnimating = false;
+      }, 500);
+
+    }, 290);
+  };
+
+  // Alias untuk kompatibilitas fungsi yang sudah ada
+  const renderWebDevItem = (index) => {
+    currentWebDevIndex = index;
+    updateWebDevContent();
   };
 
   const showDetailView = () => {
     if (!gridView || !detailView) return;
-    renderWebDevItem(currentWebDevIndex);
+    // Reset ke project pertama setiap kali masuk ke detail view
+    currentWebDevIndex = 0;
+    isWebDevAnimating = false;
+
+    // Tampilkan detail view dengan animasi masuk
     gridView.classList.add("hidden");
     detailView.classList.remove("hidden");
 
-    // Scroll to portfolio section smoothly
+    // Trigger animasi enter pada detail view
+    void detailView.offsetWidth; // force reflow
+    detailView.classList.add("is-entering");
+    detailView.addEventListener("animationend", () => {
+      detailView.classList.remove("is-entering");
+    }, { once: true });
+
+    updateWebDevContent();
+
+    // Scroll ke section portofolio secara smooth
     const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({
       top: Math.max(scrollTop, 0),
@@ -366,27 +550,49 @@ const initializePortfolioSection = () => {
     });
   };
 
+  // Animasi Kembali: detail view slide out → grid view slide in
   const showGridView = () => {
     if (!gridView || !detailView) return;
-    detailView.classList.add("hidden");
-    gridView.classList.remove("hidden");
+
+    // Fase 1: detail view bergerak keluar (slide down + fade out)
+    detailView.classList.add("is-exiting");
+
+    setTimeout(() => {
+      // Fase 2: sembunyikan detail, tampilkan grid
+      detailView.classList.remove("is-exiting");
+      detailView.classList.add("hidden");
+      gridView.classList.remove("hidden");
+
+      // Trigger animasi masuk pada grid view
+      void gridView.offsetWidth; // force reflow
+      gridView.classList.add("is-entering");
+      gridView.addEventListener("animationend", () => {
+        gridView.classList.remove("is-entering");
+      }, { once: true });
+
+      // Safety timeout jika animationend tidak terpanggil
+      setTimeout(() => gridView.classList.remove("is-entering"), 500);
+
+    }, 350);
   };
 
   if (backBtn) {
     backBtn.addEventListener("click", showGridView);
   }
 
+  // Tombol Next → slide ke kanan (project berikutnya masuk dari kanan)
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
-      currentWebDevIndex = (currentWebDevIndex + 1) % webDevItems.length;
-      renderWebDevItem(currentWebDevIndex);
+      const newIndex = (currentWebDevIndex + 1) % webDevItems.length;
+      navigateWebDev(newIndex, "next");
     });
   }
 
+  // Tombol Prev → slide ke kiri (project sebelumnya masuk dari kiri)
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
-      currentWebDevIndex = (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
-      renderWebDevItem(currentWebDevIndex);
+      const newIndex = (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
+      navigateWebDev(newIndex, "prev");
     });
   }
 
