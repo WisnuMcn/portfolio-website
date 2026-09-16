@@ -167,8 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `,
     organisasi: `
-      <div class="flex flex-col gap-4 text-left">
-        <!-- Panitia Technofest 6.0 Ã¢â‚¬â€ Keamanan -->
+      <div class="flex flex-col gap-4 text-l        <!-- Panitia Technofest 6.0 – Keamanan -->
         <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
           <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
@@ -196,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </ul>
         </div>
 
-        <!-- Panitia Magisfest 2024 Ã¢â‚¬â€ Keamanan -->
+        <!-- Panitia Magisfest 2024 – Keamanan -->â‚¬â€ Keamanan -->
         <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
           <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
@@ -410,6 +409,61 @@ const initializePortfolioSection = () => {
       imageOne: "assets/images/projek1-1.png",
       imageTwo: "assets/images/projek1-2.png",
     },
+    {
+      title: "Analisis Market Basket dengan Association Rule",
+      descriptionLeft:
+        "Dari kode dan hasilnya, proyek ini berfokus pada analisis pola pembelian produk dalam transaksi grocery menggunakan dua algoritma, yaitu Apriori dan FP-Growth. Data transaksi diubah ke format one-hot menggunakan TransactionEncoder, kemudian dicari frequent itemsets dan association rules dengan minimum support 0,02 dan minimum confidence 0,3.",
+      descriptionRight:
+        "Hasilnya, kedua algoritma menghasilkan 37 association rules. Rule dengan lift tertinggi pada keduanya adalah hubungan whole milk + other vegetables → root vegetables, dengan support 0,023, confidence 0,310, dan lift 2,842. Proyek juga membandingkan waktu eksekusi Apriori 0,0922 detik dengan FP-Growth 0,0489 detik, serta menyajikan visualisasi association rules melalui scatter plot dan network graph.",
+      technologies: "Python · Pandas · Mlxtend · Matplotlib · Seaborn · NetworkX",
+      colab: "https://colab.research.google.com/drive/1FkUNby4rNNbMR9VFuRuuAvRrOMmq3pAR?usp=sharing",
+      imageOne: "assets/images/Projek2-1.png",
+      imageTwo: "assets/images/Projek2-2.png",
+    },
+    {
+      title: "Klasifikasi Kematangan Buah Tomat",
+      descriptionLeft:
+        "Mengembangkan model klasifikasi citra untuk mengenali tingkat kematangan buah tomat berdasarkan gambar ke dalam tiga kelas: Matang, Setengah Matang, dan Mentah. Model dilatih menggunakan pendekatan Convolutional Neural Network (CNN) dengan data augmentation untuk meningkatkan variasi data pelatihan.",
+      descriptionRight:
+        "Menghasilkan model klasifikasi citra yang dapat mengenali tiga kategori kematangan tomat, dengan akurasi validasi terbaik sebesar 96,88% pada proses training.",
+      technologies: "Python · Google Colab · TensorFlow · Keras · NumPy · Matplotlib",
+      colab: "https://colab.research.google.com/drive/1oUmiFEHamC8ObwzFDpOgXm9tWWJqIOIa?authuser=3#scrollTo=8dkd2_0-G34x",
+      imageOne: "assets/images/Projek3-1.png",
+      imageTwo: "assets/images/Projek3-2.png",
+    },
+    {
+      title: "Klasifikasi Pneumonia dari Citra X-Ray",
+      descriptionLeft:
+        "Mengembangkan model klasifikasi citra untuk membedakan hasil Chest X-Ray ke dalam dua kelas, yaitu NORMAL dan PNEUMONIA, menggunakan pendekatan deep learning dengan DenseNet121 dan data augmentation.",
+      descriptionRight:
+        "Menghasilkan model klasifikasi citra X-Ray dengan akurasi pengujian 90,54%, serta evaluasi menggunakan confusion matrix dan classification report untuk melihat performa klasifikasi NORMAL dan PNEUMONIA.",
+      technologies: "Python · Google Colab · TensorFlow · Keras · DenseNet121 · NumPy · Matplotlib · Seaborn · Scikit-learn",
+      colab: "https://colab.research.google.com/drive/1wC_D90HGOuUEgKDLuIIYlZl1GQa3O45a?usp=sharing",
+      imageOne: "assets/images/Projek4-1.png",
+      imageTwo: "assets/images/Projek4-2.png",
+    },
+    {
+      title: "Automotive Sales Dashboard",
+      descriptionLeft:
+        "Mengolah dan memvisualisasikan data transaksi showroom mobil menggunakan Power BI untuk memantau penjualan berdasarkan periode, cabang, kategori, produk, metode pembayaran, dan status transaksi. Dashboard dilengkapi filter interaktif dan berbagai visualisasi untuk memudahkan analisis performa penjualan.",
+      descriptionRight:
+        "Menghasilkan dashboard interaktif dengan KPI dan visualisasi dinamis yang dapat disesuaikan melalui slicer berdasarkan periode, cabang, kategori, metode pembayaran, dan status transaksi, sehingga memudahkan pemantauan serta analisis performa penjualan.",
+      technologies: "Power BI",
+      colab: "",
+      imageOne: "assets/images/Projek5-1.png",
+      imageTwo: "assets/images/Projek5-2.png",
+    },
+    {
+      title: "Dashboard Penjualan Toko Sembako",
+      descriptionLeft:
+        "Mengolah data penjualan toko sembako yang terdiri dari data transaksi, detail produk, dan konsumen untuk menganalisis omzet, tren penjualan bulanan, sumber penjualan, serta performa kasir. Hasil analisis disajikan dalam dashboard interaktif dengan slicer untuk mempermudah eksplorasi data.",
+      descriptionRight:
+        "Menghasilkan dashboard penjualan interaktif dengan visualisasi omzet berdasarkan sumber penjualan, tren omzet bulanan, dan performa kasir, serta slicer yang memungkinkan pengguna memfilter data sehingga nilai KPI dan visualisasi dapat berubah secara dinamis.",
+      technologies: "Microsoft Excel",
+      colab: "",
+      imageOne: "assets/images/Projek6-1.png",
+      imageTwo: "assets/images/Projek6-2.png",
+    },
   ];
 
   let currentDataAnalysisIndex = 0;
@@ -593,8 +647,13 @@ const initializePortfolioSection = () => {
     if (rightDescriptionEl) rightDescriptionEl.textContent = item.descriptionRight;
     if (techEl) techEl.textContent = item.technologies;
     if (colabEl) {
-      colabEl.href = item.colab;
-      colabEl.setAttribute("aria-label", `Buka ${item.title} di Google Colab`);
+      if (item.colab) {
+        colabEl.style.display = "";
+        colabEl.href = item.colab;
+        colabEl.setAttribute("aria-label", `Buka ${item.title} di Google Colab`);
+      } else {
+        colabEl.style.display = "none";
+      }
     }
 
     updateDataAnalysisImage(imageOneEl, item.imageOne, `Dashboard ${item.title}`);
@@ -660,16 +719,17 @@ const initializePortfolioSection = () => {
   };
 
   // Animasi Kembali: detail view slide out → grid view slide in
-  const showGridView = (detailViewToHide = detailView) => {
-    if (!gridView || !detailViewToHide) return;
+  const showGridView = (detailViewToHide) => {
+    const targetView = (detailViewToHide && detailViewToHide.classList) ? detailViewToHide : detailView;
+    if (!gridView || !targetView) return;
 
     // Fase 1: detail view bergerak keluar (slide down + fade out)
-    detailViewToHide.classList.add("is-exiting");
+    targetView.classList.add("is-exiting");
 
     setTimeout(() => {
       // Fase 2: sembunyikan detail, tampilkan grid
-      detailViewToHide.classList.remove("is-exiting");
-      detailViewToHide.classList.add("hidden");
+      targetView.classList.remove("is-exiting");
+      targetView.classList.add("hidden");
       gridView.classList.remove("hidden");
 
       // Trigger animasi masuk pada grid view
@@ -706,7 +766,7 @@ const initializePortfolioSection = () => {
   };
 
   if (backBtn) {
-    backBtn.addEventListener("click", showGridView);
+    backBtn.addEventListener("click", () => showGridView(detailView));
   }
 
   // Tombol Next → slide ke kanan (project berikutnya masuk dari kanan)
