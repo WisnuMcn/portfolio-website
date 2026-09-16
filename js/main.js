@@ -119,10 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
             <div>
               <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Finishing Ã¢â‚¬â€œ Casting F2</p>
+              <p class="text-sm font-medium text-white/75 mt-1">Finishing – Casting F2</p>
             </div>
             <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
-              15 Januari 2020 Ã¢â‚¬â€œ 14 Maret 2020
+              15 Januari 2020 – 14 Maret 2020
             </div>
           </div>
           <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="text-sm font-medium text-white/75 mt-1">Finishing dan Packing</p>
             </div>
             <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
-              29 Juni 2021 Ã¢â‚¬â€œ 18 April 2022
+              29 Juni 2021 – 18 April 2022
             </div>
           </div>
           <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="text-sm font-medium text-white/75 mt-1">Keamanan</p>
             </div>
             <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
-              11 Oktober 2024 Ã¢â‚¬â€œ 12 Oktober 2024
+              11 Oktober 2024 – 12 Oktober 2024
             </div>
           </div>
           <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
@@ -306,6 +306,10 @@ const initializePortfolioSection = () => {
   const backBtn = document.getElementById("portfolio-back-btn");
   const prevBtn = document.getElementById("portfolio-btn-prev");
   const nextBtn = document.getElementById("portfolio-btn-next");
+  const dataAnalysisDetailView = document.getElementById("data-analysis-detail-view");
+  const dataAnalysisBackBtn = document.getElementById("data-analysis-back-btn");
+  const dataAnalysisPrevBtn = document.getElementById("data-analysis-btn-prev");
+  const dataAnalysisNextBtn = document.getElementById("data-analysis-btn-next");
 
   if (!portfolioSection || !portfolioCards.length) return;
 
@@ -388,6 +392,28 @@ const initializePortfolioSection = () => {
     },
 
   ];
+
+  // =====================================================================
+  // DATA PROJECT DATA ANALYSIS
+  // Tambahkan project berikutnya ke array ini; tombol navigasi akan aktif
+  // otomatis saat jumlah project lebih dari satu.
+  // =====================================================================
+  const dataAnalysisItems = [
+    {
+      title: "Analisis Penjualan & Profitabilitas",
+      descriptionLeft:
+        "Menganalisis data transaksi Superstore untuk mengetahui performa penjualan dan profit berdasarkan kategori produk dan wilayah. Analisis mencakup eksplorasi data, perhitungan metrik, klasifikasi status profit, serta visualisasi untuk memahami pola penjualan dan profitabilitas.",
+      descriptionRight:
+        "Menghasilkan insight performa penjualan dan profit, termasuk total Sales sebesar 2,30 juta, total Profit 286,40 ribu, performa kategori produk, distribusi transaksi berdasarkan region, serta hubungan antara Sales dan Profit.",
+      technologies: "Python · Google Colab · Pandas · Matplotlib",
+      colab: "https://colab.research.google.com/drive/1WprA4d3xULcJ69CvRjru3leyh5fUilIX?usp=sharing",
+      imageOne: "assets/images/projek1-1.png",
+      imageTwo: "assets/images/projek1-2.png",
+    },
+  ];
+
+  let currentDataAnalysisIndex = 0;
+  let isDataAnalysisAnimating = false;
 
   let currentWebDevIndex = 0;
   let isWebDevAnimating = false;
@@ -523,6 +549,89 @@ const initializePortfolioSection = () => {
     updateWebDevContent();
   };
 
+  const updateDataAnalysisImage = (imageElement, source, alt) => {
+    if (!imageElement) return;
+
+    imageElement.style.opacity = "0";
+    const loader = new Image();
+    loader.onload = () => {
+      imageElement.src = source;
+      imageElement.alt = alt;
+      imageElement.style.opacity = "1";
+    };
+    loader.onerror = () => {
+      imageElement.removeAttribute("src");
+      imageElement.alt = "";
+    };
+    loader.src = source;
+  };
+
+  const updateDataAnalysisNavigation = () => {
+    const isSingleProject = dataAnalysisItems.length <= 1;
+
+    [dataAnalysisPrevBtn, dataAnalysisNextBtn].forEach((button) => {
+      if (!button) return;
+      button.disabled = isSingleProject;
+      button.setAttribute("aria-disabled", String(isSingleProject));
+    });
+  };
+
+  const updateDataAnalysisContent = () => {
+    const item = dataAnalysisItems[currentDataAnalysisIndex];
+    if (!item) return;
+
+    const titleEl = document.getElementById("data-analysis-title");
+    const leftDescriptionEl = document.getElementById("data-analysis-description-left");
+    const rightDescriptionEl = document.getElementById("data-analysis-description-right");
+    const techEl = document.getElementById("data-analysis-tech");
+    const colabEl = document.getElementById("data-analysis-colab");
+    const imageOneEl = document.getElementById("data-analysis-image-one");
+    const imageTwoEl = document.getElementById("data-analysis-image-two");
+
+    if (titleEl) titleEl.textContent = item.title;
+    if (leftDescriptionEl) leftDescriptionEl.textContent = item.descriptionLeft;
+    if (rightDescriptionEl) rightDescriptionEl.textContent = item.descriptionRight;
+    if (techEl) techEl.textContent = item.technologies;
+    if (colabEl) {
+      colabEl.href = item.colab;
+      colabEl.setAttribute("aria-label", `Buka ${item.title} di Google Colab`);
+    }
+
+    updateDataAnalysisImage(imageOneEl, item.imageOne, `Dashboard ${item.title}`);
+    updateDataAnalysisImage(imageTwoEl, item.imageTwo, `Insight ${item.title}`);
+    updateDataAnalysisNavigation();
+  };
+
+  const navigateDataAnalysis = (newIndex, direction) => {
+    if (isDataAnalysisAnimating || dataAnalysisItems.length <= 1) return;
+
+    const card = document.querySelector(".data-analysis-main-card");
+    if (!card) return;
+
+    isDataAnalysisAnimating = true;
+    const exitClass = direction === "next" ? "is-exiting-next" : "is-exiting-prev";
+    const enterClass = direction === "next" ? "is-entering-next" : "is-entering-prev";
+
+    card.classList.add(exitClass);
+    setTimeout(() => {
+      card.classList.remove(exitClass);
+      currentDataAnalysisIndex = newIndex;
+      updateDataAnalysisContent();
+      void card.offsetWidth;
+      card.classList.add(enterClass);
+
+      card.addEventListener("animationend", () => {
+        card.classList.remove(enterClass);
+        isDataAnalysisAnimating = false;
+      }, { once: true });
+
+      setTimeout(() => {
+        card.classList.remove(enterClass);
+        isDataAnalysisAnimating = false;
+      }, 500);
+    }, 290);
+  };
+
   const showDetailView = () => {
     if (!gridView || !detailView) return;
     // Reset ke project pertama setiap kali masuk ke detail view
@@ -551,16 +660,16 @@ const initializePortfolioSection = () => {
   };
 
   // Animasi Kembali: detail view slide out → grid view slide in
-  const showGridView = () => {
-    if (!gridView || !detailView) return;
+  const showGridView = (detailViewToHide = detailView) => {
+    if (!gridView || !detailViewToHide) return;
 
     // Fase 1: detail view bergerak keluar (slide down + fade out)
-    detailView.classList.add("is-exiting");
+    detailViewToHide.classList.add("is-exiting");
 
     setTimeout(() => {
       // Fase 2: sembunyikan detail, tampilkan grid
-      detailView.classList.remove("is-exiting");
-      detailView.classList.add("hidden");
+      detailViewToHide.classList.remove("is-exiting");
+      detailViewToHide.classList.add("hidden");
       gridView.classList.remove("hidden");
 
       // Trigger animasi masuk pada grid view
@@ -574,6 +683,26 @@ const initializePortfolioSection = () => {
       setTimeout(() => gridView.classList.remove("is-entering"), 500);
 
     }, 350);
+  };
+
+  const showDataAnalysisDetail = () => {
+    if (!gridView || !dataAnalysisDetailView) return;
+
+    currentDataAnalysisIndex = 0;
+    isDataAnalysisAnimating = false;
+    gridView.classList.add("hidden");
+    detailView?.classList.add("hidden");
+    dataAnalysisDetailView.classList.remove("hidden");
+    void dataAnalysisDetailView.offsetWidth;
+    dataAnalysisDetailView.classList.add("is-entering");
+    dataAnalysisDetailView.addEventListener("animationend", () => {
+      dataAnalysisDetailView.classList.remove("is-entering");
+    }, { once: true });
+
+    updateDataAnalysisContent();
+
+    const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({ top: Math.max(scrollTop, 0), behavior: "smooth" });
   };
 
   if (backBtn) {
@@ -593,6 +722,24 @@ const initializePortfolioSection = () => {
     prevBtn.addEventListener("click", () => {
       const newIndex = (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
       navigateWebDev(newIndex, "prev");
+    });
+  }
+
+  if (dataAnalysisBackBtn) {
+    dataAnalysisBackBtn.addEventListener("click", () => showGridView(dataAnalysisDetailView));
+  }
+
+  if (dataAnalysisNextBtn) {
+    dataAnalysisNextBtn.addEventListener("click", () => {
+      const newIndex = (currentDataAnalysisIndex + 1) % dataAnalysisItems.length;
+      navigateDataAnalysis(newIndex, "next");
+    });
+  }
+
+  if (dataAnalysisPrevBtn) {
+    dataAnalysisPrevBtn.addEventListener("click", () => {
+      const newIndex = (currentDataAnalysisIndex - 1 + dataAnalysisItems.length) % dataAnalysisItems.length;
+      navigateDataAnalysis(newIndex, "prev");
     });
   }
 
@@ -646,6 +793,8 @@ const initializePortfolioSection = () => {
 
       if (category === "frontend") {
         showDetailView();
+      } else if (category === "data-analysis") {
+        showDataAnalysisDetail();
       } else {
         if (statusText) {
           statusText.textContent = `${label} dipilih. Tampilan detail kategori akan dikembangkan pada tahap berikutnya.`;

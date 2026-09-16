@@ -215,7 +215,7 @@
 
         <!-- Web Development Category Detail View Container -->
         <div id="portfolio-detail-view" class="portfolio-detail-view hidden" aria-label="Detail Portofolio Web Development">
-          <!-- Top Right Header / Slogan -->
+          <!-- Top Left Header / Slogan -->
           <header class="portfolio-detail-header">
             <p class="portfolio-detail-slogan">
               Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.
@@ -297,6 +297,71 @@
             </button>
           </div>
         </div>
+
+        <!-- Data Analysis Category Detail View Container -->
+        <div id="data-analysis-detail-view" class="portfolio-detail-view data-analysis-detail-view hidden"
+          aria-label="Detail Portofolio Data Analysis">
+          <div class="data-analysis-detail-main-wrapper">
+            <button type="button" class="portfolio-icon-btn data-analysis-icon-btn data-analysis-btn-prev"
+              id="data-analysis-btn-prev" aria-label="Project Data Analysis sebelumnya">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <div class="data-analysis-stacked-container">
+              <div class="data-analysis-layer data-analysis-layer-1" aria-hidden="true"></div>
+              <div class="data-analysis-layer data-analysis-layer-2" aria-hidden="true"></div>
+
+              <article class="data-analysis-main-card">
+                <h3 class="portfolio-item-title data-analysis-item-title" id="data-analysis-title">Analisis Penjualan &amp; Profitabilitas</h3>
+
+                <div class="data-analysis-composition">
+                  <figure class="data-analysis-screenshot data-analysis-screenshot--top-right">
+                    <img id="data-analysis-image-two" src="assets/images/projek1-2.png"
+                      alt="Visualisasi insight penjualan dan profit Superstore" loading="lazy" decoding="async" />
+                  </figure>
+
+                  <p class="data-analysis-copy data-analysis-copy--right" id="data-analysis-description-right">
+                    Menghasilkan insight performa penjualan dan profit, termasuk total Sales sebesar 2,30 juta, total Profit 286,40 ribu, performa kategori produk, distribusi transaksi berdasarkan region, serta hubungan antara Sales dan Profit.
+                  </p>
+
+                  <p class="data-analysis-copy data-analysis-copy--left" id="data-analysis-description-left">
+                    Menganalisis data transaksi Superstore untuk mengetahui performa penjualan dan profit berdasarkan kategori produk dan wilayah. Analisis mencakup eksplorasi data, perhitungan metrik, klasifikasi status profit, serta visualisasi untuk memahami pola penjualan dan profitabilitas.
+                  </p>
+
+                  <figure class="data-analysis-screenshot data-analysis-screenshot--bottom-left">
+                    <img id="data-analysis-image-one" src="assets/images/projek1-1.png"
+                      alt="Dashboard analisis transaksi Superstore" loading="lazy" decoding="async" />
+                  </figure>
+                </div>
+
+                <div class="data-analysis-footer">
+                  <p class="portfolio-tech-stack data-analysis-tech-stack" id="data-analysis-tech">
+                    Python · Google Colab · Pandas · Matplotlib
+                  </p>
+                  <a id="data-analysis-colab" href="https://colab.research.google.com/drive/1WprA4d3xULcJ69CvRjru3leyh5fUilIX?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="portfolio-action-btn" aria-label="Buka project di Google Colab">
+                    Colab
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <button type="button" class="portfolio-icon-btn data-analysis-icon-btn data-analysis-btn-next"
+              id="data-analysis-btn-next" aria-label="Project Data Analysis berikutnya">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="portfolio-detail-bottom-controls data-analysis-bottom-controls">
+            <button type="button" class="portfolio-back-btn" id="data-analysis-back-btn">Kembali</button>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Certification Section -->
@@ -347,7 +412,25 @@
             <p class="certification-card-provider">KarirNex</p>
           </article>
 
-          <!-- 2. MySkill - Lovable AI -->
+          <!-- 2. KarirNex - Data Analyst -->
+          <article class="certification-card certification-card--orange" style="--certification-theme: #e65c00;"
+            data-provider="KarirNex">
+            <div class="certification-card-media" aria-hidden="true">
+              <span class="certification-card-placeholder"></span>
+              <img class="certification-card-image" data-src="assets/images/certifications/KarirNex-Data.png" alt=""
+                loading="lazy" decoding="async" />
+            </div>
+            <span class="certification-card-gradient" aria-hidden="true"></span>
+            <div class="certification-card-content">
+              <h3>Bootcamp Data Analyst</h3>
+              <p>
+                Completed an Intermediate-level Data Analyst Bootcamp covering data analysis fundamentals, data formatting and cleansing, systematic data analysis, SQL and Google BigQuery, Python and Google Colab, and data visualization and dashboard development using Power BI. The program also included a mini project to apply the concepts in a practical case.
+              </p>
+            </div>
+            <p class="certification-card-provider">KarirNex</p>
+          </article>
+
+          <!-- 3. MySkill - Lovable AI -->
           <article class="certification-card certification-card--tosca" style="--certification-theme: #0d9488;"
             data-provider="MySkill">
             <div class="certification-card-media" aria-hidden="true">
