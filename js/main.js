@@ -163,11 +163,11 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>Membuat dan menyusun laporan pekerjaan secara terstruktur.</span>
             </li>
           </ul>
-        </div>
-      </div>
+        <      </div>
     `,
     organisasi: `
-      <div class="flex flex-col gap-4 text-l        <!-- Panitia Technofest 6.0 – Keamanan -->
+      <div class="flex flex-col gap-4 text-left">
+        <!-- Panitia Technofest 6.0 – Keamanan -->
         <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
           <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </ul>
         </div>
 
-        <!-- Panitia Magisfest 2024 – Keamanan -->â‚¬â€ Keamanan -->
+        <!-- Panitia Magisfest 2024 – Keamanan -->
         <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
           <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
@@ -386,7 +386,7 @@ const initializePortfolioSection = () => {
         "USD Guide merupakan aplikasi Augmented Reality (AR) untuk membantu pengguna mengenal lingkungan Universitas Sanata Dharma secara interaktif. Pengguna dapat memindai marker yang tersedia di berbagai gedung, monumen, laboratorium, dan ruang kampus untuk menampilkan objek 3D beserta informasi dan audio penjelasan terkait lokasi tersebut.",
       technologies: "HTML · Unity Hub · Augmented Reality (AR) · 3D Object",
       github: "",  // ← Tambahkan URL GitHub di sini jika sudah tersedia
-      demo:   "",  // ← TODO: Tambahkan URL Demo (TikTok/link demo) di sini jika sudah tersedia
+      demo: "",  // ← TODO: Tambahkan URL Demo (TikTok/link demo) di sini jika sudah tersedia
       image: "assets/images/Cap-USDGuide.png",
     },
 
