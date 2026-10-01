@@ -472,6 +472,17 @@ const initializePortfolioSection = () => {
   let currentWebDevIndex = 0;
   let isWebDevAnimating = false;
 
+  const formatTechStack = (techString) => {
+    if (!techString) return "";
+    return techString
+      .split(" · ")
+      .map((tech) => {
+        const slug = tech.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        return `<span class="tech-name tech-${slug}">${tech.trim()}</span>`;
+      })
+      .join(' <span class="tech-dot">·</span> ');
+  };
+
   // Perbarui konten DOM dengan data project pada index tertentu (tanpa animasi)
   const updateWebDevContent = () => {
     const item = webDevItems[currentWebDevIndex];
@@ -487,7 +498,7 @@ const initializePortfolioSection = () => {
 
     if (titleEl) titleEl.textContent = item.title;
     if (descEl) descEl.textContent = item.description;
-    if (techEl) techEl.textContent = item.technologies;
+    if (techEl) techEl.innerHTML = formatTechStack(item.technologies);
 
     // Tombol GitHub — disabled jika URL kosong
     if (githubEl) {
@@ -645,7 +656,7 @@ const initializePortfolioSection = () => {
     if (titleEl) titleEl.textContent = item.title;
     if (leftDescriptionEl) leftDescriptionEl.textContent = item.descriptionLeft;
     if (rightDescriptionEl) rightDescriptionEl.textContent = item.descriptionRight;
-    if (techEl) techEl.textContent = item.technologies;
+    if (techEl) techEl.innerHTML = formatTechStack(item.technologies);
     if (colabEl) {
       if (item.colab) {
         colabEl.style.display = "";
@@ -691,7 +702,7 @@ const initializePortfolioSection = () => {
     }, 290);
   };
 
-  const showDetailView = () => {
+  const showDetailView = (skipPushState) => {
     if (!gridView || !detailView) return;
     // Reset ke project pertama setiap kali masuk ke detail view
     currentWebDevIndex = 0;
@@ -709,6 +720,11 @@ const initializePortfolioSection = () => {
     }, { once: true });
 
     updateWebDevContent();
+
+    // Simpan state ke browser history agar tombol Back browser berfungsi
+    if (!skipPushState) {
+      history.pushState({ portfolioView: "frontend" }, "");
+    }
 
     // Scroll ke section portofolio secara smooth
     const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
@@ -745,7 +761,20 @@ const initializePortfolioSection = () => {
     }, 350);
   };
 
-  const showDataAnalysisDetail = () => {
+  // Fungsi helper: cek apakah saat ini sedang menampilkan detail view
+  const isDetailViewActive = () => {
+    return (detailView && !detailView.classList.contains("hidden")) ||
+           (dataAnalysisDetailView && !dataAnalysisDetailView.classList.contains("hidden"));
+  };
+
+  // Fungsi helper: mendapatkan detail view yang aktif saat ini
+  const getActiveDetailView = () => {
+    if (detailView && !detailView.classList.contains("hidden")) return detailView;
+    if (dataAnalysisDetailView && !dataAnalysisDetailView.classList.contains("hidden")) return dataAnalysisDetailView;
+    return null;
+  };
+
+  const showDataAnalysisDetail = (skipPushState) => {
     if (!gridView || !dataAnalysisDetailView) return;
 
     currentDataAnalysisIndex = 0;
@@ -761,12 +790,25 @@ const initializePortfolioSection = () => {
 
     updateDataAnalysisContent();
 
+    // Simpan state ke browser history agar tombol Back browser berfungsi
+    if (!skipPushState) {
+      history.pushState({ portfolioView: "data-analysis" }, "");
+    }
+
     const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({ top: Math.max(scrollTop, 0), behavior: "smooth" });
   };
 
   if (backBtn) {
-    backBtn.addEventListener("click", () => showGridView(detailView));
+    backBtn.addEventListener("click", () => {
+      // Gunakan history.back() agar sinkron dengan browser history
+      // popstate handler akan memanggil showGridView
+      if (history.state && history.state.portfolioView) {
+        history.back();
+      } else {
+        showGridView(detailView);
+      }
+    });
   }
 
   // Tombol Next → slide ke kanan (project berikutnya masuk dari kanan)
@@ -786,8 +828,39 @@ const initializePortfolioSection = () => {
   }
 
   if (dataAnalysisBackBtn) {
-    dataAnalysisBackBtn.addEventListener("click", () => showGridView(dataAnalysisDetailView));
+    dataAnalysisBackBtn.addEventListener("click", () => {
+      // Gunakan history.back() agar sinkron dengan browser history
+      // popstate handler akan memanggil showGridView
+      if (history.state && history.state.portfolioView) {
+        history.back();
+      } else {
+        showGridView(dataAnalysisDetailView);
+      }
+    });
   }
+
+  // =====================================================================
+  // BROWSER HISTORY API — popstate handler
+  // Menangani tombol Back/Forward browser untuk navigasi portfolio
+  // =====================================================================
+  window.addEventListener("popstate", (event) => {
+    // Jika state saat ini TIDAK memiliki portfolioView,
+    // berarti user menekan Back dari detail view → kembali ke grid
+    if (!event.state || !event.state.portfolioView) {
+      const activeView = getActiveDetailView();
+      if (activeView) {
+        showGridView(activeView);
+      }
+    } else {
+      // User menekan Forward → masuk kembali ke detail view
+      const view = event.state.portfolioView;
+      if (view === "frontend") {
+        showDetailView(true); // true = skip pushState
+      } else if (view === "data-analysis") {
+        showDataAnalysisDetail(true); // true = skip pushState
+      }
+    }
+  });
 
   if (dataAnalysisNextBtn) {
     dataAnalysisNextBtn.addEventListener("click", () => {
