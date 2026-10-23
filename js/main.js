@@ -412,7 +412,7 @@ const initializePortfolioSection = () => {
       technologies: "Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn",
       github: "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
       demo: "",  // ← Tambahkan URL Demo di sini jika sudah tersedia
-      image: "assets/images/Cap-KulinerKlaten.png",
+      image: "assets/images/Cap-KulinerKlaten.webp",
     },
 
     // ─── PROJECT 2 ─── Encre Nocturne ────────────────────────────────────
@@ -427,7 +427,7 @@ const initializePortfolioSection = () => {
       technologies: "HTML · CSS · JavaScript",
       github: "https://wisnumcn.github.io/encre-nocturne/",  // ← Tambahkan URL GitHub di sini jika sudah tersedia
       demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
-      image: "assets/images/Cap-EncreNocturne.png", // ← Simpan file gambar ke path ini
+      image: "assets/images/Cap-EncreNocturne.webp", // ← Simpan file gambar ke path ini
     },
 
     // ─── PROJECT 3 ─── Vogency ───────────────────────────────────────────
@@ -440,7 +440,7 @@ const initializePortfolioSection = () => {
       technologies: "PHP · Bootstrap",
       github: "https://github.com/WisnuMcn/Vogency.git",
       demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
-      image: "assets/images/Cap-Vogency.png",
+      image: "assets/images/Cap-Vogency.webp",
     },
 
     // ─── PROJECT 4 ─── Semedulur Coffee ──────────────────────────────────
@@ -453,7 +453,7 @@ const initializePortfolioSection = () => {
       technologies: "PHP · Bootstrap",
       github: "https://github.com/bernadustoro/Walawe_Coffee.git",
       demo: "",  // ← Tambahkan URL Demo (TikTok) di sini jika sudah tersedia
-      image: "assets/images/Cap-Semedulur.png",
+      image: "assets/images/Cap-Semedulur.webp",
     },
     // ─── PROJECT 5 ─── USD Guide ──────────────────────────────────────────
     // TODO: Tambahkan URL demo USD Guide ketika link sudah tersedia
@@ -466,7 +466,7 @@ const initializePortfolioSection = () => {
       technologies: "HTML · Unity Hub · Augmented Reality (AR) · 3D Object",
       github: "",  // ← Tambahkan URL GitHub di sini jika sudah tersedia
       demo: "",  // ← TODO: Tambahkan URL Demo (TikTok/link demo) di sini jika sudah tersedia
-      image: "assets/images/Cap-USDGuide.png",
+      image: "assets/images/Cap-USDGuide.webp",
     },
 
   ];
@@ -485,8 +485,8 @@ const initializePortfolioSection = () => {
         "Menghasilkan insight performa penjualan dan profit, termasuk total Sales sebesar 2,30 juta, total Profit 286,40 ribu, performa kategori produk, distribusi transaksi berdasarkan region, serta hubungan antara Sales dan Profit.",
       technologies: "Python · Google Colab · Pandas · Matplotlib",
       colab: "https://colab.research.google.com/drive/1WprA4d3xULcJ69CvRjru3leyh5fUilIX?usp=sharing",
-      imageOne: "assets/images/projek1-1.png",
-      imageTwo: "assets/images/projek1-2.png",
+      imageOne: "assets/images/projek1-1.webp",
+      imageTwo: "assets/images/projek1-2.webp",
     },
     {
       title: "Analisis Market Basket dengan Association Rule",
@@ -496,8 +496,8 @@ const initializePortfolioSection = () => {
         "Hasilnya, kedua algoritma menghasilkan 37 association rules. Rule dengan lift tertinggi pada keduanya adalah hubungan whole milk + other vegetables → root vegetables, dengan support 0,023, confidence 0,310, dan lift 2,842. Proyek juga membandingkan waktu eksekusi Apriori 0,0922 detik dengan FP-Growth 0,0489 detik, serta menyajikan visualisasi association rules melalui scatter plot dan network graph.",
       technologies: "Python · Pandas · Mlxtend · Matplotlib · Seaborn · NetworkX",
       colab: "https://colab.research.google.com/drive/1FkUNby4rNNbMR9VFuRuuAvRrOMmq3pAR?usp=sharing",
-      imageOne: "assets/images/Projek2-1.png",
-      imageTwo: "assets/images/Projek2-2.png",
+      imageOne: "assets/images/Projek2-1.webp",
+      imageTwo: "assets/images/Projek2-2.webp",
     },
     {
       title: "Klasifikasi Kematangan Buah Tomat",
@@ -507,8 +507,8 @@ const initializePortfolioSection = () => {
         "Menghasilkan model klasifikasi citra yang dapat mengenali tiga kategori kematangan tomat, dengan akurasi validasi terbaik sebesar 96,88% pada proses training.",
       technologies: "Python · Google Colab · TensorFlow · Keras · NumPy · Matplotlib",
       colab: "https://colab.research.google.com/drive/1oUmiFEHamC8ObwzFDpOgXm9tWWJqIOIa?authuser=3#scrollTo=8dkd2_0-G34x",
-      imageOne: "assets/images/Projek3-1.png",
-      imageTwo: "assets/images/Projek3-2.png",
+      imageOne: "assets/images/Projek3-1.webp",
+      imageTwo: "assets/images/Projek3-2.webp",
     },
     {
       title: "Klasifikasi Pneumonia dari Citra X-Ray",
@@ -518,8 +518,8 @@ const initializePortfolioSection = () => {
         "Menghasilkan model klasifikasi citra X-Ray dengan akurasi pengujian 90,54%, serta evaluasi menggunakan confusion matrix dan classification report untuk melihat performa klasifikasi NORMAL dan PNEUMONIA.",
       technologies: "Python · Google Colab · TensorFlow · Keras · DenseNet121 · NumPy · Matplotlib · Seaborn · Scikit-learn",
       colab: "https://colab.research.google.com/drive/1wC_D90HGOuUEgKDLuIIYlZl1GQa3O45a?usp=sharing",
-      imageOne: "assets/images/Projek4-1.png",
-      imageTwo: "assets/images/Projek4-2.png",
+      imageOne: "assets/images/Projek4-1.webp",
+      imageTwo: "assets/images/Projek4-2.webp",
     },
     {
       title: "Automotive Sales Dashboard",
@@ -529,8 +529,8 @@ const initializePortfolioSection = () => {
         "Menghasilkan dashboard interaktif dengan KPI dan visualisasi dinamis yang dapat disesuaikan melalui slicer berdasarkan periode, cabang, kategori, metode pembayaran, dan status transaksi, sehingga memudahkan pemantauan serta analisis performa penjualan.",
       technologies: "Power BI",
       colab: "",
-      imageOne: "assets/images/Projek5-1.png",
-      imageTwo: "assets/images/Projek5-2.png",
+      imageOne: "assets/images/Projek5-1.webp",
+      imageTwo: "assets/images/Projek5-2.webp",
     },
     {
       title: "Dashboard Penjualan Toko Sembako",
@@ -540,8 +540,8 @@ const initializePortfolioSection = () => {
         "Menghasilkan dashboard penjualan interaktif dengan visualisasi omzet berdasarkan sumber penjualan, tren omzet bulanan, dan performa kasir, serta slicer yang memungkinkan pengguna memfilter data sehingga nilai KPI dan visualisasi dapat berubah secara dinamis.",
       technologies: "Microsoft Excel",
       colab: "",
-      imageOne: "assets/images/Projek6-1.png",
-      imageTwo: "assets/images/Projek6-2.png",
+      imageOne: "assets/images/Projek6-1.webp",
+      imageTwo: "assets/images/Projek6-2.webp",
     },
   ];
 
