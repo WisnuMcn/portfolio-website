@@ -63,28 +63,48 @@ if ("IntersectionObserver" in window && sections.length) {
 window.addEventListener("scroll", setScrolledHeader, { passive: true });
 setScrolledHeader();
 
-// About Section Category Tabs Controller
-document.addEventListener("DOMContentLoaded", () => {
+// About Section Category Modal Controller (Glassmorphism Popup)
+const initAboutModal = () => {
   const aboutPills = document.querySelectorAll(".about-pill");
-  const aboutInfoContainer = document.getElementById("about-info-container");
+  const aboutModal = document.getElementById("about-modal");
+  const aboutModalBackdrop = document.getElementById("about-modal-backdrop");
+  const aboutModalClose = document.getElementById("about-modal-close");
+  const aboutModalTitle = document.getElementById("about-modal-title");
+  const aboutModalBody = document.getElementById("about-modal-body");
 
-  // Data mapping for active categories (structured with empty values to avoid dummy content)
+  if (!aboutModal || !aboutModalBody) return;
+
+  const categoryMeta = {
+    pendidikan: {
+      title: "Riwayat Pendidikan",
+      badge: "Pendidikan",
+    },
+    pengalaman: {
+      title: "Pengalaman Kerja",
+      badge: "Pengalaman",
+    },
+    organisasi: {
+      title: "Pengalaman Organisasi",
+      badge: "Organisasi",
+    },
+  };
+
   const aboutInfoData = {
     pendidikan: `
       <div class="flex flex-col gap-4 text-left">
         <!-- SMK Leonardo Klaten -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
           <div class="flex items-start gap-4">
             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
               </svg>
             </div>
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h3>
-              <p class="text-sm font-medium text-white/75 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
                 Teknik Mekatronika
               </p>
             </div>
@@ -92,18 +112,18 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <!-- Universitas Sanata Dharma -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
           <div class="flex items-start gap-4">
             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
               </svg>
             </div>
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h3>
-              <p class="text-sm font-medium text-white/75 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
                 S1-Informatika
               </p>
             </div>
@@ -114,186 +134,245 @@ document.addEventListener("DOMContentLoaded", () => {
     pengalaman: `
       <div class="flex flex-col gap-4 text-left">
         <!-- PT. Chemco Harapan Nusantara -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Finishing – Casting F2</p>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
             </div>
-            <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
+            <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
               15 Januari 2020 – 14 Maret 2020
             </div>
           </div>
-          <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
+          <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Melakukan proses finishing pada hasil produksi sesuai standar kerja perusahaan.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Menjaga kerapian dan ketelitian selama proses pengerjaan.</span>
             </li>
           </ul>
         </div>
 
         <!-- PT. Panacipta Seinan Components -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Finishing dan Packing</p>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing dan Packing</p>
             </div>
-            <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
+            <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
               29 Juni 2021 – 18 April 2022
             </div>
           </div>
-          <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
+          <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Melakukan proses finishing produk sesuai standar operasional perusahaan.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Melaksanakan proses packing produk dengan teliti dan rapi.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Membuat dan menyusun laporan pekerjaan secara terstruktur.</span>
             </li>
           </ul>
-        <      </div>
+        </div>
+      </div>
     `,
     organisasi: `
       <div class="flex flex-col gap-4 text-left">
         <!-- Panitia Technofest 6.0 – Keamanan -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Keamanan</p>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
             </div>
-            <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
+            <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
               11 Oktober 2024 – 12 Oktober 2024
             </div>
           </div>
-          <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
+          <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Bertanggung jawab menjaga keamanan dan ketertiban selama kegiatan berlangsung.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Membantu mengatur kelancaran aktivitas peserta dan panitia.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Berkoordinasi dengan anggota tim untuk memastikan kegiatan berjalan dengan aman dan tertib.</span>
             </li>
           </ul>
         </div>
 
         <!-- Panitia Magisfest 2024 – Keamanan -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Keamanan</p>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
             </div>
           </div>
-          <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
+          <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Menjaga keamanan dan kenyamanan lingkungan selama pelaksanaan kegiatan.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Membantu pengawasan serta pengaturan jalannya acara.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Bekerja sama dengan tim dalam menjaga ketertiban dan kelancaran kegiatan.</span>
             </li>
           </ul>
         </div>
 
         <!-- Panitia Ngupit Fest 2025 – Penanggung Jawab Media -->
-        <div class="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-leaf/30 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-          <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-leaf/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3.5 mb-3.5">
+        <div class="about-modal-card-item group">
+          <div class="about-modal-card-glow"></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
             <div>
-              <h3 class="text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h3>
-              <p class="text-sm font-medium text-white/75 mt-1">Penanggung Jawab Media</p>
+              <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
             </div>
-            <div class="px-3 py-1 text-xs font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/80">
+            <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
               31 Agustus 2025 – 13 Desember 2025
             </div>
           </div>
-          <ul class="space-y-2.5 text-[14px] text-white/80 leading-relaxed pl-0">
+          <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Bertanggung jawab mengelola kebutuhan media dan publikasi kegiatan.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Menyiapkan serta mengoordinasikan materi informasi untuk mendukung publikasi acara.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
               <span>Berkoordinasi dengan tim untuk memastikan informasi kegiatan tersampaikan secara jelas dan konsisten.</span>
             </li>
           </ul>
         </div>
       </div>
-    `
+    `,
   };
 
   let activeCategory = null;
+  let lastFocusedElement = null;
 
-  const setActiveCategory = (category) => {
-    if (activeCategory === category) return;
+  const openModal = (category) => {
+    const meta = categoryMeta[category];
+    const content = aboutInfoData[category];
+    if (!meta || !content) return;
 
-    // Update active highlight classes on buttons
+    activeCategory = category;
+    lastFocusedElement = document.activeElement;
+
+    // Highlight active pill
     aboutPills.forEach((pill) => {
-      const pillType = pill.textContent.trim().toLowerCase();
-      pill.classList.toggle("active", pillType === category);
+      const pillCategory = (pill.getAttribute("data-category") || pill.textContent).trim().toLowerCase();
+      pill.classList.toggle("active", pillCategory === category);
     });
 
-    if (activeCategory === null) {
-      // First click: render immediately and trigger fade-in
-      aboutInfoContainer.innerHTML = aboutInfoData[category] || "";
-      requestAnimationFrame(() => {
-        aboutInfoContainer.classList.add("active");
-      });
-      activeCategory = category;
-    } else {
-      // Subsequent clicks: transition fade-out -> update html -> transition fade-in
-      aboutInfoContainer.classList.remove("active");
+    // Populate modal content
+    if (aboutModalTitle) aboutModalTitle.textContent = meta.title;
+    aboutModalBody.innerHTML = content;
+    aboutModalBody.scrollTop = 0;
 
-      setTimeout(() => {
-        aboutInfoContainer.innerHTML = aboutInfoData[category] || "";
-        aboutInfoContainer.classList.add("active");
-        activeCategory = category;
-      }, 250);
+    // Prevent body scroll and preserve scrollbar width to prevent layout shift
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.classList.add("about-modal-open");
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
+
+    // Show modal with transition
+    aboutModal.style.display = "flex";
+    requestAnimationFrame(() => {
+      aboutModal.setAttribute("aria-hidden", "false");
+      aboutModal.classList.add("is-open");
+    });
+
+    // Focus close button for keyboard accessibility
+    setTimeout(() => {
+      if (aboutModalClose && typeof aboutModalClose.focus === "function") {
+        aboutModalClose.focus();
+      }
+    }, 60);
   };
 
-  // Bind click listeners
+  const closeModal = () => {
+    if (!aboutModal.classList.contains("is-open")) return;
+
+    aboutModal.classList.remove("is-open");
+    aboutModal.setAttribute("aria-hidden", "true");
+
+    // Remove active state from pills
+    aboutPills.forEach((pill) => pill.classList.remove("active"));
+    activeCategory = null;
+
+    // Restore body scrolling after transition
+    setTimeout(() => {
+      if (!aboutModal.classList.contains("is-open")) {
+        aboutModal.style.display = "none";
+      }
+      document.body.classList.remove("about-modal-open");
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+        lastFocusedElement.focus();
+      }
+    }, 280);
+  };
+
+  // Bind click on about pills
   aboutPills.forEach((pill) => {
     pill.addEventListener("click", () => {
-      const category = pill.textContent.trim().toLowerCase();
-      setActiveCategory(category);
+      const category = (pill.getAttribute("data-category") || pill.textContent).trim().toLowerCase();
+      openModal(category);
     });
   });
 
-  // Automatically activate the first category on load
-  if (aboutPills.length > 0) {
-    setActiveCategory(aboutPills[0].textContent.trim().toLowerCase());
-  }
-});
+  // Close handlers
+  aboutModalClose?.addEventListener("click", closeModal);
+  aboutModalBackdrop?.addEventListener("click", closeModal);
+
+  // Close when clicking modal backdrop or outside dialog card
+  aboutModal.addEventListener("click", (event) => {
+    if (event.target === aboutModal || event.target === aboutModalBackdrop) {
+      closeModal();
+    }
+  });
+
+  // Keyboard Escape listener
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && aboutModal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAboutModal);
+} else {
+  initAboutModal();
+}
 
 // Portfolio Section Controller
 const initializePortfolioSection = () => {
