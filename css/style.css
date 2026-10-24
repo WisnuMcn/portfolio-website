@@ -298,18 +298,23 @@ body {
   width: 146px;
   height: 36px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(217, 217, 217, 0.2);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.55) 0%, rgba(10, 14, 11, 0.68) 100%);
+  box-shadow:
+    0 10px 24px -4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
   color: #ffffff;
   font-family: "Plus Jakarta Sans";
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.31;
   text-align: center;
   cursor: pointer;
-  transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transition: border-color 240ms ease, background 240ms ease, box-shadow 240ms ease, transform 240ms ease;
 }
 
 .about-pill {
@@ -318,20 +323,37 @@ body {
 
 .about-pill:hover,
 .about-portfolio-button:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(217, 217, 217, 0.3);
-  transform: translateY(-1px);
+  border-color: rgba(25, 214, 111, 0.35);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.68) 0%, rgba(12, 18, 14, 0.78) 100%);
+  box-shadow:
+    0 14px 30px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 16px rgba(25, 214, 111, 0.15);
+  transform: translateY(-2px);
 }
 
 .about-pill.active {
-  border-color: #19d66f;
-  background: rgba(25, 214, 111, 0.16);
-  box-shadow: 0 0 20px rgba(25, 214, 111, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  border-color: rgba(25, 214, 111, 0.5);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%),
+    rgba(25, 214, 111, 0.08);
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.4),
+    0 0 18px rgba(25, 214, 111, 0.22);
 }
 
 .about-pill.active:hover {
-  border-color: #19d66f;
-  background: rgba(25, 214, 111, 0.22);
+  border-color: rgba(25, 214, 111, 0.65);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%),
+    rgba(25, 214, 111, 0.12);
+  box-shadow:
+    0 14px 32px -4px rgba(0, 0, 0, 0.52),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.48),
+    0 0 20px rgba(25, 214, 111, 0.28);
 }
 
 .about-info-container {
@@ -472,9 +494,11 @@ body {
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(3, 3, 3, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 44px;
-  background: #101612;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 100%),
+    linear-gradient(165deg, rgba(16, 22, 18, 0.82) 0%, rgba(8, 12, 10, 0.92) 100%);
   color: #ffffff;
   padding: 0;
   font: inherit;
@@ -482,11 +506,17 @@ body {
   -webkit-appearance: none;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
   opacity: 0;
   transform: translateY(28px);
-  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 320ms ease,
-    box-shadow 320ms ease;
+  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 320ms ease,
+              box-shadow 320ms ease;
 }
 
 .portfolio-card::after {
@@ -494,7 +524,7 @@ body {
   position: absolute;
   inset: -20%;
   z-index: 3;
-  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(23, 128, 79, 0.18), transparent 34%);
+  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(25, 214, 111, 0.14), transparent 34%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 320ms ease;
@@ -506,14 +536,16 @@ body {
 }
 
 .portfolio-card.is-selected {
-  border-color: rgba(23, 128, 79, 0.56);
+  border-color: rgba(25, 214, 111, 0.45);
 }
 
 .portfolio-card:hover,
 .portfolio-card:focus-visible {
-  border-color: rgba(23, 128, 79, 0.72);
-  box-shadow: 0 22px 55px rgba(3, 3, 3, 0.16), 0 0 0 1px rgba(23, 128, 79, 0.2),
-    0 0 42px rgba(23, 128, 79, 0.28);
+  border-color: rgba(25, 214, 111, 0.35);
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.38),
+    0 0 24px rgba(25, 214, 111, 0.12);
   transform: translateY(-4px) scale(1.006);
 }
 
@@ -666,32 +698,44 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(3, 3, 3, 0.58);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.65) 0%, rgba(10, 14, 11, 0.78) 100%);
+  box-shadow:
+    0 12px 28px -6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
   color: #ffffff;
   font-family: "Plus Jakarta Sans";
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
-  transition: transform 240ms ease, border-color 240ms ease, background 240ms ease, box-shadow 240ms ease;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 260ms ease,
+              background 260ms ease,
+              box-shadow 260ms ease;
 }
 
 .portfolio-certification-button:hover,
 .portfolio-certification-button:focus-visible {
-  border-color: rgba(23, 128, 79, 0.72);
-  background: rgba(3, 3, 3, 0.72);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2), 0 0 28px rgba(23, 128, 79, 0.26),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  border-color: rgba(25, 214, 111, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.72) 0%, rgba(12, 18, 14, 0.82) 100%);
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(25, 214, 111, 0.16);
   transform: translateY(-2px);
 }
 
 .portfolio-certification-button:focus-visible {
-  outline: 2px solid rgba(23, 128, 79, 0.7);
-  outline-offset: 4px;
+  outline: 2px solid rgba(25, 214, 111, 0.5);
+  outline-offset: 3px;
 }
 
 /* Portfolio Detail View & Rotated 3D Layered Cards */
@@ -947,26 +991,39 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 22px;
+  padding: 8px 24px;
   border-radius: 50px;
-  background: rgba(140, 140, 140, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(26, 32, 28, 0.6) 0%, rgba(14, 18, 15, 0.75) 100%);
   color: #ffffff;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 13.5px;
   font-weight: 500;
   text-decoration: none;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow:
+    0 8px 22px -4px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 240ms ease,
+              background 240ms ease,
+              box-shadow 240ms ease;
 }
 
 .portfolio-action-btn:hover {
-  background: rgba(255, 255, 255, 0.32);
-  border-color: rgba(255, 255, 255, 0.55);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 16px rgba(255, 255, 255, 0.15);
+  border-color: rgba(25, 214, 111, 0.35);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(30, 42, 34, 0.72) 0%, rgba(16, 24, 18, 0.82) 100%);
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.48),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 16px rgba(25, 214, 111, 0.15);
 }
 
 /* Side Navigation Controls & Bottom Centered Back Button */
@@ -974,24 +1031,39 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 30, 26, 0.72) 0%, rgba(12, 16, 14, 0.84) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 260ms ease;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow:
+    0 8px 20px -4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
   flex-shrink: 0;
   z-index: 10;
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 240ms ease,
+              background 240ms ease,
+              box-shadow 240ms ease;
 }
 
 .portfolio-icon-btn:hover {
-  background: #282828;
-  border-color: rgba(25, 214, 111, 0.6);
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(25, 214, 111, 0.35);
+  border-color: rgba(25, 214, 111, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(30, 42, 34, 0.8) 0%, rgba(16, 24, 18, 0.9) 100%);
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 18px rgba(25, 214, 111, 0.18);
 }
 
 .portfolio-detail-bottom-controls {
@@ -1012,24 +1084,37 @@ body {
   pointer-events: auto;
   padding: 11px 36px;
   border-radius: 50px;
-  background: rgba(140, 140, 140, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.65) 0%, rgba(10, 14, 11, 0.78) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 260ms ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    0 12px 28px -6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 260ms ease,
+              background 260ms ease,
+              box-shadow 260ms ease;
 }
 
 .portfolio-back-btn:hover {
-  background: rgba(180, 180, 188, 0.65);
-  border-color: rgba(255, 255, 255, 0.45);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  border-color: rgba(25, 214, 111, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.72) 0%, rgba(12, 18, 14, 0.82) 100%);
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(25, 214, 111, 0.16);
 }
 
 /* =====================================================================
@@ -1571,34 +1656,48 @@ body {
 .certification-contact-button {
   display: inline-flex;
   min-width: 146px;
-  height: 36px;
+  height: 38px;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(49, 49, 49, 0.41);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.65) 0%, rgba(10, 14, 11, 0.78) 100%);
+  box-shadow:
+    0 12px 28px -6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  color: #ffffff;
   font-family: "Plus Jakarta Sans";
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
-  transition: transform 240ms ease, background 240ms ease, box-shadow 240ms ease;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 260ms ease,
+              background 260ms ease,
+              box-shadow 260ms ease;
 }
 
 .certification-contact-button:hover,
 .certification-contact-button:focus-visible {
-  background: rgba(49, 49, 49, 0.52);
-  box-shadow: 0 0 28px rgba(212, 188, 7, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(25, 214, 111, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.72) 0%, rgba(12, 18, 14, 0.82) 100%);
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(25, 214, 111, 0.16);
   transform: translateY(-2px);
 }
 
 .certification-contact-button:focus-visible {
-  outline: 2px solid rgba(23, 128, 79, 0.68);
-  outline-offset: 4px;
+  outline: 2px solid rgba(25, 214, 111, 0.5);
+  outline-offset: 3px;
 }
 
 @keyframes navDrop {
@@ -2098,21 +2197,26 @@ body {
   pointer-events: none;
 }
 
-/* Main Glass Card (Figma desktop 811px x 493px) */
+/* Main Glass Card (Field "Contact Me" - Luxury Glassmorphism Container) */
 .kontak-card {
   position: relative;
   z-index: 5;
   width: 100%;
   max-width: 811px;
   min-height: 493px;
-  background: rgba(246, 246, 246, 0.2);
   border-radius: 68px;
-  backdrop-filter: blur(28px) saturate(130%);
-  -webkit-backdrop-filter: blur(28px) saturate(130%);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 35%, rgba(255, 255, 255, 0) 65%),
+    linear-gradient(165deg, rgba(17, 21, 19, 0.68) 0%, rgba(9, 12, 10, 0.76) 50%, rgba(4, 6, 5, 0.86) 100%);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
   box-shadow:
-    0 32px 80px rgba(0, 0, 0, 0.45),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.35);
+    0 32px 72px -16px rgba(0, 0, 0, 0.85),
+    0 16px 36px -8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 24px 0 rgba(255, 255, 255, 0.02);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2120,7 +2224,38 @@ body {
   padding: 60px 48px;
   margin: 0 auto;
   text-align: center;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kontak-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.15) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 1px 8px rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.kontak-card:hover {
+  border-color: rgba(25, 214, 111, 0.25);
+  box-shadow:
+    0 36px 80px -16px rgba(0, 0, 0, 0.9),
+    0 18px 40px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 24px rgba(25, 214, 111, 0.08);
 }
 
 .kontak-content {
@@ -2163,40 +2298,46 @@ body {
   flex-wrap: wrap;
 }
 
-/* Contact Button Circle (Figma 70px x 70px, rgba(217, 217, 217, 0.2), 50% border radius) */
+/* Contact Button Circle (Glassmorphism Icon Button) */
 .kontak-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   height: 70px;
-  background: rgba(217, 217, 217, 0.2);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
   color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 10px 24px -4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
 }
 
-/* Hover Interaction (Elevated lift, green glow, brighter border) */
+/* Hover Interaction (Elevated lift, subtle emerald light, specular glow) */
 .kontak-btn:hover,
 .kontak-btn:focus-visible {
-  transform: translateY(-5px) scale(1.08);
-  background: rgba(23, 128, 79, 0.35);
-  border-color: rgba(23, 128, 79, 0.95);
-  filter: brightness(1.2);
+  transform: translateY(-4px) scale(1.06);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%),
+    rgba(25, 214, 111, 0.06);
+  border-color: rgba(25, 214, 111, 0.38);
   box-shadow:
-    0 0 28px rgba(23, 128, 79, 0.8),
-    0 12px 32px rgba(0, 0, 0, 0.35);
+    0 16px 36px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 20px rgba(25, 214, 111, 0.18);
 }
 
 /* Icons Inside Button (Figma ~44-47px prop) */
@@ -2352,68 +2493,130 @@ body {
     transition-duration: 1ms !important;
   }
 }
-/* Unified white glass treatment for navigation controls */
+/* Unified Luxury Glassmorphism Treatment (Reference: About Modal) */
 .site-header nav {
-  background: rgba(246, 246, 246, 0.16) !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1.5px 0 rgba(255, 255, 255, 0.32) !important;
-  backdrop-filter: blur(24px) saturate(130%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(130%) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 100%),
+    linear-gradient(165deg, rgba(18, 24, 20, 0.62) 0%, rgba(10, 14, 11, 0.74) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(24px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
 }
 
 .site-header.is-scrolled nav {
-  background: rgba(246, 246, 246, 0.18) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24), inset 0 1.5px 0 rgba(255, 255, 255, 0.32) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 100%),
+    linear-gradient(165deg, rgba(14, 20, 16, 0.8) 0%, rgba(6, 10, 8, 0.9) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow:
+    0 20px 42px -8px rgba(0, 0, 0, 0.65),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.38) !important;
 }
 
 .glass-button,
 .about-pill,
-.about-portfolio-button {
-  background: rgba(246, 246, 246, 0.18) !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), inset 0 1.5px 0 rgba(255, 255, 255, 0.32) !important;
-  backdrop-filter: blur(22px) saturate(130%) !important;
-  -webkit-backdrop-filter: blur(22px) saturate(130%) !important;
+.about-portfolio-button,
+.portfolio-certification-button,
+.certification-contact-button {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.62) 0%, rgba(10, 14, 11, 0.74) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 10px 26px -6px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
 }
 
 .glass-button:hover,
+.glass-button:focus-visible,
 .about-pill:hover,
-.about-portfolio-button:hover {
-  background: rgba(246, 246, 246, 0.26) !important;
-}
-
-.portfolio-certification-button,
-.certification-contact-button,
-.portfolio-icon-btn,
-.portfolio-back-btn {
-  background: rgba(246, 246, 246, 0.34);
-  color: #030303;
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 1.5px 0 rgba(255, 255, 255, 0.52);
-  backdrop-filter: blur(22px) saturate(130%);
-  -webkit-backdrop-filter: blur(22px) saturate(130%);
-}
-
+.about-portfolio-button:hover,
 .portfolio-certification-button:hover,
 .portfolio-certification-button:focus-visible,
 .certification-contact-button:hover,
-.certification-contact-button:focus-visible,
-.portfolio-icon-btn:hover,
+.certification-contact-button:focus-visible {
+  border-color: rgba(25, 214, 111, 0.38) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.72) 0%, rgba(12, 18, 14, 0.82) 100%) !important;
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(25, 214, 111, 0.16) !important;
+  transform: translateY(-2px) !important;
+}
+
+.portfolio-icon-btn,
+.portfolio-back-btn {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(20, 26, 22, 0.65) 0%, rgba(10, 14, 11, 0.78) 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow:
+    0 10px 24px -4px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(20px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+}
+
+.portfolio-icon-btn:hover {
+  border-color: rgba(25, 214, 111, 0.38) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(30, 42, 34, 0.8) 0%, rgba(16, 24, 18, 0.9) 100%) !important;
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 18px rgba(25, 214, 111, 0.18) !important;
+  transform: scale(1.08) !important;
+}
+
 .portfolio-back-btn:hover {
-  background: rgba(246, 246, 246, 0.48);
+  border-color: rgba(25, 214, 111, 0.38) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(24, 34, 27, 0.72) 0%, rgba(12, 18, 14, 0.82) 100%) !important;
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(25, 214, 111, 0.16) !important;
+  transform: translateY(-2px) !important;
 }
 
 .portfolio-action-btn {
-  background: rgba(246, 246, 246, 0.18);
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18), inset 0 1.5px 0 rgba(255, 255, 255, 0.32);
-  backdrop-filter: blur(22px) saturate(130%);
-  -webkit-backdrop-filter: blur(22px) saturate(130%);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 100%),
+    linear-gradient(165deg, rgba(26, 32, 28, 0.6) 0%, rgba(14, 18, 15, 0.75) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 8px 22px -4px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
 }
 
 .portfolio-action-btn:hover {
-  background: rgba(246, 246, 246, 0.28);
-  border-color: rgba(255, 255, 255, 0.46);
+  border-color: rgba(25, 214, 111, 0.35) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%),
+    linear-gradient(165deg, rgba(30, 42, 34, 0.72) 0%, rgba(16, 24, 18, 0.82) 100%) !important;
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.48),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
+    0 0 16px rgba(25, 214, 111, 0.15) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Web Development detail refinements */
@@ -2436,7 +2639,7 @@ body {
 
 @media (max-width: 767px) {
   .certification-contact-button {
-    color: #030303;
+    color: #ffffff !important;
   }
 }
 /* Data Analysis detail: compact diagonal project composition */
@@ -2708,16 +2911,13 @@ body {
   color: #f43f5e;
 }
 
-.data-analysis-icon-btn:disabled {
-  opacity: 0.42;
-  cursor: not-allowed;
-  transform: none;
-}
-
+.data-analysis-icon-btn:disabled,
 .data-analysis-icon-btn:disabled:hover {
-  background: rgba(246, 246, 246, 0.34);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), inset 0 1.5px 0 rgba(255, 255, 255, 0.52);
+  opacity: 0.38;
+  cursor: not-allowed;
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
 }
 
 .data-analysis-main-card.is-exiting-next {
