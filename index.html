@@ -38,14 +38,22 @@
     <!-- Navbar -->
     <header class="site-header sticky top-0 z-50 h-0 w-full pt-6">
       <nav
-        class="mx-auto flex w-[min(88vw,503px)] items-center justify-between rounded-full px-7 py-2.5 text-[14px] font-normal text-white/90 transition-all duration-300 md:px-8"
+        class="site-nav mx-auto flex w-[min(94vw,620px)] items-center justify-between rounded-full px-4 py-2 text-[14px] font-normal text-white/90 transition-all duration-300 sm:px-6 md:px-7"
         aria-label="Navigasi utama"
       >
-        <a class="nav-link active" href="#beranda">Beranda</a>
-        <a class="nav-link" href="#tentang-saya">Tentang Saya</a>
-        <a class="nav-link" href="#portofolio">Portofolio</a>
-        <a class="nav-link" href="#sertifikasi">Pelatihan</a>
-        <a class="nav-link" href="#kontak">Kontak</a>
+        <div class="nav-links">
+          <a class="nav-link active" href="#beranda" data-i18n="nav.home">Beranda</a>
+          <a class="nav-link" href="#tentang-saya" data-i18n="nav.about">Tentang Saya</a>
+          <a class="nav-link" href="#portofolio" data-i18n="nav.portfolio">Portofolio</a>
+          <a class="nav-link" href="#sertifikasi" data-i18n="nav.training">Pelatihan</a>
+          <a class="nav-link" href="#kontak" data-i18n="nav.contact">Kontak</a>
+        </div>
+        <div class="nav-divider" aria-hidden="true"></div>
+        <div class="lang-switcher" role="group" aria-label="Pilih Bahasa / Language Selector">
+          <button type="button" class="lang-btn is-active" data-lang="id" aria-label="Bahasa Indonesia" aria-pressed="true">ID</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </header>
 
@@ -106,6 +114,7 @@
             >
               <p
                 class="whitespace-nowrap text-[18px] font-normal leading-none text-white sm:text-[19px]"
+                data-i18n="hero.cta_heading"
               >
                 <span
                   class="font-miracle text-[40px] leading-none sm:text-[42px]"
@@ -116,6 +125,7 @@
               <a
                 href="#tentang-saya"
                 class="glass-button inline-flex min-w-[145px] items-center justify-center rounded-full px-7 py-2.5 text-[14px] font-medium text-white/90 transition duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-leaf/70 focus:ring-offset-2 focus:ring-offset-black"
+                data-i18n="hero.cta_btn"
               >
                 Tentang Saya
               </a>
@@ -134,13 +144,13 @@
           <div class="about-left">
             <!-- About Heading -->
             <div class="about-heading" id="about-title">
-              <h2 class="about-title-main">Tentang</h2>
-              <span class="about-title-script">Saya</span>
+              <h2 class="about-title-main" data-i18n="about.heading_main">Tentang</h2>
+              <span class="about-title-script" data-i18n="about.heading_script">Saya</span>
             </div>
 
             <!-- About Description -->
             <article class="about-description" aria-label="Deskripsi profil">
-              <p>
+              <p data-i18n="about.p1">
                 Perkenalkan, saya Wisnu Agus Wicaksono, lulusan S1 Informatika
                 Universitas Sanata Dharma dengan fokus pada System Development
                 dan IPK 3,52. Saya memiliki minat pada software development,
@@ -150,7 +160,7 @@
                 kemampuan teknis saya.
               </p>
 
-              <p>
+              <p data-i18n="about.p2">
                 Di sisi teknis, saya memiliki dasar dalam Python, JavaScript,
                 HTML, CSS, PHP, database, dan Git. Saya juga mempelajari
                 pengolahan dan analisis data menggunakan Excel, SQL, Python,
@@ -159,23 +169,21 @@
                 menjadi informasi yang bermanfaat.
               </p>
 
-              <p>
+              <p data-i18n="about.p3">
                 Selain kemampuan teknis, saya turut mengembangkan kemampuan
                 kreatif melalui kegiatan freelance dan organisasi, khususnya
                 dalam bidang Graphic Design. Pengalaman tersebut membantu saya
                 mengasah kemampuan komunikasi, kolaborasi, problem solving,
                 manajemen waktu, serta ketelitian dalam menyelesaikan berbagai
-                kebutuhan pekerjaan. visual, komunikasi, kolaborasi, serta
-                kemampuan beradaptasi dalam menghadapi berbagai kebutuhan dan
-                lingkungan kerja.
+                kebutuhan pekerjaan.
               </p>
             </article>
 
             <!-- Static Info Buttons -->
             <div class="about-actions" aria-label="Kategori informasi profil">
-              <button class="about-pill" type="button" data-category="pendidikan">Pendidikan</button>
-              <button class="about-pill" type="button" data-category="pengalaman">Pengalaman</button>
-              <button class="about-pill" type="button" data-category="organisasi">Organisasi</button>
+              <button class="about-pill" type="button" data-category="pendidikan" data-i18n="about.btn_education">Pendidikan</button>
+              <button class="about-pill" type="button" data-category="pengalaman" data-i18n="about.btn_experience">Pengalaman</button>
+              <button class="about-pill" type="button" data-category="organisasi" data-i18n="about.btn_organization">Organisasi</button>
             </div>
           </div>
 
@@ -196,11 +204,11 @@
             class="about-portfolio-cta"
             aria-label="Ajakan melihat portofolio"
           >
-            <p>
+            <p data-i18n="about.portfolio_cta">
               <span>Mari</span>
               lihat bagaimana ide saya diwujudkan.
             </p>
-            <a class="about-portfolio-button" href="#portofolio">Portofolio</a>
+            <a class="about-portfolio-button" href="#portofolio" data-i18n="about.portfolio_btn">Portofolio</a>
           </aside>
         </div>
       </section>
@@ -215,8 +223,8 @@
           <!-- Category Grid View Container -->
           <div id="portfolio-grid-view" class="portfolio-view">
             <header class="portfolio-header">
-              <h2 id="portfolio-title" class="portfolio-title">Portofolio</h2>
-              <p class="portfolio-slogan">
+              <h2 id="portfolio-title" class="portfolio-title" data-i18n="portfolio.title">Portofolio</h2>
+              <p class="portfolio-slogan" data-i18n="portfolio.slogan">
                 <span>Where</span>
                 ideas become meaningful work.
               </p>
@@ -228,6 +236,7 @@
                 type="button"
                 data-category="frontend"
                 aria-label="Pilih kategori Web Development"
+                data-i18n-aria="portfolio.card_webdev_aria"
               >
                 <span class="portfolio-card-fallback" aria-hidden="true"></span>
                 <img
@@ -239,8 +248,8 @@
                 />
                 <span class="portfolio-card-overlay" aria-hidden="true"></span>
                 <span class="portfolio-card-content">
-                  <span class="portfolio-card-title">Web Development</span>
-                  <span class="portfolio-card-description"
+                  <span class="portfolio-card-title" data-i18n="portfolio.card_webdev_title">Web Development</span>
+                  <span class="portfolio-card-description" data-i18n="portfolio.card_webdev_desc"
                     >Turning ideas into interactive experiences.</span
                   >
                 </span>
@@ -251,6 +260,7 @@
                 type="button"
                 data-category="data-analysis"
                 aria-label="Pilih kategori Data Analysis"
+                data-i18n-aria="portfolio.card_data_aria"
               >
                 <span class="portfolio-card-fallback" aria-hidden="true"></span>
                 <img
@@ -262,8 +272,8 @@
                 />
                 <span class="portfolio-card-overlay" aria-hidden="true"></span>
                 <span class="portfolio-card-content">
-                  <span class="portfolio-card-title">Data Analysis</span>
-                  <span class="portfolio-card-description"
+                  <span class="portfolio-card-title" data-i18n="portfolio.card_data_title">Data Analysis</span>
+                  <span class="portfolio-card-description" data-i18n="portfolio.card_data_desc"
                     >From raw data to clear insights.</span
                   >
                 </span>
@@ -276,11 +286,11 @@
               class="portfolio-certification-cta"
               aria-label="Ajakan melihat pelatihan"
             >
-              <p>
+              <p data-i18n="portfolio.training_cta">
                 <span>Mari</span>
                 lihat bagaimana saya terus mengembangkan diri.
               </p>
-              <a class="portfolio-certification-button" href="#sertifikasi"
+              <a class="portfolio-certification-button" href="#sertifikasi" data-i18n="portfolio.training_btn"
                 >Pelatihan</a
               >
             </aside>
@@ -294,7 +304,7 @@
           >
             <!-- Top Left Header / Slogan -->
             <header class="portfolio-detail-header">
-              <p class="portfolio-detail-slogan">
+              <p class="portfolio-detail-slogan" data-i18n="portfolio.webdev_slogan">
                 Design,
                 <span class="portfolio-slogan-script font-miracle">Build</span>,
                 Experience.
@@ -309,6 +319,7 @@
                 class="portfolio-icon-btn portfolio-btn-prev"
                 id="portfolio-btn-prev"
                 aria-label="Portfolio Sebelumnya"
+                data-i18n-aria="portfolio.prev_aria"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +381,7 @@
                           d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                         />
                       </svg>
-                      <span class="portfolio-screenshot-fallback-text"
+                      <span class="portfolio-screenshot-fallback-text" data-i18n="portfolio.fallback_preview"
                         >Preview coming soon</span
                       >
                     </div>
@@ -453,6 +464,7 @@
                 class="portfolio-icon-btn portfolio-btn-next"
                 id="portfolio-btn-next"
                 aria-label="Portfolio Berikutnya"
+                data-i18n-aria="portfolio.next_aria"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -477,6 +489,7 @@
                 type="button"
                 class="portfolio-back-btn"
                 id="portfolio-back-btn"
+                data-i18n="portfolio.btn_back"
               >
                 Kembali
               </button>
@@ -495,6 +508,7 @@
                 class="portfolio-icon-btn data-analysis-icon-btn data-analysis-btn-prev"
                 id="data-analysis-btn-prev"
                 aria-label="Project Data Analysis sebelumnya"
+                data-i18n-aria="portfolio.data_prev_aria"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -615,6 +629,7 @@
                 class="portfolio-icon-btn data-analysis-icon-btn data-analysis-btn-next"
                 id="data-analysis-btn-next"
                 aria-label="Project Data Analysis berikutnya"
+                data-i18n-aria="portfolio.data_next_aria"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -641,6 +656,7 @@
                 type="button"
                 class="portfolio-back-btn"
                 id="data-analysis-back-btn"
+                data-i18n="portfolio.btn_back"
               >
                 Kembali
               </button>
@@ -656,10 +672,10 @@
       >
         <div class="certification-inner">
           <header class="certification-header">
-            <h2 id="certification-title" class="certification-title">
+            <h2 id="certification-title" class="certification-title" data-i18n="cert.title">
               Pelatihan
             </h2>
-            <p class="certification-slogan">
+            <p class="certification-slogan" data-i18n="cert.slogan">
               <span>Proof</span>
               of learning, growth, and progress.
             </p>
@@ -686,8 +702,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Coding Camp: Software Engineering</h3>
-                <p>
+                <h3 data-i18n="cert.c1_title">Coding Camp: Software Engineering</h3>
+                <p data-i18n="cert.c1_desc">
                   Certificate of attendance for a 1-week online course in
                   Software Engineering, covering web development fundamentals
                   and software development practices.
@@ -717,11 +733,11 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>
+                <h3 data-i18n="cert.c2_title">
                   Bootcamp Sertifikasi Microsoft Office Excel, Word & Power
                   Point Specialist
                 </h3>
-                <p>
+                <p data-i18n="cert.c2_desc">
                   Completed an Intermediate-level Microsoft Office Certification
                   Bootcamp covering Microsoft Excel, Word, and PowerPoint,
                   including data processing, formulas and functions, VLOOKUP,
@@ -753,8 +769,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Bootcamp Data Analyst</h3>
-                <p>
+                <h3 data-i18n="cert.c3_title">Bootcamp Data Analyst</h3>
+                <p data-i18n="cert.c3_desc">
                   Completed an Intermediate-level Data Analyst Bootcamp covering
                   data analysis fundamentals, data formatting and cleansing,
                   systematic data analysis, SQL and Google BigQuery, Python and
@@ -787,8 +803,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Building Website with Lovable AI</h3>
-                <p>
+                <h3 data-i18n="cert.c4_title">Building Website with Lovable AI</h3>
+                <p data-i18n="cert.c4_desc">
                   Completed a short class focused on building websites with
                   Lovable AI, exploring the use of artificial intelligence in
                   the web development process.
@@ -818,8 +834,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Index Match, Vlookup and Hlookup in Ms. Excel</h3>
-                <p>
+                <h3 data-i18n="cert.c5_title">Index Match, Vlookup and Hlookup in Ms. Excel</h3>
+                <p data-i18n="cert.c5_desc">
                   MySkill Short Class focused on Index Match, VLOOKUP, and
                   HLOOKUP functions in Microsoft Excel for data lookup and
                   analysis.
@@ -849,11 +865,11 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Python Introduction for Data Analysis</h3>
-                <p>
+                <h3 data-i18n="cert.c6_title">Python Introduction for Data Analysis</h3>
+                <p data-i18n="cert.c6_desc">
                   Completed a MySkill Short Class focused on using Python for
                   data analysis, covering Python syntax, lists, tuples, sets,
-                  dictionaries, conditional statements,
+                  dictionaries, conditional statements, and data manipulation fundamentals.
                 </p>
               </div>
               <p class="certification-card-provider">MySkill</p>
@@ -880,8 +896,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>Mini Course Data Analytics</h3>
-                <p>
+                <h3 data-i18n="cert.c7_title">Mini Course Data Analytics</h3>
+                <p data-i18n="cert.c7_desc">
                   Completed the RevoU Mini Course Data Analytics, covering the
                   fundamentals of data analysis, Big Data, data analysis types
                   and processes, spreadsheet-based analysis, the implementation
@@ -913,8 +929,8 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3>SAP01 - SAP Overview</h3>
-                <p>
+                <h3 data-i18n="cert.c8_title">SAP01 - SAP Overview</h3>
+                <p data-i18n="cert.c8_desc">
                   Completed the SAP01 – SAP Overview course through the SAP
                   University Partnership Program, gaining foundational knowledge
                   of SAP and an overview of its business processes and
@@ -929,11 +945,11 @@
             class="certification-contact-cta"
             aria-label="Ajakan menghubungi"
           >
-            <p>
+            <p data-i18n="cert.contact_cta">
               <span>Mari</span>
               ciptakan sesuatu bersama.
             </p>
-            <a class="certification-contact-button" href="#kontak"
+            <a class="certification-contact-button" href="#kontak" data-i18n="cert.contact_btn"
               >Hubungi Saya</a
             >
           </aside>
@@ -954,8 +970,8 @@
         <!-- Main Glass Card Container -->
         <div class="kontak-card kontak-animate-init">
           <div class="kontak-content">
-            <h2 class="kontak-title">Contact Me</h2>
-            <p class="kontak-description">
+            <h2 class="kontak-title" data-i18n="contact.title">Hubungi Saya</h2>
+            <p class="kontak-description" data-i18n="contact.desc">
               Saya terbuka untuk berdiskusi, berkolaborasi, maupun menjajaki
               peluang baru. Jangan ragu untuk menghubungi saya melalui salah
               satu platform di bawah ini.
@@ -1127,6 +1143,7 @@
               class="about-modal-close"
               id="about-modal-close"
               aria-label="Tutup jendela informasi"
+              data-i18n-aria="modal.close_aria"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
