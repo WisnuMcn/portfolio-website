@@ -94,6 +94,7 @@ const translations = {
     about: {
       heading_main: "Tentang",
       heading_script: "Saya",
+      slogan: '<span class="font-miracle">Tempat</span> ide menjadi karya bermakna.',
       p1: "Perkenalkan, saya Wisnu Agus Wicaksono, lulusan S1 Informatika Universitas Sanata Dharma dengan fokus pada System Development dan IPK 3,52. Saya memiliki minat pada software development, pengembangan web, serta pengolahan dan analisis data. Ketertarikan tersebut terus saya kembangkan melalui pendidikan, pelatihan, dan berbagai kegiatan yang mendukung peningkatan kemampuan teknis saya.",
       p2: "Di sisi teknis, saya memiliki dasar dalam Python, JavaScript, HTML, CSS, PHP, database, dan Git. Saya juga mempelajari pengolahan dan analisis data menggunakan Excel, SQL, Python, serta Power BI. Hal tersebut membantu saya memahami proses pengembangan sistem sekaligus bagaimana data dapat diolah menjadi informasi yang bermanfaat.",
       p3: "Selain kemampuan teknis, saya turut mengembangkan kemampuan kreatif melalui kegiatan freelance dan organisasi, khususnya dalam bidang Graphic Design. Pengalaman tersebut membantu saya mengasah kemampuan komunikasi, kolaborasi, problem solving, manajemen waktu, serta ketelitian dalam menyelesaikan berbagai kebutuhan pekerjaan.",
@@ -105,7 +106,7 @@ const translations = {
     },
     portfolio: {
       title: "Portofolio",
-      slogan: "<span>Where</span> ideas become meaningful work.",
+      slogan: '<span class="font-miracle">Tempat</span> ide menjadi karya bermakna.',
       card_webdev_title: "Web Development",
       card_webdev_desc: "Turning ideas into interactive experiences.",
       card_webdev_aria: "Pilih kategori Web Development",
@@ -116,7 +117,7 @@ const translations = {
         "<span>Mari</span> lihat bagaimana saya terus mengembangkan diri.",
       training_btn: "Pelatihan",
       webdev_slogan:
-        'Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.',
+        'Rancang, <span class="portfolio-slogan-script font-miracle">Bangun</span>, Rasakan.',
       prev_aria: "Portfolio Sebelumnya",
       next_aria: "Portfolio Berikutnya",
       fallback_preview: "Preview segera hadir",
@@ -126,7 +127,7 @@ const translations = {
     },
     cert: {
       title: "Pelatihan",
-      slogan: "<span>Proof</span> of learning, growth, and progress.",
+      slogan: '<span class="font-miracle">Bukti</span> proses belajar, berkembang, dan bertumbuh.',
       c1_title: "Coding Camp: Software Engineering",
       c1_desc:
         "Sertifikat kehadiran untuk kursus daring 1 minggu di bidang Rekayasa Perangkat Lunak, mencakup dasar-dasar pengembangan web dan praktik software engineering.",
@@ -182,6 +183,7 @@ const translations = {
     about: {
       heading_main: "About",
       heading_script: "Me",
+      slogan: '<span class="font-miracle">Where</span> ideas become meaningful work.',
       p1: "Hello, I am Wisnu Agus Wicaksono, a Bachelor of Informatics graduate from Sanata Dharma University with a focus on System Development and a GPA of 3.52. I have a passion for software development, web engineering, as well as data processing and analytics. I continuously cultivate this interest through academic education, specialized training, and various initiatives that bolster my technical skills.",
       p2: "Technically, I possess foundational proficiency in Python, JavaScript, HTML, CSS, PHP, databases, and Git. I also actively analyze and process data using Excel, SQL, Python, and Power BI. This dual skill set allows me to understand both comprehensive system architecture and how raw data is converted into meaningful, actionable insights.",
       p3: "Alongside technical capabilities, I cultivate creative problem solving through freelance projects and organizational leadership, especially within Graphic Design. These experiences have refined my communication, collaboration, troubleshooting, time management, and meticulous attention to detail across diverse workplace demands.",
@@ -193,7 +195,7 @@ const translations = {
     },
     portfolio: {
       title: "Portfolio",
-      slogan: "<span>Where</span> ideas become meaningful work.",
+      slogan: '<span class="font-miracle">Where</span> ideas become meaningful work.',
       card_webdev_title: "Web Development",
       card_webdev_desc: "Turning ideas into interactive experiences.",
       card_webdev_aria: "Select Web Development category",
@@ -214,7 +216,7 @@ const translations = {
     },
     cert: {
       title: "Training",
-      slogan: "<span>Proof</span> of learning, growth, and progress.",
+      slogan: '<span class="font-miracle">Proof</span> of learning, growth, and progress.',
       c1_title: "Coding Camp: Software Engineering",
       c1_desc:
         "Certificate of attendance for a 1-week online course in Software Engineering, covering web development fundamentals and software development practices.",
@@ -284,10 +286,16 @@ const setLanguage = (lang) => {
 
   // Update elements with data-i18n
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    // If element is a hero-typed-line and typewriter loop is active, avoid static overwrite
+    // If element is managed by typewriter loops, avoid static overwrite
     if (
       el.classList.contains("hero-typed-line") &&
       typeof window.__restartHeroTyping === "function"
+    ) {
+      return;
+    }
+    if (
+      el.classList.contains("slogan-typed") &&
+      typeof window.__restartSloganTyping === "function"
     ) {
       return;
     }
@@ -314,6 +322,11 @@ const setLanguage = (lang) => {
   // Restart hero typewriter loop in the newly active language
   if (typeof window.__restartHeroTyping === "function") {
     window.__restartHeroTyping(lang);
+  }
+
+  // Restart slogan typewriter loops in the newly active language
+  if (typeof window.__restartSloganTyping === "function") {
+    window.__restartSloganTyping(lang);
   }
 
   // Update active dynamic components
@@ -347,6 +360,7 @@ const initLanguageSwitcher = () => {
 
 // Expose setLanguage globally for convenience
 window.__setPortfolioLanguage = setLanguage;
+window.__getCurrentLanguage = () => currentPortfolioLang;
 
 // Hero Profession Typewriter Loop Controller
 const initHeroTypingAnimation = () => {
@@ -547,9 +561,307 @@ const initHeroTypingAnimation = () => {
   activeTimer = setTimeout(startLoop, 650);
 };
 
+// =====================================================================
+// Slogan Typewriter Loop Controller (Portofolio, Pelatihan, Web Development)
+// =====================================================================
+const initSloganTypingAnimation = () => {
+  const sloganConfigs = [
+    {
+      id: "portfolio",
+      element: document.querySelector(".portfolio-slogan"),
+      initialDelay: 350,
+      phrases: {
+        id: [
+          { text: "Tempat", isScript: true },
+          { text: " ide menjadi karya bermakna.", isScript: false },
+        ],
+        en: [
+          { text: "Where", isScript: true },
+          { text: " ideas become meaningful work.", isScript: false },
+        ],
+      },
+    },
+    {
+      id: "cert",
+      element: document.querySelector(".certification-slogan"),
+      initialDelay: 680,
+      phrases: {
+        id: [
+          { text: "Bukti", isScript: true },
+          { text: " proses belajar, berkembang, dan bertumbuh.", isScript: false },
+        ],
+        en: [
+          { text: "Proof", isScript: true },
+          { text: " of learning, growth, and progress.", isScript: false },
+        ],
+      },
+    },
+    {
+      id: "webdev",
+      element: document.querySelector(".portfolio-detail-slogan"),
+      initialDelay: 950,
+      phrases: {
+        id: [
+          { text: "Rancang, ", isScript: false },
+          { text: "Bangun", isScript: true, scriptClass: "portfolio-slogan-script font-miracle" },
+          { text: ", Rasakan.", isScript: false },
+        ],
+        en: [
+          { text: "Design, ", isScript: false },
+          { text: "Build", isScript: true, scriptClass: "portfolio-slogan-script font-miracle" },
+          { text: ", Experience.", isScript: false },
+        ],
+      },
+    },
+  ];
+
+  const activeConfigs = sloganConfigs.filter((cfg) => !!cfg.element);
+  if (!activeConfigs.length) return;
+
+  const renderSegmentsHtml = (segments, count) => {
+    if (count <= 0) return "";
+    let remaining = count;
+    let html = "";
+    for (const seg of segments) {
+      if (remaining <= 0) break;
+      const take = Math.min(remaining, seg.text.length);
+      const slice = seg.text.slice(0, take);
+      if (seg.isScript) {
+        const cls = seg.scriptClass || "font-miracle";
+        html += `<span class="${cls}">${slice}</span>`;
+      } else {
+        html += slice;
+      }
+      remaining -= take;
+    }
+    return html;
+  };
+
+  const renderFullSegmentsHtml = (segments) => {
+    return segments
+      .map((seg) => {
+        if (seg.isScript) {
+          const cls = seg.scriptClass || "font-miracle";
+          return `<span class="${cls}">${seg.text}</span>`;
+        }
+        return seg.text;
+      })
+      .join("");
+  };
+
+  const getSegmentsTotalLength = (segments) => {
+    return segments.reduce((sum, seg) => sum + seg.text.length, 0);
+  };
+
+  const controllers = activeConfigs.map((cfg) => {
+    const el = cfg.element;
+    const cursor = document.createElement("span");
+    cursor.className = "slogan-typing-cursor";
+    cursor.setAttribute("aria-hidden", "true");
+
+    let timer = null;
+    let isStopped = false;
+
+    const clearActiveTimer = () => {
+      if (timer !== null) {
+        clearTimeout(timer);
+        timer = null;
+      }
+    };
+
+    const stop = () => {
+      isStopped = true;
+      clearActiveTimer();
+      if (cursor.parentNode) {
+        cursor.remove();
+      }
+    };
+
+    const updateContent = (segments, count) => {
+      el.innerHTML = renderSegmentsHtml(segments, count);
+      el.appendChild(cursor);
+    };
+
+    const renderStatic = (lang) => {
+      stop();
+      const segments = cfg.phrases[lang] || cfg.phrases.id;
+      el.innerHTML = renderFullSegmentsHtml(segments);
+    };
+
+    const startLoop = (lang, delayStart = 0) => {
+      stop();
+      isStopped = false;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        renderStatic(lang);
+        return;
+      }
+
+      const activeSegments = cfg.phrases[lang] || cfg.phrases.id;
+      const totalChars = getSegmentsTotalLength(activeSegments);
+
+      const runCycle = () => {
+        if (isStopped) return;
+        el.innerHTML = "";
+        el.appendChild(cursor);
+
+        let currentChar = 1;
+
+        // Phase 1: Typing Forward
+        const typeStep = () => {
+          if (isStopped) return;
+          updateContent(activeSegments, currentChar);
+
+          if (currentChar < totalChars) {
+            currentChar++;
+            const typingDelay = 42 + Math.floor(Math.random() * 10);
+            timer = setTimeout(typeStep, typingDelay);
+          } else {
+            // Full phrase complete: Phase 2 - Pause while reading
+            timer = setTimeout(startDeleting, 2400);
+          }
+        };
+
+        // Phase 3: Deleting Backward (Backspace)
+        const startDeleting = () => {
+          if (isStopped) return;
+          let deleteChar = totalChars - 1;
+
+          const deleteStep = () => {
+            if (isStopped) return;
+            if (deleteChar > 0) {
+              updateContent(activeSegments, deleteChar);
+              deleteChar--;
+              const backspaceDelay = 26 + Math.floor(Math.random() * 6);
+              timer = setTimeout(deleteStep, backspaceDelay);
+            } else {
+              // Completely deleted: pause while empty, then restart
+              el.innerHTML = "";
+              el.appendChild(cursor);
+              // Phase 4: Empty pause before next loop
+              timer = setTimeout(runCycle, 520);
+            }
+          };
+
+          deleteStep();
+        };
+
+        timer = setTimeout(typeStep, 60);
+      };
+
+      if (delayStart > 0) {
+        timer = setTimeout(runCycle, delayStart);
+      } else {
+        runCycle();
+      }
+    };
+
+    return {
+      id: cfg.id,
+      element: el,
+      startLoop,
+      stop,
+      renderStatic,
+      initialDelay: cfg.initialDelay,
+    };
+  });
+
+  const restartAll = (newLang) => {
+    const lang = newLang === "en" ? "en" : "id";
+    controllers.forEach((ctrl) => {
+      ctrl.startLoop(lang, 0);
+    });
+  };
+
+  // Expose restart handler for language switching
+  window.__restartSloganTyping = restartAll;
+
+  // Expose webdev slogan restart helper for when detail view is opened
+  window.__restartWebDevSlogan = () => {
+    const webdevCtrl = controllers.find((c) => c.id === "webdev");
+    if (webdevCtrl) {
+      const lang =
+        (typeof window.__getCurrentLanguage === "function"
+          ? window.__getCurrentLanguage()
+          : currentPortfolioLang) || "id";
+      webdevCtrl.startLoop(lang, 180);
+    }
+  };
+
+  const initialLang =
+    (typeof window.__getCurrentLanguage === "function"
+      ? window.__getCurrentLanguage()
+      : currentPortfolioLang) || "id";
+  controllers.forEach((ctrl) => {
+    ctrl.startLoop(initialLang, ctrl.initialDelay);
+  });
+};
+
+// =====================================================================
+// SCROLL REVEAL ANIMATIONS (Tentang Saya & Portofolio)
+// =====================================================================
+const initScrollReveal = () => {
+  const revealElements = document.querySelectorAll(
+    "#tentang-saya .scroll-reveal, #portofolio .scroll-reveal",
+  );
+
+  if (!revealElements.length) return;
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  // Progressive enhancement: if reduced motion or IntersectionObserver unsupported, reveal immediately
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach((el) => {
+      el.classList.add("is-revealed");
+      if (el.classList.contains("portfolio-card")) {
+        el.classList.add("is-visible");
+      }
+    });
+    return;
+  }
+
+  // Activate CSS reveal mode (hides unrevealed elements with progressive enhancement)
+  document.documentElement.classList.add("js-reveal-ready");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -40px 0px",
+    threshold: 0.08,
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add("is-revealed");
+        if (el.classList.contains("portfolio-card")) {
+          el.classList.add("is-visible");
+        }
+      } else {
+        // Reset when element has scrolled out below the viewport (user scrolled back up),
+        // so it smoothly re-animates when user scrolls down again.
+        if (entry.boundingClientRect.top > window.innerHeight) {
+          el.classList.remove("is-revealed");
+          if (el.classList.contains("portfolio-card")) {
+            el.classList.remove("is-visible");
+          }
+        }
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach((el) => {
+    revealObserver.observe(el);
+  });
+};
+
 const initLandingFeatures = () => {
-  initLanguageSwitcher();
   initHeroTypingAnimation();
+  initSloganTypingAnimation();
+  initLanguageSwitcher();
+  initScrollReveal();
 };
 
 if (document.readyState === "loading") {
@@ -1608,6 +1920,10 @@ const initializePortfolioSection = () => {
     gridView.classList.add("hidden");
     detailView.classList.remove("hidden");
 
+    if (typeof window.__restartWebDevSlogan === "function") {
+      window.__restartWebDevSlogan();
+    }
+
     // Trigger animasi enter pada detail view
     void detailView.offsetWidth; // force reflow
     detailView.classList.add("is-entering");
@@ -1800,19 +2116,9 @@ const initializePortfolioSection = () => {
     });
   }
 
-  let hasRevealedPortfolio = false;
-
   const revealCards = () => {
-    if (hasRevealedPortfolio) return;
-
-    hasRevealedPortfolio = true;
-
-    portfolioCards.forEach((card, index) => {
-      const delay = window.matchMedia("(prefers-reduced-motion: reduce)")
-        .matches
-        ? 0
-        : index * 140;
-      window.setTimeout(() => card.classList.add("is-visible"), delay);
+    portfolioCards.forEach((card) => {
+      card.classList.add("is-visible", "is-revealed");
     });
   };
 
@@ -1877,38 +2183,7 @@ const initializePortfolioSection = () => {
     });
   });
 
-  const isPortfolioInView = () => {
-    const rect = portfolioSection.getBoundingClientRect();
-
-    return (
-      rect.top < window.innerHeight * 0.85 &&
-      rect.bottom > window.innerHeight * 0.15
-    );
-  };
-
-  const revealIfInView = () => {
-    if (window.location.hash === "#portofolio" || isPortfolioInView())
-      revealCards();
-  };
-
-  if ("IntersectionObserver" in window) {
-    const portfolioObserver = new IntersectionObserver(
-      (entries, observer) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          revealCards();
-          observer.unobserve(portfolioSection);
-        }
-      },
-      {
-        rootMargin: "0px 0px -18% 0px",
-        threshold: 0.18,
-      },
-    );
-
-    portfolioObserver.observe(portfolioSection);
-    requestAnimationFrame(revealIfInView);
-    window.setTimeout(revealIfInView, 250);
-  } else {
+  if (!("IntersectionObserver" in window)) {
     revealCards();
   }
 };

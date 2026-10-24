@@ -144,13 +144,13 @@
         <div class="about-inner">
           <div class="about-left">
             <!-- About Heading -->
-            <div class="about-heading" id="about-title">
+            <div class="about-heading scroll-reveal" style="--reveal-delay: 0ms;" id="about-title">
               <h2 class="about-title-main" data-i18n="about.heading_main">Tentang</h2>
               <span class="about-title-script" data-i18n="about.heading_script">Saya</span>
             </div>
 
             <!-- About Description -->
-            <article class="about-description" aria-label="Deskripsi profil">
+            <article class="about-description scroll-reveal" style="--reveal-delay: 180ms;" aria-label="Deskripsi profil">
               <p data-i18n="about.p1">
                 Perkenalkan, saya Wisnu Agus Wicaksono, lulusan S1 Informatika
                 Universitas Sanata Dharma dengan fokus pada System Development
@@ -182,14 +182,14 @@
 
             <!-- Static Info Buttons -->
             <div class="about-actions" aria-label="Kategori informasi profil">
-              <button class="about-pill" type="button" data-category="pendidikan" data-i18n="about.btn_education">Pendidikan</button>
-              <button class="about-pill" type="button" data-category="pengalaman" data-i18n="about.btn_experience">Pengalaman</button>
-              <button class="about-pill" type="button" data-category="organisasi" data-i18n="about.btn_organization">Organisasi</button>
+              <button class="about-pill scroll-reveal" style="--reveal-delay: 260ms;" type="button" data-category="pendidikan" data-i18n="about.btn_education">Pendidikan</button>
+              <button class="about-pill scroll-reveal" style="--reveal-delay: 340ms;" type="button" data-category="pengalaman" data-i18n="about.btn_experience">Pengalaman</button>
+              <button class="about-pill scroll-reveal" style="--reveal-delay: 420ms;" type="button" data-category="organisasi" data-i18n="about.btn_organization">Organisasi</button>
             </div>
           </div>
 
           <!-- About Portrait -->
-          <figure class="about-portrait">
+          <figure class="about-portrait scroll-reveal" style="--reveal-delay: 140ms;">
             <img
               src="assets/images/Profil-TentangSaya.webp"
               alt="Portrait profil Wisnu Agus Wicaksono"
@@ -202,7 +202,8 @@
 
           <!-- Portfolio CTA -->
           <aside
-            class="about-portfolio-cta"
+            class="about-portfolio-cta scroll-reveal"
+            style="--reveal-delay: 500ms;"
             aria-label="Ajakan melihat portofolio"
           >
             <p data-i18n="about.portfolio_cta">
@@ -224,16 +225,17 @@
           <!-- Category Grid View Container -->
           <div id="portfolio-grid-view" class="portfolio-view">
             <header class="portfolio-header">
-              <h2 id="portfolio-title" class="portfolio-title" data-i18n="portfolio.title">Portofolio</h2>
-              <p class="portfolio-slogan" data-i18n="portfolio.slogan">
-                <span>Where</span>
-                ideas become meaningful work.
+              <h2 id="portfolio-title" class="portfolio-title scroll-reveal" style="--reveal-delay: 0ms;" data-i18n="portfolio.title">Portofolio</h2>
+              <p class="portfolio-slogan scroll-reveal slogan-typed" style="--reveal-delay: 120ms;" data-i18n="portfolio.slogan">
+                <span>Tempat</span>
+                ide menjadi karya bermakna.
               </p>
             </header>
 
             <div class="portfolio-grid" aria-label="Kategori portofolio">
               <button
-                class="portfolio-card portfolio-card--frontend"
+                class="portfolio-card portfolio-card--frontend scroll-reveal"
+                style="--reveal-delay: 240ms;"
                 type="button"
                 data-category="frontend"
                 aria-label="Pilih kategori Web Development"
@@ -257,7 +259,8 @@
               </button>
 
               <button
-                class="portfolio-card portfolio-card--data"
+                class="portfolio-card portfolio-card--data scroll-reveal"
+                style="--reveal-delay: 360ms;"
                 type="button"
                 data-category="data-analysis"
                 aria-label="Pilih kategori Data Analysis"
@@ -284,7 +287,8 @@
             <p class="portfolio-category-status" aria-live="polite"></p>
 
             <aside
-              class="portfolio-certification-cta"
+              class="portfolio-certification-cta scroll-reveal"
+              style="--reveal-delay: 480ms;"
               aria-label="Ajakan melihat pelatihan"
             >
               <p data-i18n="portfolio.training_cta">
@@ -305,10 +309,10 @@
           >
             <!-- Top Left Header / Slogan -->
             <header class="portfolio-detail-header">
-              <p class="portfolio-detail-slogan" data-i18n="portfolio.webdev_slogan">
-                Design,
-                <span class="portfolio-slogan-script font-miracle">Build</span>,
-                Experience.
+              <p class="portfolio-detail-slogan slogan-typed" data-i18n="portfolio.webdev_slogan">
+                Rancang,
+                <span class="portfolio-slogan-script font-miracle">Bangun</span>,
+                Rasakan.
               </p>
             </header>
 
@@ -676,9 +680,9 @@
             <h2 id="certification-title" class="certification-title" data-i18n="cert.title">
               Pelatihan
             </h2>
-            <p class="certification-slogan" data-i18n="cert.slogan">
-              <span>Proof</span>
-              of learning, growth, and progress.
+            <p class="certification-slogan slogan-typed" data-i18n="cert.slogan">
+              <span>Bukti</span>
+              proses belajar, berkembang, dan bertumbuh.
             </p>
           </header>
 
