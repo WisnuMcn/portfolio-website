@@ -138,7 +138,7 @@
       <!-- About Section -->
       <section
         id="tentang-saya"
-        class="about-section bg-black"
+        class="about-section bg-white"
         aria-labelledby="about-title"
       >
         <div class="about-inner">
@@ -200,17 +200,69 @@
             />
           </figure>
 
-          <!-- Portfolio CTA -->
+          <!-- Tech Stack CTA -->
           <aside
-            class="about-portfolio-cta scroll-reveal"
+            class="about-portfolio-cta about-tech-cta scroll-reveal"
             style="--reveal-delay: 500ms;"
+            aria-label="Ajakan menjelajahi tech stack"
+          >
+            <p data-i18n="about.tech_cta">
+              <span>Mari</span>
+              lihat teknologi yang saya gunakan.
+            </p>
+            <a
+              class="about-portfolio-button about-tech-button"
+              href="#tech-stack"
+              data-i18n="about.tech_btn"
+            >
+              Jelajahi Tech Stack
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section
+        id="tech-stack"
+        class="tech-stack-section scroll-mt-28"
+        aria-labelledby="tech-stack-title"
+      >
+        <!-- Background Layer -->
+        <div class="tech-stack-bg-wrapper" aria-hidden="true">
+          <div class="tech-stack-background"></div>
+          <div class="tech-stack-overlay"></div>
+        </div>
+
+        <div class="tech-stack-inner">
+          <header class="tech-stack-header scroll-reveal" style="--reveal-delay: 0ms;">
+            <h2 id="tech-stack-title" class="tech-stack-title" data-i18n="tech.title">
+              Tech Stack
+            </h2>
+            <p class="tech-stack-subtitle" data-i18n="tech.subtitle">
+              <span>Alat</span> dan teknologi yang mendukung pekerjaan saya.
+            </p>
+          </header>
+
+          <!-- Content Placeholder (Card / Logo teknologi akan ditambahkan pada tahap berikutnya) -->
+          <div class="tech-stack-content" aria-hidden="true"></div>
+
+          <!-- Navigation CTA to Portfolio -->
+          <aside
+            class="tech-portfolio-cta scroll-reveal"
+            style="--reveal-delay: 200ms;"
             aria-label="Ajakan melihat portofolio"
           >
-            <p data-i18n="about.portfolio_cta">
+            <p data-i18n="tech.portfolio_cta">
               <span>Mari</span>
               lihat bagaimana ide saya diwujudkan.
             </p>
-            <a class="about-portfolio-button" href="#portofolio" data-i18n="about.portfolio_btn">Portofolio</a>
+            <a
+              class="glass-button tech-portfolio-button"
+              href="#portofolio"
+              data-i18n="tech.portfolio_btn"
+            >
+              Portofolio
+            </a>
           </aside>
         </div>
       </section>

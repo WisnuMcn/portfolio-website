@@ -101,6 +101,14 @@ const translations = {
       btn_education: "Pendidikan",
       btn_experience: "Pengalaman",
       btn_organization: "Organisasi",
+      tech_cta: "<span>Mari</span> lihat teknologi yang saya gunakan.",
+      tech_btn: "Jelajahi Tech Stack",
+      portfolio_cta: "<span>Mari</span> lihat teknologi yang saya gunakan.",
+      portfolio_btn: "Jelajahi Tech Stack",
+    },
+    tech: {
+      title: "Tech Stack",
+      subtitle: "<span>Alat</span> dan teknologi yang mendukung pekerjaan saya.",
       portfolio_cta: "<span>Mari</span> lihat bagaimana ide saya diwujudkan.",
       portfolio_btn: "Portofolio",
     },
@@ -190,6 +198,14 @@ const translations = {
       btn_education: "Education",
       btn_experience: "Experience",
       btn_organization: "Organizations",
+      tech_cta: "<span>Let's</span> explore the technologies I use.",
+      tech_btn: "Explore Tech Stack",
+      portfolio_cta: "<span>Let's</span> explore the technologies I use.",
+      portfolio_btn: "Explore Tech Stack",
+    },
+    tech: {
+      title: "Tech Stack",
+      subtitle: "<span>Tools</span> and technologies that power my work.",
       portfolio_cta: "<span>Let's</span> see how my ideas come to life.",
       portfolio_btn: "Portfolio",
     },
@@ -802,7 +818,7 @@ const initSloganTypingAnimation = () => {
 // =====================================================================
 const initScrollReveal = () => {
   const revealElements = document.querySelectorAll(
-    "#tentang-saya .scroll-reveal, #portofolio .scroll-reveal",
+    "#tentang-saya .scroll-reveal, #tech-stack .scroll-reveal, #portofolio .scroll-reveal",
   );
 
   if (!revealElements.length) return;
