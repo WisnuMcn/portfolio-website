@@ -8,7 +8,10 @@ const setScrolledHeader = () => {
 
 const setActiveLink = (targetId) => {
   navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${targetId}`);
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${targetId}`,
+    );
   });
 };
 
@@ -29,7 +32,10 @@ anchorLinks.forEach((link) => {
     event.preventDefault();
     setActiveLink(targetId);
 
-    const scrollTop = target.getBoundingClientRect().top + window.scrollY - getScrollOffset(targetId);
+    const scrollTop =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      getScrollOffset(targetId);
 
     window.scrollTo({
       top: Math.max(scrollTop, 0),
@@ -54,7 +60,7 @@ if ("IntersectionObserver" in window && sections.length) {
     {
       rootMargin: "-35% 0px -55% 0px",
       threshold: [0, 0.2, 0.45, 0.7],
-    }
+    },
   );
 
   sections.forEach((section) => observer.observe(section));
@@ -78,8 +84,12 @@ const translations = {
       contact: "Kontak",
     },
     hero: {
-      cta_heading: '<span class="font-miracle text-[40px] leading-none sm:text-[42px]">Mari</span> mengenal saya lebih dekat',
+      cta_heading:
+        '<span class="font-miracle text-[40px] leading-none sm:text-[42px]">Mari</span> mengenal saya lebih dekat',
       cta_btn: "Tentang Saya",
+      profession_1: '<strong class="font-bold">System</strong> Development',
+      profession_2: 'Software <strong class="font-bold">Engineer</strong>',
+      profession_3: '<strong class="font-bold">Data</strong> Analysis',
     },
     about: {
       heading_main: "Tentang",
@@ -102,9 +112,11 @@ const translations = {
       card_data_title: "Data Analysis",
       card_data_desc: "From raw data to clear insights.",
       card_data_aria: "Pilih kategori Data Analysis",
-      training_cta: "<span>Mari</span> lihat bagaimana saya terus mengembangkan diri.",
+      training_cta:
+        "<span>Mari</span> lihat bagaimana saya terus mengembangkan diri.",
       training_btn: "Pelatihan",
-      webdev_slogan: 'Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.',
+      webdev_slogan:
+        'Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.',
       prev_aria: "Portfolio Sebelumnya",
       next_aria: "Portfolio Berikutnya",
       fallback_preview: "Preview segera hadir",
@@ -116,21 +128,30 @@ const translations = {
       title: "Pelatihan",
       slogan: "<span>Proof</span> of learning, growth, and progress.",
       c1_title: "Coding Camp: Software Engineering",
-      c1_desc: "Sertifikat kehadiran untuk kursus daring 1 minggu di bidang Rekayasa Perangkat Lunak, mencakup dasar-dasar pengembangan web dan praktik software engineering.",
-      c2_title: "Bootcamp Sertifikasi Microsoft Office Excel, Word & Power Point Specialist",
-      c2_desc: "Menyelesaikan Bootcamp Sertifikasi Microsoft Office tingkat Intermediate yang mencakup Microsoft Excel, Word, dan PowerPoint, meliputi pengolahan data, rumus dan fungsi, VLOOKUP, INDEX MATCH, Pivot Table, pelaporan dan dashboard interaktif, VBA Macro, serta mini project.",
+      c1_desc:
+        "Sertifikat kehadiran untuk kursus daring 1 minggu di bidang Rekayasa Perangkat Lunak, mencakup dasar-dasar pengembangan web dan praktik software engineering.",
+      c2_title:
+        "Bootcamp Sertifikasi Microsoft Office Excel, Word & Power Point Specialist",
+      c2_desc:
+        "Menyelesaikan Bootcamp Sertifikasi Microsoft Office tingkat Intermediate yang mencakup Microsoft Excel, Word, dan PowerPoint, meliputi pengolahan data, rumus dan fungsi, VLOOKUP, INDEX MATCH, Pivot Table, pelaporan dan dashboard interaktif, VBA Macro, serta mini project.",
       c3_title: "Bootcamp Data Analyst",
-      c3_desc: "Menyelesaikan Bootcamp Data Analyst tingkat Intermediate yang mencakup dasar-dasar analisis data, formatting dan pembersihan data, analisis data sistematis, SQL dan Google BigQuery, Python dan Google Colab, serta visualisasi data dan pengembangan dashboard menggunakan Power BI, termasuk mini project terapan.",
+      c3_desc:
+        "Menyelesaikan Bootcamp Data Analyst tingkat Intermediate yang mencakup dasar-dasar analisis data, formatting dan pembersihan data, analisis data sistematis, SQL dan Google BigQuery, Python dan Google Colab, serta visualisasi data dan pengembangan dashboard menggunakan Power BI, termasuk mini project terapan.",
       c4_title: "Membangun Website dengan Lovable AI",
-      c4_desc: "Menyelesaikan kelas singkat yang berfokus pada pembuatan website dengan Lovable AI, mengeksplorasi pemanfaatan kecerdasan buatan dalam alur pengembangan web modern.",
+      c4_desc:
+        "Menyelesaikan kelas singkat yang berfokus pada pembuatan website dengan Lovable AI, mengeksplorasi pemanfaatan kecerdasan buatan dalam alur pengembangan web modern.",
       c5_title: "Index Match, Vlookup and Hlookup di Ms. Excel",
-      c5_desc: "Kelas singkat MySkill berfokus pada fungsi INDEX MATCH, VLOOKUP, dan HLOOKUP di Microsoft Excel untuk pencarian dan analisis data tingkat lanjut.",
+      c5_desc:
+        "Kelas singkat MySkill berfokus pada fungsi INDEX MATCH, VLOOKUP, dan HLOOKUP di Microsoft Excel untuk pencarian dan analisis data tingkat lanjut.",
       c6_title: "Pengenalan Python untuk Analisis Data",
-      c6_desc: "Menyelesaikan kelas singkat MySkill yang berfokus pada penggunaan Python untuk analisis data, mencakup sintaks Python, list, tuple, set, dictionary, conditional statement, dan manipulasi data.",
+      c6_desc:
+        "Menyelesaikan kelas singkat MySkill yang berfokus pada penggunaan Python untuk analisis data, mencakup sintaks Python, list, tuple, set, dictionary, conditional statement, dan manipulasi data.",
       c7_title: "Mini Course Data Analytics",
-      c7_desc: "Menyelesaikan RevoU Mini Course Data Analytics, mencakup dasar-dasar analisis data, Big Data, tipe dan proses analisis data, analisis berbasis spreadsheet, implementasi Big Data di industri, serta peran AI dan otomasi bagi karier data analytics di masa depan.",
+      c7_desc:
+        "Menyelesaikan RevoU Mini Course Data Analytics, mencakup dasar-dasar analisis data, Big Data, tipe dan proses analisis data, analisis berbasis spreadsheet, implementasi Big Data di industri, serta peran AI dan otomasi bagi karier data analytics di masa depan.",
       c8_title: "SAP01 - SAP Overview",
-      c8_desc: "Menyelesaikan kursus SAP01 – SAP Overview melalui program kemitraan universitas SAP, memperoleh pengetahuan dasar tentang SAP serta tinjauan umum proses bisnis dan solusi perusahaan.",
+      c8_desc:
+        "Menyelesaikan kursus SAP01 – SAP Overview melalui program kemitraan universitas SAP, memperoleh pengetahuan dasar tentang SAP serta tinjauan umum proses bisnis dan solusi perusahaan.",
       contact_cta: "<span>Mari</span> ciptakan sesuatu bersama.",
       contact_btn: "Hubungi Saya",
     },
@@ -151,8 +172,12 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      cta_heading: '<span class="font-miracle text-[40px] leading-none sm:text-[42px]">Get</span> to know me closer',
+      cta_heading:
+        '<span class="font-miracle text-[40px] leading-none sm:text-[42px]">Get</span> to know me closer',
       cta_btn: "About Me",
+      profession_1: '<strong class="font-bold">System</strong> Development',
+      profession_2: 'Software <strong class="font-bold">Engineer</strong>',
+      profession_3: '<strong class="font-bold">Data</strong> Analysis',
     },
     about: {
       heading_main: "About",
@@ -175,9 +200,11 @@ const translations = {
       card_data_title: "Data Analysis",
       card_data_desc: "From raw data to clear insights.",
       card_data_aria: "Select Data Analysis category",
-      training_cta: "<span>Let's</span> discover my journey of continuous growth.",
+      training_cta:
+        "<span>Let's</span> discover my journey of continuous growth.",
       training_btn: "Certifications",
-      webdev_slogan: 'Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.',
+      webdev_slogan:
+        'Design, <span class="portfolio-slogan-script font-miracle">Build</span>, Experience.',
       prev_aria: "Previous Project",
       next_aria: "Next Project",
       fallback_preview: "Preview coming soon",
@@ -186,24 +213,33 @@ const translations = {
       data_next_aria: "Next Data Analysis Project",
     },
     cert: {
-      title: "Certifications & Training",
+      title: "Training",
       slogan: "<span>Proof</span> of learning, growth, and progress.",
       c1_title: "Coding Camp: Software Engineering",
-      c1_desc: "Certificate of attendance for a 1-week online course in Software Engineering, covering web development fundamentals and software development practices.",
-      c2_title: "Microsoft Office Excel, Word & PowerPoint Specialist Certification Bootcamp",
-      c2_desc: "Completed an Intermediate-level Microsoft Office Certification Bootcamp covering Microsoft Excel, Word, and PowerPoint, including data processing, formulas and functions, VLOOKUP, INDEX MATCH, Pivot Tables, reporting and interactive dashboards, VBA Macros, and a mini project.",
+      c1_desc:
+        "Certificate of attendance for a 1-week online course in Software Engineering, covering web development fundamentals and software development practices.",
+      c2_title:
+        "Microsoft Office Excel, Word & PowerPoint Specialist Certification Bootcamp",
+      c2_desc:
+        "Completed an Intermediate-level Microsoft Office Certification Bootcamp covering Microsoft Excel, Word, and PowerPoint, including data processing, formulas and functions, VLOOKUP, INDEX MATCH, Pivot Tables, reporting and interactive dashboards, VBA Macros, and a mini project.",
       c3_title: "Data Analyst Bootcamp",
-      c3_desc: "Completed an Intermediate-level Data Analyst Bootcamp covering data analysis fundamentals, data formatting and cleansing, systematic data analysis, SQL and Google BigQuery, Python and Google Colab, and data visualization and dashboard development using Power BI. The program also included a mini project to apply the concepts in a practical case.",
+      c3_desc:
+        "Completed an Intermediate-level Data Analyst Bootcamp covering data analysis fundamentals, data formatting and cleansing, systematic data analysis, SQL and Google BigQuery, Python and Google Colab, and data visualization and dashboard development using Power BI. The program also included a mini project to apply the concepts in a practical case.",
       c4_title: "Building Website with Lovable AI",
-      c4_desc: "Completed a short class focused on building websites with Lovable AI, exploring the use of artificial intelligence in the web development process.",
+      c4_desc:
+        "Completed a short class focused on building websites with Lovable AI, exploring the use of artificial intelligence in the web development process.",
       c5_title: "Index Match, Vlookup and Hlookup in Ms. Excel",
-      c5_desc: "MySkill Short Class focused on Index Match, VLOOKUP, and HLOOKUP functions in Microsoft Excel for data lookup and analysis.",
+      c5_desc:
+        "MySkill Short Class focused on Index Match, VLOOKUP, and HLOOKUP functions in Microsoft Excel for data lookup and analysis.",
       c6_title: "Python Introduction for Data Analysis",
-      c6_desc: "Completed a MySkill Short Class focused on using Python for data analysis, covering Python syntax, lists, tuples, sets, dictionaries, conditional statements, and data manipulation fundamentals.",
+      c6_desc:
+        "Completed a MySkill Short Class focused on using Python for data analysis, covering Python syntax, lists, tuples, sets, dictionaries, conditional statements, and data manipulation fundamentals.",
       c7_title: "Mini Course Data Analytics",
-      c7_desc: "Completed the RevoU Mini Course Data Analytics, covering the fundamentals of data analysis, Big Data, data analysis types and processes, spreadsheet-based analysis, the implementation of Big Data in industry, and the role of AI and automation in the future of data analytics careers.",
+      c7_desc:
+        "Completed the RevoU Mini Course Data Analytics, covering the fundamentals of data analysis, Big Data, data analysis types and processes, spreadsheet-based analysis, the implementation of Big Data in industry, and the role of AI and automation in the future of data analytics careers.",
       c8_title: "SAP01 - SAP Overview",
-      c8_desc: "Completed the SAP01 – SAP Overview course through the SAP University Partnership Program, gaining foundational knowledge of SAP and an overview of its business processes and enterprise solutions.",
+      c8_desc:
+        "Completed the SAP01 – SAP Overview course through the SAP University Partnership Program, gaining foundational knowledge of SAP and an overview of its business processes and enterprise solutions.",
       contact_cta: "<span>Let's</span> create something remarkable together.",
       contact_btn: "Contact Me",
     },
@@ -248,6 +284,13 @@ const setLanguage = (lang) => {
 
   // Update elements with data-i18n
   document.querySelectorAll("[data-i18n]").forEach((el) => {
+    // If element is a hero-typed-line and typewriter loop is active, avoid static overwrite
+    if (
+      el.classList.contains("hero-typed-line") &&
+      typeof window.__restartHeroTyping === "function"
+    ) {
+      return;
+    }
     const key = el.getAttribute("data-i18n");
     const text = getTranslationValue(lang, key);
     if (text !== null) {
@@ -267,6 +310,11 @@ const setLanguage = (lang) => {
       el.setAttribute("aria-label", text);
     }
   });
+
+  // Restart hero typewriter loop in the newly active language
+  if (typeof window.__restartHeroTyping === "function") {
+    window.__restartHeroTyping(lang);
+  }
 
   // Update active dynamic components
   if (typeof window.__refreshAboutModal === "function") {
@@ -300,10 +348,214 @@ const initLanguageSwitcher = () => {
 // Expose setLanguage globally for convenience
 window.__setPortfolioLanguage = setLanguage;
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initLanguageSwitcher);
-} else {
+// Hero Profession Typewriter Loop Controller
+const initHeroTypingAnimation = () => {
+  const linesElements = [
+    document.querySelector('.hero-typed-line[data-line="0"]'),
+    document.querySelector('.hero-typed-line[data-line="1"]'),
+    document.querySelector('.hero-typed-line[data-line="2"]'),
+  ];
+
+  if (!linesElements[0] || !linesElements[1] || !linesElements[2]) return;
+
+  const professionLines = [
+    {
+      segments: [
+        { text: "System", isBold: true },
+        { text: " Development", isBold: false },
+      ],
+      totalChars: 18,
+    },
+    {
+      segments: [
+        { text: "Software ", isBold: false },
+        { text: "Engineer", isBold: true },
+      ],
+      totalChars: 17,
+    },
+    {
+      segments: [
+        { text: "Data", isBold: true },
+        { text: " Analysis", isBold: false },
+      ],
+      totalChars: 13,
+    },
+  ];
+
+  const renderLineHtml = (config, count) => {
+    if (count <= 0) return "";
+    let remaining = count;
+    let html = "";
+    for (const seg of config.segments) {
+      if (remaining <= 0) break;
+      const take = Math.min(remaining, seg.text.length);
+      const slice = seg.text.slice(0, take);
+      if (seg.isBold) {
+        html += `<strong class="font-bold">${slice}</strong>`;
+      } else {
+        html += slice;
+      }
+      remaining -= take;
+    }
+    return html;
+  };
+
+  const renderFullLineHtml = (config) => {
+    return config.segments
+      .map((seg) =>
+        seg.isBold
+          ? `<strong class="font-bold">${seg.text}</strong>`
+          : seg.text,
+      )
+      .join("");
+  };
+
+  // If user prefers reduced motion, render all lines in full immediately and exit
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    linesElements.forEach((el, index) => {
+      const config = professionLines[index];
+      if (el && config) {
+        el.innerHTML = renderFullLineHtml(config);
+      }
+    });
+    return;
+  }
+
+  const cursor = document.createElement("span");
+  cursor.className = "hero-typing-cursor";
+  cursor.setAttribute("aria-hidden", "true");
+
+  let activeTimer = null;
+  let isStopped = false;
+
+  const clearTimer = () => {
+    if (activeTimer !== null) {
+      clearTimeout(activeTimer);
+      activeTimer = null;
+    }
+  };
+
+  const updateLineWithCursor = (lineIndex, count) => {
+    const lineEl = linesElements[lineIndex];
+    const config = professionLines[lineIndex];
+    if (!lineEl || !config) return;
+    lineEl.innerHTML = renderLineHtml(config, count);
+    lineEl.appendChild(cursor);
+  };
+
+  const stopAnimation = () => {
+    isStopped = true;
+    clearTimer();
+    if (cursor.parentNode) {
+      cursor.remove();
+    }
+  };
+
+  const startLoop = () => {
+    isStopped = false;
+    clearTimer();
+
+    // Clear all lines at start of cycle (min-height prevents layout jump)
+    linesElements.forEach((el) => {
+      el.innerHTML = "";
+    });
+
+    let currentLine = 0;
+    let currentChar = 1;
+
+    // Phase 1: Typing Forward
+    const typeStep = () => {
+      if (isStopped) return;
+
+      const config = professionLines[currentLine];
+      updateLineWithCursor(currentLine, currentChar);
+
+      if (currentChar < config.totalChars) {
+        currentChar++;
+        const typingDelay = 42 + Math.floor(Math.random() * 10);
+        activeTimer = setTimeout(typeStep, typingDelay);
+      } else {
+        // Line finished typing
+        if (currentLine < professionLines.length - 1) {
+          currentLine++;
+          currentChar = 1;
+          activeTimer = setTimeout(typeStep, 260);
+        } else {
+          // All 3 lines complete: Phase 2 - HOLDING for reading
+          activeTimer = setTimeout(startDeleting, 2300);
+        }
+      }
+    };
+
+    // Phase 3: Deleting Backward (Backspace reverse order: Line 2 -> Line 1 -> Line 0)
+    const startDeleting = () => {
+      if (isStopped) return;
+
+      let deleteLine = professionLines.length - 1; // start from line 2
+      let deleteChar = professionLines[deleteLine].totalChars - 1;
+
+      const deleteStep = () => {
+        if (isStopped) return;
+
+        if (deleteChar > 0) {
+          updateLineWithCursor(deleteLine, deleteChar);
+          deleteChar--;
+          const backspaceDelay = 26 + Math.floor(Math.random() * 6);
+          activeTimer = setTimeout(deleteStep, backspaceDelay);
+        } else {
+          // Line completely erased
+          linesElements[deleteLine].innerHTML = "";
+
+          if (deleteLine > 0) {
+            // Move cursor to end of previous line and continue backspacing
+            deleteLine--;
+            deleteChar = professionLines[deleteLine].totalChars;
+            updateLineWithCursor(deleteLine, deleteChar);
+            activeTimer = setTimeout(deleteStep, 180);
+          } else {
+            // All lines erased! Move cursor to start of line 0 and pause briefly
+            linesElements[0].appendChild(cursor);
+            // Phase 4: PAUSED_EMPTY -> then restart loop
+            activeTimer = setTimeout(startLoop, 550);
+          }
+        }
+      };
+
+      deleteStep();
+    };
+
+    typeStep();
+  };
+
+  // Expose restart handler when language changes
+  window.__restartHeroTyping = (newLang) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      stopAnimation();
+      linesElements.forEach((el, index) => {
+        const config = professionLines[index];
+        if (el && config) {
+          el.innerHTML = renderFullLineHtml(config);
+        }
+      });
+      return;
+    }
+    stopAnimation();
+    startLoop();
+  };
+
+  // Initial delay synchronized with hero entrance
+  activeTimer = setTimeout(startLoop, 650);
+};
+
+const initLandingFeatures = () => {
   initLanguageSwitcher();
+  initHeroTypingAnimation();
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLandingFeatures);
+} else {
+  initLandingFeatures();
 }
 
 // About Section Category Modal Controller (Glassmorphism Popup)
@@ -730,7 +982,9 @@ const initAboutModal = () => {
 
     // Highlight active pill
     aboutPills.forEach((pill) => {
-      const pillCategory = (pill.getAttribute("data-category") || "").trim().toLowerCase();
+      const pillCategory = (pill.getAttribute("data-category") || "")
+        .trim()
+        .toLowerCase();
       pill.classList.toggle("active", pillCategory === category);
     });
 
@@ -740,7 +994,8 @@ const initAboutModal = () => {
     aboutModalBody.scrollTop = 0;
 
     // Prevent body scroll and preserve scrollbar width to prevent layout shift
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     document.body.classList.add("about-modal-open");
     document.body.style.overflow = "hidden";
     if (scrollbarWidth > 0) {
@@ -780,7 +1035,10 @@ const initAboutModal = () => {
       document.body.classList.remove("about-modal-open");
       document.body.style.overflow = "";
       document.body.style.paddingRight = "";
-      if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      if (
+        lastFocusedElement &&
+        typeof lastFocusedElement.focus === "function"
+      ) {
         lastFocusedElement.focus();
       }
     }, 280);
@@ -789,7 +1047,9 @@ const initAboutModal = () => {
   // Bind click on about pills
   aboutPills.forEach((pill) => {
     pill.addEventListener("click", () => {
-      const category = (pill.getAttribute("data-category") || "").trim().toLowerCase();
+      const category = (pill.getAttribute("data-category") || "")
+        .trim()
+        .toLowerCase();
       openModal(category);
     });
   });
@@ -836,14 +1096,18 @@ if (document.readyState === "loading") {
 // Portfolio Section Controller
 const initializePortfolioSection = () => {
   const portfolioSection = document.getElementById("portofolio");
-  const portfolioCards = [...document.querySelectorAll(".portfolio-card[data-category]")];
+  const portfolioCards = [
+    ...document.querySelectorAll(".portfolio-card[data-category]"),
+  ];
   const statusText = document.querySelector(".portfolio-category-status");
   const gridView = document.getElementById("portfolio-grid-view");
   const detailView = document.getElementById("portfolio-detail-view");
   const backBtn = document.getElementById("portfolio-back-btn");
   const prevBtn = document.getElementById("portfolio-btn-prev");
   const nextBtn = document.getElementById("portfolio-btn-next");
-  const dataAnalysisDetailView = document.getElementById("data-analysis-detail-view");
+  const dataAnalysisDetailView = document.getElementById(
+    "data-analysis-detail-view",
+  );
   const dataAnalysisBackBtn = document.getElementById("data-analysis-back-btn");
   const dataAnalysisPrevBtn = document.getElementById("data-analysis-btn-prev");
   const dataAnalysisNextBtn = document.getElementById("data-analysis-btn-next");
@@ -875,8 +1139,10 @@ const initializePortfolioSection = () => {
         id: "Sistem rekomendasi kuliner berbasis web yang membantu pengguna menemukan tempat makan di Kabupaten Klaten sesuai dengan preferensi mereka. Dikembangkan menggunakan Flask dengan pendekatan hybrid switching yang menggabungkan Popularity-Based Filtering dan Content-Based Filtering untuk menghasilkan rekomendasi yang lebih relevan.",
         en: "A web-based culinary recommendation system that helps users find dining places in Klaten Regency according to their preferences. Developed using Flask with a hybrid switching approach that combines Popularity-Based Filtering and Content-Based Filtering to produce more relevant recommendations.",
       },
-      technologies: "Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn",
-      github: "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
+      technologies:
+        "Python · Flask · HTML · CSS · JavaScript · Pandas · Scikit-learn",
+      github:
+        "https://github.com/WisnuMcn/sistem-rekomendasi-kuliner-klaten.git",
       demo: "",
       image: "assets/images/Cap-KulinerKlaten.webp",
     },
@@ -952,7 +1218,8 @@ const initializePortfolioSection = () => {
         en: "Delivered actionable revenue insights including 2.30M in total sales, 286.40K in profit, category performance breakdowns, regional transaction distributions, and correlation models between sales volume and margin.",
       },
       technologies: "Python · Google Colab · Pandas · Matplotlib",
-      colab: "https://colab.research.google.com/drive/1WprA4d3xULcJ69CvRjru3leyh5fUilIX?usp=sharing",
+      colab:
+        "https://colab.research.google.com/drive/1WprA4d3xULcJ69CvRjru3leyh5fUilIX?usp=sharing",
       imageOne: "assets/images/projek1-1.webp",
       imageTwo: "assets/images/projek1-2.webp",
     },
@@ -969,8 +1236,10 @@ const initializePortfolioSection = () => {
         id: "Hasilnya, kedua algoritma menghasilkan 37 association rules. Rule dengan lift tertinggi pada keduanya adalah hubungan whole milk + other vegetables → root vegetables, dengan support 0,023, confidence 0,310, dan lift 2,842. Proyek juga membandingkan waktu eksekusi Apriori 0,0922 detik dengan FP-Growth 0,0489 detik, serta menyajikan visualisasi association rules melalui scatter plot dan network graph.",
         en: "Both algorithms extracted 37 association rules. The top lift rule was whole milk + other vegetables → root vegetables (support 0.023, confidence 0.310, lift 2.842). The project benchmarked execution speed (Apriori 0.0922s vs FP-Growth 0.0489s) alongside scatter plots and interactive network graphs.",
       },
-      technologies: "Python · Pandas · Mlxtend · Matplotlib · Seaborn · NetworkX",
-      colab: "https://colab.research.google.com/drive/1FkUNby4rNNbMR9VFuRuuAvRrOMmq3pAR?usp=sharing",
+      technologies:
+        "Python · Pandas · Mlxtend · Matplotlib · Seaborn · NetworkX",
+      colab:
+        "https://colab.research.google.com/drive/1FkUNby4rNNbMR9VFuRuuAvRrOMmq3pAR?usp=sharing",
       imageOne: "assets/images/Projek2-1.webp",
       imageTwo: "assets/images/Projek2-2.webp",
     },
@@ -987,8 +1256,10 @@ const initializePortfolioSection = () => {
         id: "Menghasilkan model klasifikasi citra yang dapat mengenali tiga kategori kematangan tomat, dengan akurasi validasi terbaik sebesar 96,88% pada proses training.",
         en: "Achieved high classification accuracy across all three stages, culminating in a peak validation accuracy of 96.88% during model training and evaluation.",
       },
-      technologies: "Python · Google Colab · TensorFlow · Keras · NumPy · Matplotlib",
-      colab: "https://colab.research.google.com/drive/1oUmiFEHamC8ObwzFDpOgXm9tWWJqIOIa?authuser=3#scrollTo=8dkd2_0-G34x",
+      technologies:
+        "Python · Google Colab · TensorFlow · Keras · NumPy · Matplotlib",
+      colab:
+        "https://colab.research.google.com/drive/1oUmiFEHamC8ObwzFDpOgXm9tWWJqIOIa?authuser=3#scrollTo=8dkd2_0-G34x",
       imageOne: "assets/images/Projek3-1.webp",
       imageTwo: "assets/images/Projek3-2.webp",
     },
@@ -1005,8 +1276,10 @@ const initializePortfolioSection = () => {
         id: "Menghasilkan model klasifikasi citra X-Ray dengan akurasi pengujian 90,54%, serta evaluasi menggunakan confusion matrix dan classification report untuk melihat performa klasifikasi NORMAL dan PNEUMONIA.",
         en: "Attained 90.54% test accuracy on unseen clinical scans, thoroughly validated with confusion matrices, ROC-AUC curves, and classification reports.",
       },
-      technologies: "Python · Google Colab · TensorFlow · Keras · DenseNet121 · NumPy · Matplotlib · Seaborn · Scikit-learn",
-      colab: "https://colab.research.google.com/drive/1wC_D90HGOuUEgKDLuIIYlZl1GQa3O45a?usp=sharing",
+      technologies:
+        "Python · Google Colab · TensorFlow · Keras · DenseNet121 · NumPy · Matplotlib · Seaborn · Scikit-learn",
+      colab:
+        "https://colab.research.google.com/drive/1wC_D90HGOuUEgKDLuIIYlZl1GQa3O45a?usp=sharing",
       imageOne: "assets/images/Projek4-1.webp",
       imageTwo: "assets/images/Projek4-2.webp",
     },
@@ -1059,7 +1332,10 @@ const initializePortfolioSection = () => {
     return techString
       .split(" · ")
       .map((tech) => {
-        const slug = tech.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        const slug = tech
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-");
         return `<span class="tech-name tech-${slug}">${tech.trim()}</span>`;
       })
       .join(' <span class="tech-dot">·</span> ');
@@ -1098,7 +1374,12 @@ const initializePortfolioSection = () => {
         githubEl.classList.add("portfolio-action-btn--disabled");
         githubEl.onclick = (e) => e.preventDefault();
       }
-      githubEl.setAttribute("aria-label", currentPortfolioLang === "en" ? `Github Repository ${itemTitle}` : `Repository Github ${itemTitle}`);
+      githubEl.setAttribute(
+        "aria-label",
+        currentPortfolioLang === "en"
+          ? `Github Repository ${itemTitle}`
+          : `Repository Github ${itemTitle}`,
+      );
     }
 
     // Tombol Demo — disabled jika URL kosong
@@ -1160,8 +1441,10 @@ const initializePortfolioSection = () => {
     }
 
     // Tentukan class animasi berdasarkan arah navigasi
-    const exitClass = direction === "next" ? "is-exiting-next" : "is-exiting-prev";
-    const enterClass = direction === "next" ? "is-entering-next" : "is-entering-prev";
+    const exitClass =
+      direction === "next" ? "is-exiting-next" : "is-exiting-prev";
+    const enterClass =
+      direction === "next" ? "is-entering-next" : "is-entering-prev";
 
     // Fase 1: slide exit — card saat ini bergerak keluar
     card.classList.add(exitClass);
@@ -1189,7 +1472,6 @@ const initializePortfolioSection = () => {
         card.classList.remove(enterClass);
         isWebDevAnimating = false;
       }, 500);
-
     }, 290);
   };
 
@@ -1231,8 +1513,12 @@ const initializePortfolioSection = () => {
     if (!item) return;
 
     const titleEl = document.getElementById("data-analysis-title");
-    const leftDescriptionEl = document.getElementById("data-analysis-description-left");
-    const rightDescriptionEl = document.getElementById("data-analysis-description-right");
+    const leftDescriptionEl = document.getElementById(
+      "data-analysis-description-left",
+    );
+    const rightDescriptionEl = document.getElementById(
+      "data-analysis-description-right",
+    );
     const techEl = document.getElementById("data-analysis-tech");
     const colabEl = document.getElementById("data-analysis-colab");
     const imageOneEl = document.getElementById("data-analysis-image-one");
@@ -1250,13 +1536,22 @@ const initializePortfolioSection = () => {
       if (item.colab) {
         colabEl.style.display = "";
         colabEl.href = item.colab;
-        colabEl.setAttribute("aria-label", currentPortfolioLang === "en" ? `Open ${itemTitle} in Google Colab` : `Buka ${itemTitle} di Google Colab`);
+        colabEl.setAttribute(
+          "aria-label",
+          currentPortfolioLang === "en"
+            ? `Open ${itemTitle} in Google Colab`
+            : `Buka ${itemTitle} di Google Colab`,
+        );
       } else {
         colabEl.style.display = "none";
       }
     }
 
-    updateDataAnalysisImage(imageOneEl, item.imageOne, `Dashboard ${itemTitle}`);
+    updateDataAnalysisImage(
+      imageOneEl,
+      item.imageOne,
+      `Dashboard ${itemTitle}`,
+    );
     updateDataAnalysisImage(imageTwoEl, item.imageTwo, `Insight ${itemTitle}`);
     updateDataAnalysisNavigation();
   };
@@ -1274,8 +1569,10 @@ const initializePortfolioSection = () => {
     if (!card) return;
 
     isDataAnalysisAnimating = true;
-    const exitClass = direction === "next" ? "is-exiting-next" : "is-exiting-prev";
-    const enterClass = direction === "next" ? "is-entering-next" : "is-entering-prev";
+    const exitClass =
+      direction === "next" ? "is-exiting-next" : "is-exiting-prev";
+    const enterClass =
+      direction === "next" ? "is-entering-next" : "is-entering-prev";
 
     card.classList.add(exitClass);
     setTimeout(() => {
@@ -1285,10 +1582,14 @@ const initializePortfolioSection = () => {
       void card.offsetWidth;
       card.classList.add(enterClass);
 
-      card.addEventListener("animationend", () => {
-        card.classList.remove(enterClass);
-        isDataAnalysisAnimating = false;
-      }, { once: true });
+      card.addEventListener(
+        "animationend",
+        () => {
+          card.classList.remove(enterClass);
+          isDataAnalysisAnimating = false;
+        },
+        { once: true },
+      );
 
       setTimeout(() => {
         card.classList.remove(enterClass);
@@ -1310,9 +1611,13 @@ const initializePortfolioSection = () => {
     // Trigger animasi enter pada detail view
     void detailView.offsetWidth; // force reflow
     detailView.classList.add("is-entering");
-    detailView.addEventListener("animationend", () => {
-      detailView.classList.remove("is-entering");
-    }, { once: true });
+    detailView.addEventListener(
+      "animationend",
+      () => {
+        detailView.classList.remove("is-entering");
+      },
+      { once: true },
+    );
 
     updateWebDevContent();
 
@@ -1322,7 +1627,8 @@ const initializePortfolioSection = () => {
     }
 
     // Scroll ke section portofolio secara smooth
-    const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
+    const scrollTop =
+      portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({
       top: Math.max(scrollTop, 0),
       behavior: "smooth",
@@ -1331,7 +1637,10 @@ const initializePortfolioSection = () => {
 
   // Animasi Kembali: detail view slide out → grid view slide in
   const showGridView = (detailViewToHide) => {
-    const targetView = (detailViewToHide && detailViewToHide.classList) ? detailViewToHide : detailView;
+    const targetView =
+      detailViewToHide && detailViewToHide.classList
+        ? detailViewToHide
+        : detailView;
     if (!gridView || !targetView) return;
 
     // Fase 1: detail view bergerak keluar (slide down + fade out)
@@ -1346,26 +1655,37 @@ const initializePortfolioSection = () => {
       // Trigger animasi masuk pada grid view
       void gridView.offsetWidth; // force reflow
       gridView.classList.add("is-entering");
-      gridView.addEventListener("animationend", () => {
-        gridView.classList.remove("is-entering");
-      }, { once: true });
+      gridView.addEventListener(
+        "animationend",
+        () => {
+          gridView.classList.remove("is-entering");
+        },
+        { once: true },
+      );
 
       // Safety timeout jika animationend tidak terpanggil
       setTimeout(() => gridView.classList.remove("is-entering"), 500);
-
     }, 350);
   };
 
   // Fungsi helper: cek apakah saat ini sedang menampilkan detail view
   const isDetailViewActive = () => {
-    return (detailView && !detailView.classList.contains("hidden")) ||
-           (dataAnalysisDetailView && !dataAnalysisDetailView.classList.contains("hidden"));
+    return (
+      (detailView && !detailView.classList.contains("hidden")) ||
+      (dataAnalysisDetailView &&
+        !dataAnalysisDetailView.classList.contains("hidden"))
+    );
   };
 
   // Fungsi helper: mendapatkan detail view yang aktif saat ini
   const getActiveDetailView = () => {
-    if (detailView && !detailView.classList.contains("hidden")) return detailView;
-    if (dataAnalysisDetailView && !dataAnalysisDetailView.classList.contains("hidden")) return dataAnalysisDetailView;
+    if (detailView && !detailView.classList.contains("hidden"))
+      return detailView;
+    if (
+      dataAnalysisDetailView &&
+      !dataAnalysisDetailView.classList.contains("hidden")
+    )
+      return dataAnalysisDetailView;
     return null;
   };
 
@@ -1379,9 +1699,13 @@ const initializePortfolioSection = () => {
     dataAnalysisDetailView.classList.remove("hidden");
     void dataAnalysisDetailView.offsetWidth;
     dataAnalysisDetailView.classList.add("is-entering");
-    dataAnalysisDetailView.addEventListener("animationend", () => {
-      dataAnalysisDetailView.classList.remove("is-entering");
-    }, { once: true });
+    dataAnalysisDetailView.addEventListener(
+      "animationend",
+      () => {
+        dataAnalysisDetailView.classList.remove("is-entering");
+      },
+      { once: true },
+    );
 
     updateDataAnalysisContent();
 
@@ -1390,7 +1714,8 @@ const initializePortfolioSection = () => {
       history.pushState({ portfolioView: "data-analysis" }, "");
     }
 
-    const scrollTop = portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
+    const scrollTop =
+      portfolioSection.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({ top: Math.max(scrollTop, 0), behavior: "smooth" });
   };
 
@@ -1417,7 +1742,8 @@ const initializePortfolioSection = () => {
   // Tombol Prev → slide ke kiri (project sebelumnya masuk dari kiri)
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
-      const newIndex = (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
+      const newIndex =
+        (currentWebDevIndex - 1 + webDevItems.length) % webDevItems.length;
       navigateWebDev(newIndex, "prev");
     });
   }
@@ -1459,14 +1785,17 @@ const initializePortfolioSection = () => {
 
   if (dataAnalysisNextBtn) {
     dataAnalysisNextBtn.addEventListener("click", () => {
-      const newIndex = (currentDataAnalysisIndex + 1) % dataAnalysisItems.length;
+      const newIndex =
+        (currentDataAnalysisIndex + 1) % dataAnalysisItems.length;
       navigateDataAnalysis(newIndex, "next");
     });
   }
 
   if (dataAnalysisPrevBtn) {
     dataAnalysisPrevBtn.addEventListener("click", () => {
-      const newIndex = (currentDataAnalysisIndex - 1 + dataAnalysisItems.length) % dataAnalysisItems.length;
+      const newIndex =
+        (currentDataAnalysisIndex - 1 + dataAnalysisItems.length) %
+        dataAnalysisItems.length;
       navigateDataAnalysis(newIndex, "prev");
     });
   }
@@ -1479,28 +1808,33 @@ const initializePortfolioSection = () => {
     hasRevealedPortfolio = true;
 
     portfolioCards.forEach((card, index) => {
-      const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : index * 140;
+      const delay = window.matchMedia("(prefers-reduced-motion: reduce)")
+        .matches
+        ? 0
+        : index * 140;
       window.setTimeout(() => card.classList.add("is-visible"), delay);
     });
   };
 
-  document.querySelectorAll(".portfolio-card-cover[data-src]").forEach((cover) => {
-    const coverPath = cover.dataset.src;
-    const card = cover.closest(".portfolio-card");
+  document
+    .querySelectorAll(".portfolio-card-cover[data-src]")
+    .forEach((cover) => {
+      const coverPath = cover.dataset.src;
+      const card = cover.closest(".portfolio-card");
 
-    if (!coverPath || !card) return;
+      if (!coverPath || !card) return;
 
-    const coverLoader = new Image();
-    coverLoader.onload = () => {
-      cover.src = coverPath;
-      card.classList.add("has-cover");
-    };
-    coverLoader.onerror = () => {
-      cover.removeAttribute("src");
-      card.classList.add("has-fallback-cover");
-    };
-    coverLoader.src = coverPath;
-  });
+      const coverLoader = new Image();
+      coverLoader.onload = () => {
+        cover.src = coverPath;
+        card.classList.add("has-cover");
+      };
+      coverLoader.onerror = () => {
+        cover.removeAttribute("src");
+        card.classList.add("has-fallback-cover");
+      };
+      coverLoader.src = coverPath;
+    });
 
   portfolioCards.forEach((card) => {
     card.addEventListener("pointermove", (event) => {
@@ -1516,7 +1850,9 @@ const initializePortfolioSection = () => {
       const category = card.dataset.category;
       const label = categoryLabels[category] || category;
 
-      portfolioCards.forEach((item) => item.classList.toggle("is-selected", item === card));
+      portfolioCards.forEach((item) =>
+        item.classList.toggle("is-selected", item === card),
+      );
       portfolioSection.dataset.activeCategory = category;
 
       if (category === "frontend") {
@@ -1525,9 +1861,10 @@ const initializePortfolioSection = () => {
         showDataAnalysisDetail();
       } else {
         if (statusText) {
-          statusText.textContent = currentPortfolioLang === "en"
-            ? `${label} selected. Category detail view will be developed in the next stage.`
-            : `${label} dipilih. Tampilan detail kategori akan dikembangkan pada tahap berikutnya.`;
+          statusText.textContent =
+            currentPortfolioLang === "en"
+              ? `${label} selected. Category detail view will be developed in the next stage.`
+              : `${label} dipilih. Tampilan detail kategori akan dikembangkan pada tahap berikutnya.`;
         }
       }
 
@@ -1535,7 +1872,7 @@ const initializePortfolioSection = () => {
         new CustomEvent("portfolio:category-selected", {
           bubbles: true,
           detail: { category, label },
-        })
+        }),
       );
     });
   });
@@ -1543,11 +1880,15 @@ const initializePortfolioSection = () => {
   const isPortfolioInView = () => {
     const rect = portfolioSection.getBoundingClientRect();
 
-    return rect.top < window.innerHeight * 0.85 && rect.bottom > window.innerHeight * 0.15;
+    return (
+      rect.top < window.innerHeight * 0.85 &&
+      rect.bottom > window.innerHeight * 0.15
+    );
   };
 
   const revealIfInView = () => {
-    if (window.location.hash === "#portofolio" || isPortfolioInView()) revealCards();
+    if (window.location.hash === "#portofolio" || isPortfolioInView())
+      revealCards();
   };
 
   if ("IntersectionObserver" in window) {
@@ -1561,7 +1902,7 @@ const initializePortfolioSection = () => {
       {
         rootMargin: "0px 0px -18% 0px",
         threshold: 0.18,
-      }
+      },
     );
 
     portfolioObserver.observe(portfolioSection);
@@ -1581,7 +1922,9 @@ if (document.readyState === "loading") {
 // Certification Section Controller
 const initializeCertificationSection = () => {
   const certificationSection = document.getElementById("sertifikasi");
-  const certificationCards = [...document.querySelectorAll(".certification-card")];
+  const certificationCards = [
+    ...document.querySelectorAll(".certification-card"),
+  ];
 
   if (!certificationSection) return;
 
@@ -1615,11 +1958,15 @@ const initializeCertificationSection = () => {
   const isCertificationInView = () => {
     const rect = certificationSection.getBoundingClientRect();
 
-    return rect.top < window.innerHeight * 0.82 && rect.bottom > window.innerHeight * 0.12;
+    return (
+      rect.top < window.innerHeight * 0.82 &&
+      rect.bottom > window.innerHeight * 0.12
+    );
   };
 
   const revealIfInView = () => {
-    if (window.location.hash === "#sertifikasi" || isCertificationInView()) revealSection();
+    if (window.location.hash === "#sertifikasi" || isCertificationInView())
+      revealSection();
   };
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -1638,7 +1985,7 @@ const initializeCertificationSection = () => {
       {
         rootMargin: "0px 0px -18% 0px",
         threshold: 0.18,
-      }
+      },
     );
 
     certificationObserver.observe(certificationSection);
@@ -1682,7 +2029,7 @@ const initializeKontakSection = () => {
       {
         rootMargin: "0px 0px -15% 0px",
         threshold: 0.15,
-      }
+      },
     );
 
     kontakObserver.observe(kontakSection);
@@ -1696,4 +2043,3 @@ if (document.readyState === "loading") {
 } else {
   initializeKontakSection();
 }
-
