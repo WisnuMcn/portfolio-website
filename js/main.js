@@ -216,6 +216,7 @@ const translations = {
     },
     modal: {
       close_aria: "Tutup jendela informasi",
+      view_certificate: "Lihat Sertifikat",
     },
   },
   en: {
@@ -324,6 +325,7 @@ const translations = {
     },
     modal: {
       close_aria: "Close information modal",
+      view_certificate: "View Certificate",
     },
   },
 };
@@ -1301,41 +1303,29 @@ const initAboutModal = () => {
       pendidikan: `
         <div class="flex flex-col gap-4 text-left">
           <!-- SMK Leonardo Klaten -->
-          <div class="about-modal-card-item group">
+          <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex items-start gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
-                  Teknik Mekatronika
-                </p>
-              </div>
+            <div class="relative z-10 flex-1 pr-20 sm:pr-28">
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">SMK Leonardo Klaten</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+                Teknik Mekatronika
+              </p>
             </div>
+            <img src="assets/images/logo_smkleonardo.png" alt="Logo SMK Leonardo Klaten" class="about-modal-school-logo about-modal-school-logo--leonardo" loading="lazy" aria-hidden="true" />
           </div>
 
           <!-- Universitas Sanata Dharma -->
-          <div class="about-modal-card-item group">
+          <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex items-start gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
-                  S1-Informatika
-                </p>
-              </div>
+            <div class="relative z-10 flex-1 pr-20 sm:pr-28">
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">Universitas Sanata Dharma</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+                S1-Informatika
+              </p>
             </div>
+            <img src="assets/images/logo_usd.png" alt="Logo Universitas Sanata Dharma" class="about-modal-school-logo about-modal-school-logo--usd" loading="lazy" aria-hidden="true" />
           </div>
         </div>
       `,
@@ -1344,13 +1334,31 @@ const initAboutModal = () => {
           <!-- PT. Chemco Harapan Nusantara -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
               <div>
                 <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h4>
                 <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                15 Januari 2020 – 14 Maret 2020
+              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                  15 Januari 2020 – 14 Maret 2020
+                </div>
+                <a
+                  href="assets/documents/sertifikat_Chemco.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-emerald-pill about-modal-cert-btn"
+                  aria-label="Lihat Sertifikat PT. Chemco Harapan Nusantara (buka di tab baru)"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-cert-icon" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span data-i18n="modal.view_certificate">Lihat Sertifikat</span>
+                </a>
               </div>
             </div>
             <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
@@ -1368,13 +1376,31 @@ const initAboutModal = () => {
           <!-- PT. Panacipta Seinan Components -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
               <div>
                 <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h4>
                 <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing dan Packing</p>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                29 Juni 2021 – 18 April 2022
+              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                  29 Juni 2021 – 18 April 2022
+                </div>
+                <a
+                  href="assets/documents/sertifikat_Panacipta.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-emerald-pill about-modal-cert-btn"
+                  aria-label="Lihat Sertifikat PT. Panacipta Seinan Components (buka di tab baru)"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-cert-icon" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span data-i18n="modal.view_certificate">Lihat Sertifikat</span>
+                </a>
               </div>
             </div>
             <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
@@ -1483,41 +1509,29 @@ const initAboutModal = () => {
       pendidikan: `
         <div class="flex flex-col gap-4 text-left">
           <!-- SMK Leonardo Klaten -->
-          <div class="about-modal-card-item group">
+          <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex items-start gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
-                  Mechatronics Engineering
-                </p>
-              </div>
+            <div class="relative z-10 flex-1 pr-20 sm:pr-28">
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">SMK Leonardo Klaten</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+                Mechatronics Engineering
+              </p>
             </div>
+            <img src="assets/images/logo_smkleonardo.png" alt="Logo SMK Leonardo Klaten" class="about-modal-school-logo about-modal-school-logo--leonardo" loading="lazy" aria-hidden="true" />
           </div>
 
           <!-- Universitas Sanata Dharma -->
-          <div class="about-modal-card-item group">
+          <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex items-start gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/60 transition-all duration-300 group-hover:scale-110 group-hover:text-leaf group-hover:border-leaf/30 group-hover:bg-leaf/5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A5.905 5.905 0 018 3.44a50.45 50.45 0 019.103 0 5.905 5.905 0 014.887 5.894c0 .285-.02.569-.06.85m-18.411 0L12 14.654l8.232-4.802" />
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-1.5 group-hover:text-leaf transition-colors duration-300">
-                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
-                  Bachelor of Informatics
-                </p>
-              </div>
+            <div class="relative z-10 flex-1 pr-20 sm:pr-28">
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">Universitas Sanata Dharma</h4>
+              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+                Bachelor of Informatics
+              </p>
             </div>
+            <img src="assets/images/logo_usd.png" alt="Logo Universitas Sanata Dharma" class="about-modal-school-logo about-modal-school-logo--usd" loading="lazy" aria-hidden="true" />
           </div>
         </div>
       `,
@@ -1526,13 +1540,31 @@ const initAboutModal = () => {
           <!-- PT. Chemco Harapan Nusantara -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
               <div>
                 <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h4>
                 <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                15 January 2020 – 14 March 2020
+              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                  15 January 2020 – 14 March 2020
+                </div>
+                <a
+                  href="assets/documents/sertifikat_Chemco.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-emerald-pill about-modal-cert-btn"
+                  aria-label="View Certificate PT. Chemco Harapan Nusantara (opens in new tab)"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-cert-icon" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span data-i18n="modal.view_certificate">View Certificate</span>
+                </a>
               </div>
             </div>
             <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
@@ -1550,13 +1582,31 @@ const initAboutModal = () => {
           <!-- PT. Panacipta Seinan Components -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
               <div>
                 <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h4>
                 <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing and Packaging</p>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                29 June 2021 – 18 April 2022
+              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                  29 June 2021 – 18 April 2022
+                </div>
+                <a
+                  href="assets/documents/sertifikat_Panacipta.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-emerald-pill about-modal-cert-btn"
+                  aria-label="View Certificate PT. Panacipta Seinan Components (opens in new tab)"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-cert-icon" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span data-i18n="modal.view_certificate">View Certificate</span>
+                </a>
               </div>
             </div>
             <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
