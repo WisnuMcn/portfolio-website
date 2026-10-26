@@ -167,10 +167,14 @@ body {
   transform: translateY(-1px);
 }
 
+.site-nav {
+  width: min(96vw, 690px) !important;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .nav-divider {
@@ -239,17 +243,18 @@ body {
 
 @media (max-width: 767px) {
   .site-nav {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    font-size: 12.5px !important;
+    width: min(96vw, 560px) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 11.5px !important;
   }
 
   .nav-links {
-    gap: 8px;
+    gap: 7px;
   }
 
   .nav-link {
-    font-size: 11px;
+    font-size: 10.5px;
     padding: 3px 0;
   }
 
@@ -270,25 +275,10 @@ body {
 
 @media (max-width: 440px) {
   .site-nav {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
   }
 
-  .nav-links {
-    gap: 5px;
-  }
-
-  .nav-link {
-    font-size: 10px;
-  }
-
-  .lang-btn {
-    font-size: 9.5px;
-    padding: 1.5px 5px;
-  }
-}
-
-@media (max-width: 360px) {
   .nav-links {
     gap: 4px;
   }
@@ -299,7 +289,22 @@ body {
 
   .lang-btn {
     font-size: 9px;
-    padding: 1px 4px;
+    padding: 1.5px 4.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-links {
+    gap: 2.5px;
+  }
+
+  .nav-link {
+    font-size: 8px;
+  }
+
+  .lang-btn {
+    font-size: 8px;
+    padding: 1px 3px;
   }
 }
 
@@ -745,7 +750,7 @@ body {
 .tech-cards-track {
   display: inline-flex;
   align-items: center;
-  gap: clamp(14px, 1.4vw, 22px);
+  gap: 0;
   padding: 0 clamp(32px, 5vw, 90px);
   transform-style: preserve-3d;
   will-change: transform;
@@ -764,6 +769,7 @@ body {
   width: clamp(126px, 9.5vw, 146px);
   height: clamp(170px, 12.8vw, 194px);
   flex-shrink: 0;
+  margin: 0 clamp(-11px, -0.85vw, -6px);
   border-radius: 20px;
   background: linear-gradient(168deg, #ffffff 0%, #f4f6f5 100%);
   border: 1px solid rgba(255, 255, 255, 0.85);
@@ -775,7 +781,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 10px 12px;
+  padding: 12px 10px 11px;
   transform: translateY(var(--wave-y)) rotate(var(--wave-rot)) scale(var(--dyn-scale)) rotateY(var(--dyn-rot-y));
   opacity: var(--dyn-opacity);
   transform-style: preserve-3d;
@@ -806,39 +812,45 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 2px;
 }
 
 .tech-card-badge {
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  border: none;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #047857;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.18);
   line-height: 1.2;
 }
 
 .tech-card-logo-box {
-  width: clamp(52px, 4.6vw, 64px);
-  height: clamp(52px, 4.6vw, 64px);
+  width: 100%;
+  flex: 1;
+  min-height: clamp(74px, 6.8vw, 92px);
+  max-height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 6px 0;
+  margin: 4px 0 6px;
+  padding: 0 4px;
   position: relative;
 }
 
 .tech-card-logo {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  object-position: center;
   transition: transform 240ms ease;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
 }
 
 .tech-card:hover .tech-card-logo {
@@ -850,8 +862,8 @@ body {
 }
 
 .tech-card-fallback {
-  width: 100%;
-  height: 100%;
+  width: clamp(58px, 5vw, 72px);
+  height: clamp(58px, 5vw, 72px);
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(25, 214, 111, 0.15) 0%, rgba(20, 26, 22, 0.08) 100%);
   border: 1px dashed rgba(25, 214, 111, 0.4);
@@ -876,7 +888,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
   width: 100%;
 }
 
@@ -885,7 +897,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 13px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
   color: #0f172a;
   text-align: center;
   white-space: nowrap;
@@ -903,24 +915,27 @@ body {
 }
 
 .tech-cards-hint {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 18px;
+  gap: 7px;
+  margin-top: 22px;
+  margin-left: clamp(4px, 1.2vw, 16px);
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.6);
   pointer-events: none;
+  text-align: left;
 }
 
 .tech-hint-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #19d66f;
-  box-shadow: 0 0 8px #19d66f;
-  animation: pulseHintDot 2s infinite ease-in-out;
+  box-shadow: 0 0 6px #19d66f;
+  animation: pulseHintDot 2.2s infinite ease-in-out;
 }
 
 @keyframes pulseHintDot {
@@ -2457,7 +2472,13 @@ body {
   .tech-card {
     width: 120px;
     height: 164px;
-    padding: 12px 8px 10px;
+    padding: 10px 6px 9px;
+    margin: 0 -7px;
+  }
+
+  .tech-card-logo-box {
+    min-height: 68px;
+    max-height: 78px;
   }
 
   .tech-card-name {
@@ -2469,8 +2490,10 @@ body {
   }
 
   .tech-cards-hint {
-    font-size: 11.5px;
-    margin-top: 12px;
+    align-self: flex-start;
+    font-size: 11px;
+    margin-top: 14px;
+    margin-left: 2px;
   }
 }
 

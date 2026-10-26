@@ -18,6 +18,7 @@ const setActiveLink = (targetId) => {
 const getScrollOffset = (targetId) => {
   if (targetId === "tentang-saya") return 0;
   if (targetId === "beranda") return 0;
+  if (targetId === "tech-stack") return 0;
 
   return 72;
 };
@@ -79,6 +80,7 @@ const translations = {
     nav: {
       home: "Beranda",
       about: "Tentang Saya",
+      tech: "Tech Stack",
       portfolio: "Portofolio",
       training: "Pelatihan",
       contact: "Kontak",
@@ -183,6 +185,7 @@ const translations = {
     nav: {
       home: "Home",
       about: "About Me",
+      tech: "Tech Stack",
       portfolio: "Portfolio",
       training: "Certifications",
       contact: "Contact",
