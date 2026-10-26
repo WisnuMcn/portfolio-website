@@ -42,18 +42,48 @@
         aria-label="Navigasi utama"
       >
         <div class="nav-links">
-          <a class="nav-link active" href="#beranda" data-i18n="nav.home">Beranda</a>
-          <a class="nav-link" href="#tentang-saya" data-i18n="nav.about">Tentang Saya</a>
-          <a class="nav-link" href="#tech-stack" data-i18n="nav.tech">Tech Stack</a>
-          <a class="nav-link" href="#portofolio" data-i18n="nav.portfolio">Portofolio</a>
-          <a class="nav-link" href="#sertifikasi" data-i18n="nav.training">Pelatihan</a>
+          <a class="nav-link active" href="#beranda" data-i18n="nav.home"
+            >Beranda</a
+          >
+          <a class="nav-link" href="#tentang-saya" data-i18n="nav.about"
+            >Tentang Saya</a
+          >
+          <a class="nav-link" href="#tech-stack" data-i18n="nav.tech"
+            >Tech Stack</a
+          >
+          <a class="nav-link" href="#portofolio" data-i18n="nav.portfolio"
+            >Portofolio</a
+          >
+          <a class="nav-link" href="#sertifikasi" data-i18n="nav.training"
+            >Pelatihan</a
+          >
           <a class="nav-link" href="#kontak" data-i18n="nav.contact">Kontak</a>
         </div>
         <div class="nav-divider" aria-hidden="true"></div>
-        <div class="lang-switcher" role="group" aria-label="Pilih Bahasa / Language Selector">
-          <button type="button" class="lang-btn is-active" data-lang="id" aria-label="Bahasa Indonesia" aria-pressed="true">ID</button>
+        <div
+          class="lang-switcher"
+          role="group"
+          aria-label="Pilih Bahasa / Language Selector"
+        >
+          <button
+            type="button"
+            class="lang-btn is-active"
+            data-lang="id"
+            aria-label="Bahasa Indonesia"
+            aria-pressed="true"
+          >
+            ID
+          </button>
           <span class="lang-sep" aria-hidden="true">|</span>
-          <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          <button
+            type="button"
+            class="lang-btn"
+            data-lang="en"
+            aria-label="English"
+            aria-pressed="false"
+          >
+            EN
+          </button>
         </div>
       </nav>
     </header>
@@ -64,6 +94,36 @@
         id="beranda"
         class="hero-section relative isolate min-h-screen overflow-hidden bg-ink"
       >
+        <!-- Download CV Button -->
+        <a
+          href="assets/documents/cv-wisnuaguswicaksono.pdf"
+          download="CV-WisnuAgusWicaksono.pdf"
+          class="hero-cv-btn"
+          aria-label="Unduh CV Wisnu Agus Wicaksono"
+          data-i18n-aria="hero.download_cv_aria"
+        >
+          <svg
+            class="hero-cv-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span class="hero-cv-text" data-i18n="hero.download_cv"
+            >Unduh CV</span
+          >
+        </a>
+
         <div class="hero-scene relative min-h-screen w-full">
           <div
             class="hero-layout mx-auto grid min-h-screen w-full max-w-[1440px] grid-cols-1 items-center px-6 pb-20 pt-20 sm:px-10 sm:pb-24 sm:pt-24 lg:grid-cols-[minmax(350px,0.82fr)_minmax(420px,1.18fr)_minmax(310px,0.76fr)] lg:px-[50px] lg:pb-0 lg:pt-0"
@@ -89,9 +149,27 @@
                 class="reveal-copy hero-typing-container mt-8 text-[19px] leading-[1.25] text-white sm:mt-9 sm:text-[21px] lg:mt-10 lg:text-[23px] xl:text-[24px]"
                 aria-label="System Development, Software Engineer, Data Analysis"
               >
-                <p class="hero-typed-line" data-line="0" data-i18n="hero.profession_1"><strong class="font-bold">System</strong> Development</p>
-                <p class="hero-typed-line" data-line="1" data-i18n="hero.profession_2">Software <strong class="font-bold">Engineer</strong></p>
-                <p class="hero-typed-line" data-line="2" data-i18n="hero.profession_3"><strong class="font-bold">Data</strong> Analysis</p>
+                <p
+                  class="hero-typed-line"
+                  data-line="0"
+                  data-i18n="hero.profession_1"
+                >
+                  <strong class="font-bold">System</strong> Development
+                </p>
+                <p
+                  class="hero-typed-line"
+                  data-line="1"
+                  data-i18n="hero.profession_2"
+                >
+                  Software <strong class="font-bold">Engineer</strong>
+                </p>
+                <p
+                  class="hero-typed-line"
+                  data-line="2"
+                  data-i18n="hero.profession_3"
+                >
+                  <strong class="font-bold">Data</strong> Analysis
+                </p>
               </div>
             </article>
 
@@ -145,12 +223,22 @@
         <div class="about-inner">
           <div class="about-left">
             <!-- About Heading -->
-            <div class="about-heading scroll-reveal" style="--reveal-delay: 0ms;" id="about-title">
-              <h2 class="about-title-main" data-i18n="about.heading">Tentang Saya</h2>
+            <div
+              class="about-heading scroll-reveal"
+              style="--reveal-delay: 0ms"
+              id="about-title"
+            >
+              <h2 class="about-title-main" data-i18n="about.heading">
+                Tentang Saya
+              </h2>
             </div>
 
             <!-- About Description -->
-            <article class="about-description scroll-reveal" style="--reveal-delay: 180ms;" aria-label="Deskripsi profil">
+            <article
+              class="about-description scroll-reveal"
+              style="--reveal-delay: 180ms"
+              aria-label="Deskripsi profil"
+            >
               <p data-i18n="about.p1">
                 Perkenalkan, saya Wisnu Agus Wicaksono, lulusan S1 Informatika
                 Universitas Sanata Dharma dengan fokus pada System Development
@@ -182,14 +270,41 @@
 
             <!-- Static Info Buttons -->
             <div class="about-actions" aria-label="Kategori informasi profil">
-              <button class="about-pill scroll-reveal" style="--reveal-delay: 260ms;" type="button" data-category="pendidikan" data-i18n="about.btn_education">Pendidikan</button>
-              <button class="about-pill scroll-reveal" style="--reveal-delay: 340ms;" type="button" data-category="pengalaman" data-i18n="about.btn_experience">Pengalaman</button>
-              <button class="about-pill scroll-reveal" style="--reveal-delay: 420ms;" type="button" data-category="organisasi" data-i18n="about.btn_organization">Organisasi</button>
+              <button
+                class="about-pill scroll-reveal"
+                style="--reveal-delay: 260ms"
+                type="button"
+                data-category="pendidikan"
+                data-i18n="about.btn_education"
+              >
+                Pendidikan
+              </button>
+              <button
+                class="about-pill scroll-reveal"
+                style="--reveal-delay: 340ms"
+                type="button"
+                data-category="pengalaman"
+                data-i18n="about.btn_experience"
+              >
+                Pengalaman
+              </button>
+              <button
+                class="about-pill scroll-reveal"
+                style="--reveal-delay: 420ms"
+                type="button"
+                data-category="organisasi"
+                data-i18n="about.btn_organization"
+              >
+                Organisasi
+              </button>
             </div>
           </div>
 
           <!-- About Portrait -->
-          <figure class="about-portrait scroll-reveal" style="--reveal-delay: 140ms;">
+          <figure
+            class="about-portrait scroll-reveal"
+            style="--reveal-delay: 140ms"
+          >
             <img
               src="assets/images/Profil-TentangSaya.webp"
               alt="Portrait profil Wisnu Agus Wicaksono"
@@ -203,7 +318,7 @@
           <!-- Tech Stack CTA -->
           <aside
             class="about-portfolio-cta about-tech-cta scroll-reveal"
-            style="--reveal-delay: 500ms;"
+            style="--reveal-delay: 500ms"
             aria-label="Ajakan menjelajahi tech stack"
           >
             <p data-i18n="about.tech_cta">
@@ -234,17 +349,31 @@
         </div>
 
         <div class="tech-stack-inner">
-          <header class="tech-stack-header scroll-reveal" style="--reveal-delay: 0ms;">
-            <h2 id="tech-stack-title" class="tech-stack-title" data-i18n="tech.title">
+          <header
+            class="tech-stack-header scroll-reveal"
+            style="--reveal-delay: 0ms"
+          >
+            <h2
+              id="tech-stack-title"
+              class="tech-stack-title"
+              data-i18n="tech.title"
+            >
               Tech Stack
             </h2>
-            <p class="tech-stack-subtitle slogan-typed" data-i18n="tech.subtitle">
+            <p
+              class="tech-stack-subtitle slogan-typed"
+              data-i18n="tech.subtitle"
+            >
               <span>Alat</span> dan teknologi yang mendukung pekerjaan saya.
             </p>
           </header>
 
           <!-- Interactive Tech Stack Carousel -->
-          <div class="tech-stack-content scroll-reveal" style="--reveal-delay: 120ms;" id="tech-stack-content">
+          <div
+            class="tech-stack-content scroll-reveal"
+            style="--reveal-delay: 120ms"
+            id="tech-stack-content"
+          >
             <div
               class="tech-cards-viewport"
               id="tech-cards-viewport"
@@ -254,9 +383,19 @@
             >
               <div class="tech-cards-track" id="tech-cards-track">
                 <!-- 01. Frontend Development -->
-                <article class="tech-card" style="--wave-y: -10px; --wave-rot: -2.4deg;" tabindex="0" data-category="frontend" aria-label="HTML5 - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -10px; --wave-rot: -2.4deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="HTML5 - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -267,9 +406,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">H5</span>
                     </div>
                   </div>
@@ -279,9 +424,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -3px; --wave-rot: -1.0deg;" tabindex="0" data-category="frontend" aria-label="CSS3 - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -3px; --wave-rot: -1deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="CSS3 - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -292,9 +447,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">CSS</span>
                     </div>
                   </div>
@@ -304,9 +465,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 5px; --wave-rot: 1.0deg;" tabindex="0" data-category="frontend" aria-label="JavaScript - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 5px; --wave-rot: 1deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="JavaScript - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -317,9 +488,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">JS</span>
                     </div>
                   </div>
@@ -329,9 +506,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 13px; --wave-rot: 2.6deg;" tabindex="0" data-category="frontend" aria-label="React - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 13px; --wave-rot: 2.6deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="React - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -342,9 +529,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">RC</span>
                     </div>
                   </div>
@@ -354,9 +547,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.0deg;" tabindex="0" data-category="frontend" aria-label="Tailwind CSS - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 16px; --wave-rot: 3deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="Tailwind CSS - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -367,9 +570,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">TW</span>
                     </div>
                   </div>
@@ -379,9 +588,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 9px; --wave-rot: 1.8deg;" tabindex="0" data-category="frontend" aria-label="Bootstrap - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 9px; --wave-rot: 1.8deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="Bootstrap - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -392,9 +611,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">BS</span>
                     </div>
                   </div>
@@ -404,9 +629,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -1px; --wave-rot: -0.4deg;" tabindex="0" data-category="frontend" aria-label="Alpine.js - Frontend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -1px; --wave-rot: -0.4deg"
+                  tabindex="0"
+                  data-category="frontend"
+                  aria-label="Alpine.js - Frontend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_frontend"
+                      >Frontend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -417,9 +652,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">ALP</span>
                     </div>
                   </div>
@@ -430,9 +671,19 @@
                 </article>
 
                 <!-- 02. Backend Development -->
-                <article class="tech-card" style="--wave-y: -11px; --wave-rot: -2.5deg;" tabindex="0" data-category="backend" aria-label="PHP - Backend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -11px; --wave-rot: -2.5deg"
+                  tabindex="0"
+                  data-category="backend"
+                  aria-label="PHP - Backend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_backend"
+                      >Backend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -443,9 +694,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">PHP</span>
                     </div>
                   </div>
@@ -455,9 +712,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -16px; --wave-rot: -3.2deg;" tabindex="0" data-category="backend" aria-label="Laravel - Backend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -16px; --wave-rot: -3.2deg"
+                  tabindex="0"
+                  data-category="backend"
+                  aria-label="Laravel - Backend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_backend"
+                      >Backend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -468,9 +735,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">LAR</span>
                     </div>
                   </div>
@@ -480,9 +753,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -11px; --wave-rot: -2.0deg;" tabindex="0" data-category="backend" aria-label="Python - Backend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -11px; --wave-rot: -2deg"
+                  tabindex="0"
+                  data-category="backend"
+                  aria-label="Python - Backend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_backend"
+                      >Backend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -493,9 +776,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">PY</span>
                     </div>
                   </div>
@@ -505,9 +794,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -1px; --wave-rot: 0.4deg;" tabindex="0" data-category="backend" aria-label="Flask - Backend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -1px; --wave-rot: 0.4deg"
+                  tabindex="0"
+                  data-category="backend"
+                  aria-label="Flask - Backend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_backend"
+                      >Backend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -518,9 +817,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">FLK</span>
                     </div>
                   </div>
@@ -530,9 +835,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 9px; --wave-rot: 2.0deg;" tabindex="0" data-category="backend" aria-label="MySQL - Backend Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 9px; --wave-rot: 2deg"
+                  tabindex="0"
+                  data-category="backend"
+                  aria-label="MySQL - Backend Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_backend"
+                      >Backend</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -543,9 +858,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">SQL</span>
                     </div>
                   </div>
@@ -556,9 +877,17 @@
                 </article>
 
                 <!-- 03. Data Analysis & Data Science -->
-                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.2deg;" tabindex="0" data-category="data-analysis" aria-label="Google Colab - Data Analysis & Data Science">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 16px; --wave-rot: 3.2deg"
+                  tabindex="0"
+                  data-category="data-analysis"
+                  aria-label="Google Colab - Data Analysis & Data Science"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                    <span class="tech-card-badge" data-i18n="tech.category_data"
+                      >Data</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -569,9 +898,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">GC</span>
                     </div>
                   </div>
@@ -581,9 +916,17 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 11px; --wave-rot: 2.2deg;" tabindex="0" data-category="data-analysis" aria-label="Power BI - Data Analysis & Data Science">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 11px; --wave-rot: 2.2deg"
+                  tabindex="0"
+                  data-category="data-analysis"
+                  aria-label="Power BI - Data Analysis & Data Science"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                    <span class="tech-card-badge" data-i18n="tech.category_data"
+                      >Data</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -594,9 +937,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">PBI</span>
                     </div>
                   </div>
@@ -606,9 +955,17 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 1px; --wave-rot: 0.0deg;" tabindex="0" data-category="data-analysis" aria-label="Tableau - Data Analysis & Data Science">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 1px; --wave-rot: 0deg"
+                  tabindex="0"
+                  data-category="data-analysis"
+                  aria-label="Tableau - Data Analysis & Data Science"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                    <span class="tech-card-badge" data-i18n="tech.category_data"
+                      >Data</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -619,9 +976,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">TAB</span>
                     </div>
                   </div>
@@ -632,9 +995,19 @@
                 </article>
 
                 <!-- 04. UI/UX & Design -->
-                <article class="tech-card" style="--wave-y: -9px; --wave-rot: -2.0deg;" tabindex="0" data-category="ui-ux-design" aria-label="Figma - UI/UX & Design">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -9px; --wave-rot: -2deg"
+                  tabindex="0"
+                  data-category="ui-ux-design"
+                  aria-label="Figma - UI/UX & Design"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_design">UI/UX</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_design"
+                      >UI/UX</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -645,9 +1018,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">FIG</span>
                     </div>
                   </div>
@@ -657,9 +1036,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -16px; --wave-rot: -3.0deg;" tabindex="0" data-category="ui-ux-design" aria-label="Canva - UI/UX & Design">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -16px; --wave-rot: -3deg"
+                  tabindex="0"
+                  data-category="ui-ux-design"
+                  aria-label="Canva - UI/UX & Design"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_design">UI/UX</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_design"
+                      >UI/UX</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -670,9 +1059,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">CNV</span>
                     </div>
                   </div>
@@ -683,9 +1078,19 @@
                 </article>
 
                 <!-- 05. Tools & Development -->
-                <article class="tech-card" style="--wave-y: -10px; --wave-rot: -2.0deg;" tabindex="0" data-category="development-tools" aria-label="Git - Tools & Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -10px; --wave-rot: -2deg"
+                  tabindex="0"
+                  data-category="development-tools"
+                  aria-label="Git - Tools & Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_tools"
+                      >Tools</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -696,9 +1101,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">GIT</span>
                     </div>
                   </div>
@@ -708,9 +1119,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 0px; --wave-rot: 0.6deg;" tabindex="0" data-category="development-tools" aria-label="GitHub - Tools & Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 0px; --wave-rot: 0.6deg"
+                  tabindex="0"
+                  data-category="development-tools"
+                  aria-label="GitHub - Tools & Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_tools"
+                      >Tools</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -721,9 +1142,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">GH</span>
                     </div>
                   </div>
@@ -733,9 +1160,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 11px; --wave-rot: 2.4deg;" tabindex="0" data-category="development-tools" aria-label="Unity - Tools & Development">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 11px; --wave-rot: 2.4deg"
+                  tabindex="0"
+                  data-category="development-tools"
+                  aria-label="Unity - Tools & Development"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_tools"
+                      >Tools</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -746,9 +1183,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">UNT</span>
                     </div>
                   </div>
@@ -759,9 +1202,19 @@
                 </article>
 
                 <!-- 06. Productivity & Office -->
-                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.2deg;" tabindex="0" data-category="productivity-office" aria-label="Microsoft Word - Productivity & Office">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 16px; --wave-rot: 3.2deg"
+                  tabindex="0"
+                  data-category="productivity-office"
+                  aria-label="Microsoft Word - Productivity & Office"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_office"
+                      >Office</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -772,9 +1225,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">DOC</span>
                     </div>
                   </div>
@@ -784,9 +1243,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: 7px; --wave-rot: 1.4deg;" tabindex="0" data-category="productivity-office" aria-label="Microsoft Excel - Productivity & Office">
+                <article
+                  class="tech-card"
+                  style="--wave-y: 7px; --wave-rot: 1.4deg"
+                  tabindex="0"
+                  data-category="productivity-office"
+                  aria-label="Microsoft Excel - Productivity & Office"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_office"
+                      >Office</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -797,9 +1266,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">XLS</span>
                     </div>
                   </div>
@@ -809,9 +1284,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -4px; --wave-rot: -1.2deg;" tabindex="0" data-category="productivity-office" aria-label="PowerPoint - Productivity & Office">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -4px; --wave-rot: -1.2deg"
+                  tabindex="0"
+                  data-category="productivity-office"
+                  aria-label="PowerPoint - Productivity & Office"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_office"
+                      >Office</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -822,9 +1307,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">PPT</span>
                     </div>
                   </div>
@@ -834,9 +1325,19 @@
                   </div>
                 </article>
 
-                <article class="tech-card" style="--wave-y: -12px; --wave-rot: -2.6deg;" tabindex="0" data-category="productivity-office" aria-label="Google Workspace - Productivity & Office">
+                <article
+                  class="tech-card"
+                  style="--wave-y: -12px; --wave-rot: -2.6deg"
+                  tabindex="0"
+                  data-category="productivity-office"
+                  aria-label="Google Workspace - Productivity & Office"
+                >
                   <div class="tech-card-header">
-                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                    <span
+                      class="tech-card-badge"
+                      data-i18n="tech.category_office"
+                      >Office</span
+                    >
                   </div>
                   <div class="tech-card-logo-box">
                     <img
@@ -847,9 +1348,15 @@
                       height="58"
                       loading="lazy"
                       decoding="async"
-                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                      onerror="
+                        this.classList.add('is-missing');
+                        this.nextElementSibling.classList.remove('is-hidden');
+                      "
                     />
-                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                    <div
+                      class="tech-card-fallback is-hidden"
+                      aria-hidden="true"
+                    >
                       <span class="tech-card-fallback-avatar">GWS</span>
                     </div>
                   </div>
@@ -863,11 +1370,16 @@
           </div>
 
           <!-- Bottom Action Bar (Hint on left, Portfolio CTA on right) -->
-          <div class="tech-stack-bottom scroll-reveal" style="--reveal-delay: 200ms;">
+          <div
+            class="tech-stack-bottom scroll-reveal"
+            style="--reveal-delay: 200ms"
+          >
             <!-- Exploration Indicator / Hint -->
             <div class="tech-cards-hint" aria-hidden="true">
               <span class="tech-hint-dot"></span>
-              <span data-i18n="tech.hint">Arahkan kursor atau geser untuk menjelajahi teknologi</span>
+              <span data-i18n="tech.hint"
+                >Arahkan kursor atau geser untuk menjelajahi teknologi</span
+              >
             </div>
 
             <!-- Navigation CTA to Portfolio -->
@@ -901,8 +1413,19 @@
           <!-- Category Grid View Container -->
           <div id="portfolio-grid-view" class="portfolio-view">
             <header class="portfolio-header">
-              <h2 id="portfolio-title" class="portfolio-title scroll-reveal" style="--reveal-delay: 0ms;" data-i18n="portfolio.title">Portofolio</h2>
-              <p class="portfolio-slogan scroll-reveal slogan-typed" style="--reveal-delay: 120ms;" data-i18n="portfolio.slogan">
+              <h2
+                id="portfolio-title"
+                class="portfolio-title scroll-reveal"
+                style="--reveal-delay: 0ms"
+                data-i18n="portfolio.title"
+              >
+                Portofolio
+              </h2>
+              <p
+                class="portfolio-slogan scroll-reveal slogan-typed"
+                style="--reveal-delay: 120ms"
+                data-i18n="portfolio.slogan"
+              >
                 <span>Tempat</span>
                 ide menjadi karya bermakna.
               </p>
@@ -911,7 +1434,7 @@
             <div class="portfolio-grid" aria-label="Kategori portofolio">
               <button
                 class="portfolio-card portfolio-card--frontend scroll-reveal"
-                style="--reveal-delay: 240ms;"
+                style="--reveal-delay: 240ms"
                 type="button"
                 data-category="frontend"
                 aria-label="Pilih kategori Web Development"
@@ -927,8 +1450,14 @@
                 />
                 <span class="portfolio-card-overlay" aria-hidden="true"></span>
                 <span class="portfolio-card-content">
-                  <span class="portfolio-card-title" data-i18n="portfolio.card_webdev_title">Web Development</span>
-                  <span class="portfolio-card-description" data-i18n="portfolio.card_webdev_desc"
+                  <span
+                    class="portfolio-card-title"
+                    data-i18n="portfolio.card_webdev_title"
+                    >Web Development</span
+                  >
+                  <span
+                    class="portfolio-card-description"
+                    data-i18n="portfolio.card_webdev_desc"
                     >Turning ideas into interactive experiences.</span
                   >
                 </span>
@@ -936,7 +1465,7 @@
 
               <button
                 class="portfolio-card portfolio-card--data scroll-reveal"
-                style="--reveal-delay: 360ms;"
+                style="--reveal-delay: 360ms"
                 type="button"
                 data-category="data-analysis"
                 aria-label="Pilih kategori Data Analysis"
@@ -952,8 +1481,14 @@
                 />
                 <span class="portfolio-card-overlay" aria-hidden="true"></span>
                 <span class="portfolio-card-content">
-                  <span class="portfolio-card-title" data-i18n="portfolio.card_data_title">Data Analysis</span>
-                  <span class="portfolio-card-description" data-i18n="portfolio.card_data_desc"
+                  <span
+                    class="portfolio-card-title"
+                    data-i18n="portfolio.card_data_title"
+                    >Data Analysis</span
+                  >
+                  <span
+                    class="portfolio-card-description"
+                    data-i18n="portfolio.card_data_desc"
                     >From raw data to clear insights.</span
                   >
                 </span>
@@ -964,14 +1499,17 @@
 
             <aside
               class="portfolio-certification-cta scroll-reveal"
-              style="--reveal-delay: 480ms;"
+              style="--reveal-delay: 480ms"
               aria-label="Ajakan melihat pelatihan"
             >
               <p data-i18n="portfolio.training_cta">
                 <span>Mari</span>
                 lihat bagaimana saya terus mengembangkan diri.
               </p>
-              <a class="portfolio-certification-button" href="#sertifikasi" data-i18n="portfolio.training_btn"
+              <a
+                class="portfolio-certification-button"
+                href="#sertifikasi"
+                data-i18n="portfolio.training_btn"
                 >Pelatihan</a
               >
             </aside>
@@ -985,10 +1523,13 @@
           >
             <!-- Top Left Header / Slogan -->
             <header class="portfolio-detail-header">
-              <p class="portfolio-detail-slogan slogan-typed" data-i18n="portfolio.webdev_slogan">
+              <p
+                class="portfolio-detail-slogan slogan-typed"
+                data-i18n="portfolio.webdev_slogan"
+              >
                 Rancang,
-                <span class="portfolio-slogan-script font-miracle">Bangun</span>,
-                Rasakan.
+                <span class="portfolio-slogan-script font-miracle">Bangun</span
+                >, Rasakan.
               </p>
             </header>
 
@@ -1062,7 +1603,9 @@
                           d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                         />
                       </svg>
-                      <span class="portfolio-screenshot-fallback-text" data-i18n="portfolio.fallback_preview"
+                      <span
+                        class="portfolio-screenshot-fallback-text"
+                        data-i18n="portfolio.fallback_preview"
                         >Preview coming soon</span
                       >
                     </div>
@@ -1353,10 +1896,17 @@
       >
         <div class="certification-inner">
           <header class="certification-header">
-            <h2 id="certification-title" class="certification-title" data-i18n="cert.title">
+            <h2
+              id="certification-title"
+              class="certification-title"
+              data-i18n="cert.title"
+            >
               Pelatihan
             </h2>
-            <p class="certification-slogan slogan-typed" data-i18n="cert.slogan">
+            <p
+              class="certification-slogan slogan-typed"
+              data-i18n="cert.slogan"
+            >
               <span>Bukti</span>
               proses belajar, berkembang, dan bertumbuh.
             </p>
@@ -1383,7 +1933,9 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3 data-i18n="cert.c1_title">Coding Camp: Software Engineering</h3>
+                <h3 data-i18n="cert.c1_title">
+                  Coding Camp: Software Engineering
+                </h3>
                 <p data-i18n="cert.c1_desc">
                   Certificate of attendance for a 1-week online course in
                   Software Engineering, covering web development fundamentals
@@ -1484,7 +2036,9 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3 data-i18n="cert.c4_title">Building Website with Lovable AI</h3>
+                <h3 data-i18n="cert.c4_title">
+                  Building Website with Lovable AI
+                </h3>
                 <p data-i18n="cert.c4_desc">
                   Completed a short class focused on building websites with
                   Lovable AI, exploring the use of artificial intelligence in
@@ -1515,7 +2069,9 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3 data-i18n="cert.c5_title">Index Match, Vlookup and Hlookup in Ms. Excel</h3>
+                <h3 data-i18n="cert.c5_title">
+                  Index Match, Vlookup and Hlookup in Ms. Excel
+                </h3>
                 <p data-i18n="cert.c5_desc">
                   MySkill Short Class focused on Index Match, VLOOKUP, and
                   HLOOKUP functions in Microsoft Excel for data lookup and
@@ -1546,11 +2102,14 @@
                 aria-hidden="true"
               ></span>
               <div class="certification-card-content">
-                <h3 data-i18n="cert.c6_title">Python Introduction for Data Analysis</h3>
+                <h3 data-i18n="cert.c6_title">
+                  Python Introduction for Data Analysis
+                </h3>
                 <p data-i18n="cert.c6_desc">
                   Completed a MySkill Short Class focused on using Python for
                   data analysis, covering Python syntax, lists, tuples, sets,
-                  dictionaries, conditional statements, and data manipulation fundamentals.
+                  dictionaries, conditional statements, and data manipulation
+                  fundamentals.
                 </p>
               </div>
               <p class="certification-card-provider">MySkill</p>
@@ -1630,7 +2189,10 @@
               <span>Mari</span>
               ciptakan sesuatu bersama.
             </p>
-            <a class="certification-contact-button" href="#kontak" data-i18n="cert.contact_btn"
+            <a
+              class="certification-contact-button"
+              href="#kontak"
+              data-i18n="cert.contact_btn"
               >Hubungi Saya</a
             >
           </aside>
@@ -1817,7 +2379,9 @@
           <!-- Modal Header -->
           <div class="about-modal-header">
             <div class="about-modal-header-text">
-              <h3 id="about-modal-title" class="about-modal-title font-jakarta">Riwayat Pendidikan</h3>
+              <h3 id="about-modal-title" class="about-modal-title font-jakarta">
+                Riwayat Pendidikan
+              </h3>
             </div>
             <button
               type="button"

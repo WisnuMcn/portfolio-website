@@ -143,6 +143,7 @@ body {
 /* Navbar */
 .site-header {
   animation: navDrop 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  pointer-events: none;
 }
 
 .site-header.is-scrolled nav {
@@ -169,6 +170,7 @@ body {
 
 .site-nav {
   width: min(96vw, 690px) !important;
+  pointer-events: auto;
 }
 
 .nav-links {
@@ -400,6 +402,132 @@ body {
 
 .glass-button {
   will-change: transform, box-shadow;
+}
+
+/* ==========================================================================
+   Hero Download CV Button (Emerald CTA - Enhanced Presence)
+   ========================================================================== */
+.hero-cv-btn {
+  position: absolute;
+  top: 22px;
+  right: clamp(24px, 4vw, 56px);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border-radius: 9999px;
+  background-color: #059669;
+  background-image: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.32), 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 260ms ease,
+              background-color 260ms ease,
+              transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 260ms ease,
+              border-color 260ms ease;
+  will-change: transform, box-shadow;
+  animation: fadeIn 800ms 350ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  pointer-events: auto;
+}
+
+.hero-cv-btn:hover {
+  background-color: #10b981;
+  background-image: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  border-color: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.42), 0 2px 6px rgba(0, 0, 0, 0.24);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.hero-cv-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 10px rgba(5, 150, 105, 0.35);
+}
+
+.hero-cv-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #000000, 0 0 0 4px #10b981, 0 6px 20px rgba(5, 150, 105, 0.35);
+}
+
+.hero-cv-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-cv-btn:hover .hero-cv-icon {
+  transform: translateY(2px);
+}
+
+.hero-cv-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (min-width: 1440px) {
+  .hero-cv-btn {
+    right: max(56px, calc((100vw - 1440px) / 2 + 50px));
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .hero-cv-btn {
+    right: 18px;
+    padding: 11px 20px;
+    font-size: 14.5px;
+    gap: 8px;
+  }
+
+  .hero-cv-icon {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-cv-btn {
+    top: 78px;
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.28), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-cv-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-cv-btn {
+    top: 70px;
+    right: 14px;
+    padding: 8.5px 16px;
+    font-size: 13px;
+    gap: 7px;
+  }
+
+  .hero-cv-icon {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 /* About */
@@ -2007,8 +2135,8 @@ body {
   background: linear-gradient(90deg, var(--cert-theme-color) 46.63%, var(--cert-theme-end) 100%), var(--cert-theme-color);
   box-shadow: 24px 25px 80.2px 32px rgba(0, 0, 0, 0.24);
   color: #ffffff;
-  opacity: 0;
-  transform: translateY(34px);
+  opacity: 1;
+  transform: translateY(0);
   transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 320ms ease;
   will-change: transform, box-shadow;
 }
@@ -2175,15 +2303,15 @@ body {
 }
 
 .certification-section.is-visible .certification-title {
-  animation: fadeUp 820ms 80ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: fadeUp 650ms 40ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .certification-section.is-visible .certification-slogan {
-  animation: fadeIn 780ms 230ms ease both;
+  animation: fadeIn 600ms 120ms ease both;
 }
 
 .certification-section.is-visible .certification-card {
-  animation: fadeUp 860ms 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: fadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .certification-card:hover,
@@ -2994,42 +3122,55 @@ body {
 
 /* Entrance Animations & Stagger Effects */
 .kontak-animate-init {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-reveal-ready .kontak-card:not(.kontak-animate-visible) {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(22px);
 }
 
 .kontak-animate-init.kontak-animate-visible {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .kontak-btn-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-reveal-ready .kontak-card:not(.kontak-animate-visible) .kontak-btn-animate {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(18px);
+}
+
+.kontak-animate-visible .kontak-btn-animate {
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .kontak-animate-visible .kontak-btn-animate:nth-child(1) {
-  transition-delay: 150ms;
+  transition-delay: 80ms;
   opacity: 1;
   transform: translateY(0);
 }
 
 .kontak-animate-visible .kontak-btn-animate:nth-child(2) {
-  transition-delay: 280ms;
+  transition-delay: 160ms;
   opacity: 1;
   transform: translateY(0);
 }
 
 .kontak-animate-visible .kontak-btn-animate:nth-child(3) {
-  transition-delay: 410ms;
+  transition-delay: 240ms;
   opacity: 1;
   transform: translateY(0);
 }
 
 .kontak-animate-visible .kontak-btn-animate:nth-child(4) {
-  transition-delay: 540ms;
+  transition-delay: 320ms;
   opacity: 1;
   transform: translateY(0);
 }
@@ -4001,7 +4142,7 @@ body.about-modal-open {
 }
 
 /* ==========================================================================
-   Scroll Reveal Animations (Tentang Saya & Portofolio)
+   Scroll Reveal Animations (Tentang Saya, Tech Stack, Portofolio, Pelatihan, Kontak)
    Progressive Enhancement: Default state is fully visible.
    Only when .js-reveal-ready is attached does the initial hidden/shift apply.
    ========================================================================== */
@@ -4013,8 +4154,8 @@ body.about-modal-open {
 .js-reveal-ready .scroll-reveal {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0ms;
   will-change: opacity, transform;
 }
@@ -4023,6 +4164,12 @@ body.about-modal-open {
   opacity: 1;
   transform: translateY(0);
   transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Progressive enhancement state for Pelatihan cards when reveal mode is active */
+.js-reveal-ready .certification-section:not(.is-visible) .certification-card {
+  opacity: 0;
+  transform: translateY(22px);
 }
 
 /* Ensure interactive hover & focus states remain active without specificity conflict */
@@ -4047,11 +4194,19 @@ body.about-modal-open {
 
 /* Respect user's motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .js-reveal-ready .scroll-reveal {
+  .js-reveal-ready .scroll-reveal,
+  .certification-card,
+  .certification-title,
+  .certification-slogan,
+  .certification-contact-cta,
+  .kontak-animate-init,
+  .kontak-btn-animate,
+  .kontak-card {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     transition-delay: 0ms !important;
+    animation: none !important;
   }
 }
 
@@ -4073,6 +4228,15 @@ body.about-modal-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-cv-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-cv-icon {
+    transition: none !important;
+  }
+
   .slogan-typing-cursor {
     display: none !important;
   }

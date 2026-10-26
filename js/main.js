@@ -23,6 +23,15 @@ const getScrollOffset = (targetId) => {
   return 72;
 };
 
+const MAIN_SECTIONS = [
+  "beranda",
+  "tentang-saya",
+  "tech-stack",
+  "portofolio",
+  "sertifikasi",
+  "kontak",
+];
+
 anchorLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     const targetId = link.getAttribute("href")?.slice(1);
@@ -32,6 +41,31 @@ anchorLinks.forEach((link) => {
 
     event.preventDefault();
     setActiveLink(targetId);
+
+    // Immediately trigger reveal on target section so content smoothly settles into view
+    if (
+      targetId === "sertifikasi" &&
+      typeof window.__revealCertificationSection === "function"
+    ) {
+      window.__revealCertificationSection();
+    } else if (
+      targetId === "kontak" &&
+      typeof window.__revealKontakSection === "function"
+    ) {
+      window.__revealKontakSection();
+    } else if (
+      targetId === "tech-stack" &&
+      typeof window.__wakeTechStackCarousel === "function"
+    ) {
+      window.__wakeTechStackCarousel();
+    }
+
+    target.querySelectorAll(".scroll-reveal").forEach((el) => {
+      el.classList.add("is-revealed");
+      if (el.classList.contains("portfolio-card")) {
+        el.classList.add("is-visible");
+      }
+    });
 
     const scrollTop =
       target.getBoundingClientRect().top +
@@ -92,6 +126,8 @@ const translations = {
       profession_1: '<strong class="font-bold">System</strong> Development',
       profession_2: 'Software <strong class="font-bold">Engineer</strong>',
       profession_3: '<strong class="font-bold">Data</strong> Analysis',
+      download_cv: "Unduh CV",
+      download_cv_aria: "Unduh CV Wisnu Agus Wicaksono",
     },
     about: {
       heading: "Tentang Saya",
@@ -198,6 +234,8 @@ const translations = {
       profession_1: '<strong class="font-bold">System</strong> Development',
       profession_2: 'Software <strong class="font-bold">Engineer</strong>',
       profession_3: '<strong class="font-bold">Data</strong> Analysis',
+      download_cv: "Download CV",
+      download_cv_aria: "Download Wisnu Agus Wicaksono's CV",
     },
     about: {
       heading: "About Me",
@@ -877,8 +915,8 @@ const initScrollReveal = () => {
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px 0px -40px 0px",
-    threshold: 0.08,
+    rootMargin: "0px 0px 40px 0px",
+    threshold: 0.05,
   };
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -889,15 +927,7 @@ const initScrollReveal = () => {
         if (el.classList.contains("portfolio-card")) {
           el.classList.add("is-visible");
         }
-      } else {
-        // Reset when element has scrolled out below the viewport (user scrolled back up),
-        // so it smoothly re-animates when user scrolls down again.
-        if (entry.boundingClientRect.top > window.innerHeight) {
-          el.classList.remove("is-revealed");
-          if (el.classList.contains("portfolio-card")) {
-            el.classList.remove("is-visible");
-          }
-        }
+        revealObserver.unobserve(el);
       }
     });
   }, observerOptions);
@@ -1060,6 +1090,8 @@ const initTechStackCarousel = () => {
     currentX = Math.max(-maxScroll, Math.min(0, currentX));
     wakeLoop();
   };
+
+  window.__wakeTechStackCarousel = updateDimensions;
 
   window.addEventListener("resize", updateDimensions, { passive: true });
 
@@ -2559,35 +2591,43 @@ const initializeCertificationSection = () => {
     certificationSection.classList.add("is-visible");
     certificationCards.forEach((card, index) => {
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        card.style.animationDelay = `${300 + index * 100}ms`;
+        card.style.animationDelay = `${Math.min(index * 35, 280)}ms`;
       }
     });
   };
 
+  // Expose for immediate activation on navigation click
+  window.__revealCertificationSection = revealSection;
+
+  // Pre-assign image sources immediately so the browser fetches assets in parallel
   certificationCards.forEach((card) => {
     const image = card.querySelector(".certification-card-image[data-src]");
     const imagePath = image?.dataset.src;
 
     if (!image || !imagePath) return;
 
-    const loader = new Image();
-    loader.onload = () => {
+    if (!image.src) {
       image.src = imagePath;
+    }
+
+    if (image.complete && image.naturalWidth > 0) {
       card.classList.add("has-image");
-    };
-    loader.onerror = () => {
-      image.removeAttribute("src");
-      card.classList.add("has-fallback-image");
-    };
-    loader.src = imagePath;
+    } else {
+      image.onload = () => {
+        card.classList.add("has-image");
+      };
+      image.onerror = () => {
+        card.classList.add("has-fallback-image");
+      };
+    }
   });
 
   const isCertificationInView = () => {
     const rect = certificationSection.getBoundingClientRect();
 
     return (
-      rect.top < window.innerHeight * 0.82 &&
-      rect.bottom > window.innerHeight * 0.12
+      rect.top < window.innerHeight * 0.95 &&
+      rect.bottom > window.innerHeight * 0.05
     );
   };
 
@@ -2610,14 +2650,14 @@ const initializeCertificationSection = () => {
         }
       },
       {
-        rootMargin: "0px 0px -18% 0px",
-        threshold: 0.18,
+        rootMargin: "0px 0px 100px 0px",
+        threshold: 0.02,
       },
     );
 
     certificationObserver.observe(certificationSection);
     requestAnimationFrame(revealIfInView);
-    window.setTimeout(revealIfInView, 250);
+    window.setTimeout(revealIfInView, 150);
   } else {
     revealSection();
   }
@@ -2640,6 +2680,9 @@ const initializeKontakSection = () => {
     kontakCard.classList.add("kontak-animate-visible");
   };
 
+  // Expose for immediate activation on navigation click
+  window.__revealKontakSection = revealSection;
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     revealSection();
     return;
@@ -2654,12 +2697,21 @@ const initializeKontakSection = () => {
         }
       },
       {
-        rootMargin: "0px 0px -15% 0px",
-        threshold: 0.15,
+        rootMargin: "0px 0px 80px 0px",
+        threshold: 0.04,
       },
     );
 
     kontakObserver.observe(kontakSection);
+
+    const isKontakInView = () => {
+      const rect = kontakSection.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.95 && rect.bottom > 0;
+    };
+
+    if (window.location.hash === "#kontak" || isKontakInView()) {
+      revealSection();
+    }
   } else {
     revealSection();
   }
