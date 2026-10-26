@@ -102,15 +102,22 @@ const translations = {
       btn_experience: "Pengalaman",
       btn_organization: "Organisasi",
       tech_cta: "<span>Mari</span> lihat teknologi yang saya gunakan.",
-      tech_btn: "Jelajahi Tech Stack",
+      tech_btn: "Tech Stack",
       portfolio_cta: "<span>Mari</span> lihat teknologi yang saya gunakan.",
-      portfolio_btn: "Jelajahi Tech Stack",
+      portfolio_btn: "Tech Stack",
     },
     tech: {
       title: "Tech Stack",
       subtitle: "<span>Alat</span> dan teknologi yang mendukung pekerjaan saya.",
       portfolio_cta: "<span>Mari</span> lihat bagaimana ide saya diwujudkan.",
       portfolio_btn: "Portofolio",
+      hint: "Arahkan kursor atau geser untuk menjelajahi teknologi",
+      category_frontend: "Frontend",
+      category_backend: "Backend",
+      category_data: "Data",
+      category_design: "UI/UX",
+      category_tools: "Tools",
+      category_office: "Office",
     },
     portfolio: {
       title: "Portofolio",
@@ -199,15 +206,22 @@ const translations = {
       btn_experience: "Experience",
       btn_organization: "Organizations",
       tech_cta: "<span>Let's</span> explore the technologies I use.",
-      tech_btn: "Explore Tech Stack",
+      tech_btn: "Tech Stack",
       portfolio_cta: "<span>Let's</span> explore the technologies I use.",
-      portfolio_btn: "Explore Tech Stack",
+      portfolio_btn: "Tech Stack",
     },
     tech: {
       title: "Tech Stack",
       subtitle: "<span>Tools</span> and technologies that power my work.",
       portfolio_cta: "<span>Let's</span> see how my ideas come to life.",
       portfolio_btn: "Portfolio",
+      hint: "Move cursor or swipe to explore technologies",
+      category_frontend: "Frontend",
+      category_backend: "Backend",
+      category_data: "Data",
+      category_design: "UI/UX",
+      category_tools: "Tools",
+      category_office: "Office",
     },
     portfolio: {
       title: "Portfolio",
@@ -578,14 +592,29 @@ const initHeroTypingAnimation = () => {
 };
 
 // =====================================================================
-// Slogan Typewriter Loop Controller (Portofolio, Pelatihan, Web Development)
+// Slogan Typewriter Loop Controller (Tech Stack, Portofolio, Pelatihan, Web Development)
 // =====================================================================
 const initSloganTypingAnimation = () => {
   const sloganConfigs = [
     {
+      id: "tech",
+      element: document.querySelector(".tech-stack-subtitle"),
+      initialDelay: 300,
+      phrases: {
+        id: [
+          { text: "Alat", isScript: true },
+          { text: " dan teknologi yang mendukung pekerjaan saya.", isScript: false },
+        ],
+        en: [
+          { text: "Tools", isScript: true },
+          { text: " and technologies that power my work.", isScript: false },
+        ],
+      },
+    },
+    {
       id: "portfolio",
       element: document.querySelector(".portfolio-slogan"),
-      initialDelay: 350,
+      initialDelay: 500,
       phrases: {
         id: [
           { text: "Tempat", isScript: true },
@@ -873,11 +902,313 @@ const initScrollReveal = () => {
   });
 };
 
+// =====================================================================
+// TECH STACK DATA REGISTRY (6 Categories, 24 Technologies)
+// =====================================================================
+const TECH_STACK_DATA = [
+  {
+    id: "frontend",
+    name: {
+      id: "Frontend Development",
+      en: "Frontend Development",
+    },
+    description: {
+      id: "Teknologi untuk membangun tampilan dan interaksi website.",
+      en: "Technologies for building web interfaces and interactive experiences.",
+    },
+    folder: "assets/images/techstack/frontend/",
+    items: [
+      { name: "HTML5", file: "logoHTML.png", tag: "Markup", fallback: "H5" },
+      { name: "CSS3", file: "logoCSS.png", tag: "Styling", fallback: "CSS" },
+      { name: "JavaScript", file: "logoJS.png", tag: "Language", fallback: "JS" },
+      { name: "React", file: "logoReact.png", tag: "Library", fallback: "RC" },
+      { name: "Tailwind CSS", file: "logoTailwind.png", tag: "Framework", fallback: "TW" },
+      { name: "Bootstrap", file: "logoBootstrap.png", tag: "Framework", fallback: "BS" },
+      { name: "Alpine.js", file: "logoAlpine.png", tag: "Framework", fallback: "ALP" },
+    ],
+  },
+  {
+    id: "backend",
+    name: {
+      id: "Backend Development",
+      en: "Backend Development",
+    },
+    description: {
+      id: "Teknologi untuk logika aplikasi, pemrosesan data, dan penyimpanan.",
+      en: "Technologies for application logic, data processing, and storage.",
+    },
+    folder: "assets/images/techstack/backend/",
+    items: [
+      { name: "PHP", file: "logoPHP.png", tag: "Language", fallback: "PHP" },
+      { name: "Laravel", file: "logoLaravel.png", tag: "Framework", fallback: "LAR" },
+      { name: "Python", file: "logoPython.png", tag: "Language", fallback: "PY" },
+      { name: "Flask", file: "logoFlask.png", tag: "Framework", fallback: "FLK" },
+      { name: "MySQL", file: "logoMySQL.png", tag: "Database", fallback: "SQL" },
+    ],
+  },
+  {
+    id: "data-analysis",
+    name: {
+      id: "Data Analysis & Data Science",
+      en: "Data Analysis & Data Science",
+    },
+    description: {
+      id: "Tools untuk pengolahan, eksplorasi, analisis, dan visualisasi data.",
+      en: "Tools for data processing, exploration, analytics, and visualization.",
+    },
+    folder: "assets/images/techstack/data-analysis/",
+    items: [
+      { name: "Google Colab", file: "logoColab.png", tag: "Analytics", fallback: "GC" },
+      { name: "Power BI", file: "logoBI.png", tag: "BI & Viz", fallback: "PBI" },
+      { name: "Tableau", file: "logoTableau.png", tag: "Visualization", fallback: "TAB" },
+    ],
+  },
+  {
+    id: "ui-ux-design",
+    name: {
+      id: "UI/UX & Design",
+      en: "UI/UX & Design",
+    },
+    description: {
+      id: "Tools untuk desain antarmuka, prototipe, dan kebutuhan visual.",
+      en: "Tools for UI design, prototyping, and visual assets.",
+    },
+    folder: "assets/images/techstack/ui-ux-design/",
+    items: [
+      { name: "Figma", file: "logoFigma.png", tag: "Prototyping", fallback: "FIG" },
+      { name: "Canva", file: "logoCanva.png", tag: "Graphic Design", fallback: "CNV" },
+    ],
+  },
+  {
+    id: "development-tools",
+    name: {
+      id: "Tools & Development",
+      en: "Tools & Development",
+    },
+    description: {
+      id: "Tools pendukung pengembangan, pengelolaan kode, dan pengujian.",
+      en: "Supporting tools for development, code management, and testing.",
+    },
+    folder: "assets/images/techstack/development-tools/",
+    items: [
+      { name: "Git", file: "logoGit.png", tag: "Version Control", fallback: "GIT" },
+      { name: "GitHub", file: "logoGitHub.png", tag: "Collaboration", fallback: "GH" },
+      { name: "Unity", file: "logoUnity.png", tag: "Game Engine", fallback: "UNT" },
+    ],
+  },
+  {
+    id: "productivity-office",
+    name: {
+      id: "Productivity & Office",
+      en: "Productivity & Office",
+    },
+    description: {
+      id: "Tools untuk pengolahan dokumen, spreadsheet, presentasi, dan kolaborasi.",
+      en: "Tools for document processing, spreadsheets, presentations, and collaboration.",
+    },
+    folder: "assets/images/techstack/productivity-office/",
+    items: [
+      { name: "Microsoft Word", file: "logoWord.png", tag: "Document", fallback: "DOC" },
+      { name: "Microsoft Excel", file: "logoExcel.png", tag: "Spreadsheet", fallback: "XLS" },
+      { name: "PowerPoint", file: "logoPowerPoint.png", tag: "Presentation", fallback: "PPT" },
+      { name: "Google Workspace", file: "logoWorkspace.png", tag: "Collaboration", fallback: "GWS" },
+    ],
+  },
+];
+
+// Expose globally for future feature extensions
+window.TECH_STACK_DATA = TECH_STACK_DATA;
+
+// =====================================================================
+// TECH STACK INTERACTIVE CAROUSEL (Cursor Follow, Depth & Swipe)
+// =====================================================================
+const initTechStackCarousel = () => {
+  const viewport = document.getElementById("tech-cards-viewport");
+  const track = document.getElementById("tech-cards-track");
+  if (!viewport || !track) return;
+
+  const cards = Array.from(track.querySelectorAll(".tech-card"));
+  if (!cards.length) return;
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  let viewportWidth = viewport.clientWidth;
+  let trackScrollWidth = track.scrollWidth;
+  let maxScroll = Math.max(0, trackScrollWidth - viewportWidth);
+
+  // Position track slightly inward so adjacent cards are visible initially
+  let currentX = -Math.min(maxScroll * 0.16, 260);
+  let targetX = currentX;
+  let isHovered = false;
+  let isDragging = false;
+  let startX = 0;
+  let dragStartTrackX = 0;
+  let rafId = null;
+
+  const updateDimensions = () => {
+    viewportWidth = viewport.clientWidth;
+    trackScrollWidth = track.scrollWidth;
+    maxScroll = Math.max(0, trackScrollWidth - viewportWidth);
+    targetX = Math.max(-maxScroll, Math.min(0, targetX));
+    currentX = Math.max(-maxScroll, Math.min(0, currentX));
+    wakeLoop();
+  };
+
+  window.addEventListener("resize", updateDimensions, { passive: true });
+
+  const render = () => {
+    if (prefersReducedMotion) return;
+
+    const diff = targetX - currentX;
+    if (Math.abs(diff) > 0.05) {
+      currentX += diff * 0.085;
+    } else {
+      currentX = targetX;
+    }
+
+    track.style.transform = `translate3d(${currentX.toFixed(2)}px, 0, 0)`;
+
+    // Calculate dynamic focus, scale, Y-rotation, and depth for cards
+    const viewportCenter = viewportWidth / 2;
+    cards.forEach((card) => {
+      const cardLeft = card.offsetLeft + currentX;
+      const cardCenter = cardLeft + card.offsetWidth / 2;
+      const distFromCenter = cardCenter - viewportCenter;
+      const normDist = distFromCenter / (viewportWidth / 2);
+      const absDist = Math.min(Math.abs(normDist), 1.6);
+
+      // Scale: 1.05 at center, down to 0.90 at edges
+      const scale = Math.max(0.88, 1.05 - absDist * 0.11).toFixed(3);
+      // Perspective tilt: cards face gently toward the center
+      const rotY = (normDist * -11).toFixed(2);
+      // Opacity: 1 in focus zone, down to 0.76 at outer edges
+      const opacity = Math.max(0.76, 1 - Math.max(0, absDist - 0.45) * 0.32).toFixed(3);
+
+      card.style.setProperty("--dyn-scale", scale);
+      card.style.setProperty("--dyn-rot-y", `${rotY}deg`);
+      card.style.setProperty("--dyn-opacity", opacity);
+      card.style.zIndex = Math.round(30 - absDist * 12);
+    });
+
+    if (Math.abs(diff) > 0.05 || isDragging) {
+      rafId = requestAnimationFrame(render);
+    } else {
+      rafId = null;
+    }
+  };
+
+  const wakeLoop = () => {
+    if (!rafId && !prefersReducedMotion) {
+      rafId = requestAnimationFrame(render);
+    }
+  };
+
+  if (!prefersReducedMotion) {
+    // Initial layout compute
+    updateDimensions();
+
+    // Mouse Glide / Cursor Follow
+    viewport.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse") {
+        isHovered = true;
+        wakeLoop();
+      }
+    });
+
+    viewport.addEventListener("pointerleave", (e) => {
+      if (e.pointerType === "mouse") {
+        isHovered = false;
+      }
+    });
+
+    viewport.addEventListener("pointermove", (e) => {
+      if (isDragging) {
+        const delta = e.clientX - startX;
+        targetX = Math.max(-maxScroll, Math.min(0, dragStartTrackX + delta));
+        wakeLoop();
+        return;
+      }
+
+      if (isHovered && e.pointerType === "mouse") {
+        const rect = viewport.getBoundingClientRect();
+        const normX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        targetX = -normX * maxScroll;
+        wakeLoop();
+      }
+    });
+
+    // Touch / Pointer Drag
+    viewport.addEventListener("pointerdown", (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      dragStartTrackX = targetX;
+      track.classList.add("is-dragging");
+      if (viewport.setPointerCapture) {
+        try {
+          viewport.setPointerCapture(e.pointerId);
+        } catch (_) {}
+      }
+      wakeLoop();
+    });
+
+    const stopDragging = (e) => {
+      if (isDragging) {
+        isDragging = false;
+        track.classList.remove("is-dragging");
+        if (viewport.releasePointerCapture && e && e.pointerId) {
+          try {
+            viewport.releasePointerCapture(e.pointerId);
+          } catch (_) {}
+        }
+      }
+    };
+
+    viewport.addEventListener("pointerup", stopDragging);
+    viewport.addEventListener("pointercancel", stopDragging);
+
+    // Mouse Wheel horizontal navigation
+    viewport.addEventListener(
+      "wheel",
+      (e) => {
+        const delta =
+          Math.abs(e.deltaX) > Math.abs(e.deltaY)
+            ? e.deltaX
+            : e.shiftKey
+            ? e.deltaY
+            : 0;
+        if (delta !== 0) {
+          targetX = Math.max(-maxScroll, Math.min(0, targetX - delta));
+          wakeLoop();
+          e.preventDefault();
+        }
+      },
+      { passive: false },
+    );
+
+    // Keyboard Arrow navigation
+    viewport.addEventListener("keydown", (e) => {
+      const step = 170;
+      if (e.key === "ArrowLeft") {
+        targetX = Math.min(0, targetX + step);
+        wakeLoop();
+        e.preventDefault();
+      } else if (e.key === "ArrowRight") {
+        targetX = Math.max(-maxScroll, targetX - step);
+        wakeLoop();
+        e.preventDefault();
+      }
+    });
+  }
+};
+
 const initLandingFeatures = () => {
   initHeroTypingAnimation();
   initSloganTypingAnimation();
   initLanguageSwitcher();
   initScrollReveal();
+  initTechStackCarousel();
 };
 
 if (document.readyState === "loading") {

@@ -215,7 +215,7 @@
               href="#tech-stack"
               data-i18n="about.tech_btn"
             >
-              Jelajahi Tech Stack
+              Tech Stack
             </a>
           </aside>
         </div>
@@ -238,13 +238,635 @@
             <h2 id="tech-stack-title" class="tech-stack-title" data-i18n="tech.title">
               Tech Stack
             </h2>
-            <p class="tech-stack-subtitle" data-i18n="tech.subtitle">
+            <p class="tech-stack-subtitle slogan-typed" data-i18n="tech.subtitle">
               <span>Alat</span> dan teknologi yang mendukung pekerjaan saya.
             </p>
           </header>
 
-          <!-- Content Placeholder (Card / Logo teknologi akan ditambahkan pada tahap berikutnya) -->
-          <div class="tech-stack-content" aria-hidden="true"></div>
+          <!-- Interactive Tech Stack Carousel -->
+          <div class="tech-stack-content scroll-reveal" style="--reveal-delay: 120ms;" id="tech-stack-content">
+            <div
+              class="tech-cards-viewport"
+              id="tech-cards-viewport"
+              tabindex="0"
+              role="region"
+              aria-label="Koleksi Logo Teknologi Tech Stack"
+            >
+              <div class="tech-cards-track" id="tech-cards-track">
+                <!-- 01. Frontend Development -->
+                <article class="tech-card" style="--wave-y: -10px; --wave-rot: -2.4deg;" tabindex="0" data-category="frontend" aria-label="HTML5 - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoHTML.png"
+                      alt="Logo HTML5"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">H5</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">HTML5</h3>
+                    <span class="tech-card-tag">Markup</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -3px; --wave-rot: -1.0deg;" tabindex="0" data-category="frontend" aria-label="CSS3 - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoCSS.png"
+                      alt="Logo CSS3"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">CSS</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">CSS3</h3>
+                    <span class="tech-card-tag">Styling</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 5px; --wave-rot: 1.0deg;" tabindex="0" data-category="frontend" aria-label="JavaScript - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoJS.png"
+                      alt="Logo JavaScript"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">JS</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">JavaScript</h3>
+                    <span class="tech-card-tag">Language</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 13px; --wave-rot: 2.6deg;" tabindex="0" data-category="frontend" aria-label="React - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoReact.png"
+                      alt="Logo React"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">RC</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">React</h3>
+                    <span class="tech-card-tag">Library</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.0deg;" tabindex="0" data-category="frontend" aria-label="Tailwind CSS - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoTailwind.png"
+                      alt="Logo Tailwind CSS"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">TW</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Tailwind CSS</h3>
+                    <span class="tech-card-tag">Framework</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 9px; --wave-rot: 1.8deg;" tabindex="0" data-category="frontend" aria-label="Bootstrap - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoBootstrap.png"
+                      alt="Logo Bootstrap"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">BS</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Bootstrap</h3>
+                    <span class="tech-card-tag">Framework</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -1px; --wave-rot: -0.4deg;" tabindex="0" data-category="frontend" aria-label="Alpine.js - Frontend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_frontend">Frontend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/frontend/logoAlpine.png"
+                      alt="Logo Alpine.js"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">ALP</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Alpine.js</h3>
+                    <span class="tech-card-tag">Framework</span>
+                  </div>
+                </article>
+
+                <!-- 02. Backend Development -->
+                <article class="tech-card" style="--wave-y: -11px; --wave-rot: -2.5deg;" tabindex="0" data-category="backend" aria-label="PHP - Backend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/backend/logoPHP.png"
+                      alt="Logo PHP"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">PHP</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">PHP</h3>
+                    <span class="tech-card-tag">Language</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -16px; --wave-rot: -3.2deg;" tabindex="0" data-category="backend" aria-label="Laravel - Backend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/backend/logoLaravel.png"
+                      alt="Logo Laravel"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">LAR</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Laravel</h3>
+                    <span class="tech-card-tag">Framework</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -11px; --wave-rot: -2.0deg;" tabindex="0" data-category="backend" aria-label="Python - Backend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/backend/logoPython.png"
+                      alt="Logo Python"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">PY</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Python</h3>
+                    <span class="tech-card-tag">Language</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -1px; --wave-rot: 0.4deg;" tabindex="0" data-category="backend" aria-label="Flask - Backend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/backend/logoFlask.png"
+                      alt="Logo Flask"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">FLK</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Flask</h3>
+                    <span class="tech-card-tag">Framework</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 9px; --wave-rot: 2.0deg;" tabindex="0" data-category="backend" aria-label="MySQL - Backend Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_backend">Backend</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/backend/logoMySQL.png"
+                      alt="Logo MySQL"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">SQL</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">MySQL</h3>
+                    <span class="tech-card-tag">Database</span>
+                  </div>
+                </article>
+
+                <!-- 03. Data Analysis & Data Science -->
+                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.2deg;" tabindex="0" data-category="data-analysis" aria-label="Google Colab - Data Analysis & Data Science">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/data-analysis/logoColab.png"
+                      alt="Logo Google Colab"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">GC</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Google Colab</h3>
+                    <span class="tech-card-tag">Analytics</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 11px; --wave-rot: 2.2deg;" tabindex="0" data-category="data-analysis" aria-label="Power BI - Data Analysis & Data Science">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/data-analysis/logoBI.png"
+                      alt="Logo Power BI"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">PBI</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Power BI</h3>
+                    <span class="tech-card-tag">BI & Viz</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 1px; --wave-rot: 0.0deg;" tabindex="0" data-category="data-analysis" aria-label="Tableau - Data Analysis & Data Science">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_data">Data</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/data-analysis/logoTableau.png"
+                      alt="Logo Tableau"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">TAB</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Tableau</h3>
+                    <span class="tech-card-tag">Visualization</span>
+                  </div>
+                </article>
+
+                <!-- 04. UI/UX & Design -->
+                <article class="tech-card" style="--wave-y: -9px; --wave-rot: -2.0deg;" tabindex="0" data-category="ui-ux-design" aria-label="Figma - UI/UX & Design">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_design">UI/UX</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/ui-ux-design/logoFigma.png"
+                      alt="Logo Figma"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">FIG</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Figma</h3>
+                    <span class="tech-card-tag">Prototyping</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -16px; --wave-rot: -3.0deg;" tabindex="0" data-category="ui-ux-design" aria-label="Canva - UI/UX & Design">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_design">UI/UX</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/ui-ux-design/logoCanva.png"
+                      alt="Logo Canva"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">CNV</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Canva</h3>
+                    <span class="tech-card-tag">Graphic Design</span>
+                  </div>
+                </article>
+
+                <!-- 05. Tools & Development -->
+                <article class="tech-card" style="--wave-y: -10px; --wave-rot: -2.0deg;" tabindex="0" data-category="development-tools" aria-label="Git - Tools & Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/development-tools/logoGit.png"
+                      alt="Logo Git"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">GIT</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Git</h3>
+                    <span class="tech-card-tag">Version Control</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 0px; --wave-rot: 0.6deg;" tabindex="0" data-category="development-tools" aria-label="GitHub - Tools & Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/development-tools/logoGitHub.png"
+                      alt="Logo GitHub"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">GH</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">GitHub</h3>
+                    <span class="tech-card-tag">Collaboration</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 11px; --wave-rot: 2.4deg;" tabindex="0" data-category="development-tools" aria-label="Unity - Tools & Development">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_tools">Tools</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/development-tools/logoUnity.png"
+                      alt="Logo Unity"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">UNT</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Unity</h3>
+                    <span class="tech-card-tag">Game Engine</span>
+                  </div>
+                </article>
+
+                <!-- 06. Productivity & Office -->
+                <article class="tech-card" style="--wave-y: 16px; --wave-rot: 3.2deg;" tabindex="0" data-category="productivity-office" aria-label="Microsoft Word - Productivity & Office">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/productivity-office/logoWord.png"
+                      alt="Logo Microsoft Word"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">DOC</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Microsoft Word</h3>
+                    <span class="tech-card-tag">Document</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: 7px; --wave-rot: 1.4deg;" tabindex="0" data-category="productivity-office" aria-label="Microsoft Excel - Productivity & Office">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/productivity-office/logoExcel.png"
+                      alt="Logo Microsoft Excel"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">XLS</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Microsoft Excel</h3>
+                    <span class="tech-card-tag">Spreadsheet</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -4px; --wave-rot: -1.2deg;" tabindex="0" data-category="productivity-office" aria-label="PowerPoint - Productivity & Office">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/productivity-office/logoPowerPoint.png"
+                      alt="Logo PowerPoint"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">PPT</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">PowerPoint</h3>
+                    <span class="tech-card-tag">Presentation</span>
+                  </div>
+                </article>
+
+                <article class="tech-card" style="--wave-y: -12px; --wave-rot: -2.6deg;" tabindex="0" data-category="productivity-office" aria-label="Google Workspace - Productivity & Office">
+                  <div class="tech-card-header">
+                    <span class="tech-card-badge" data-i18n="tech.category_office">Office</span>
+                  </div>
+                  <div class="tech-card-logo-box">
+                    <img
+                      src="assets/images/techstack/productivity-office/logoWorkspace.png"
+                      alt="Logo Google Workspace"
+                      class="tech-card-logo"
+                      width="58"
+                      height="58"
+                      loading="lazy"
+                      decoding="async"
+                      onerror="this.classList.add('is-missing'); this.nextElementSibling.classList.remove('is-hidden');"
+                    />
+                    <div class="tech-card-fallback is-hidden" aria-hidden="true">
+                      <span class="tech-card-fallback-avatar">GWS</span>
+                    </div>
+                  </div>
+                  <div class="tech-card-info">
+                    <h3 class="tech-card-name">Google Workspace</h3>
+                    <span class="tech-card-tag">Collaboration</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Exploration Indicator / Hint -->
+            <div class="tech-cards-hint" aria-hidden="true">
+              <span class="tech-hint-dot"></span>
+              <span data-i18n="tech.hint">Arahkan kursor atau geser untuk menjelajahi teknologi</span>
+            </div>
+          </div>
 
           <!-- Navigation CTA to Portfolio -->
           <aside
