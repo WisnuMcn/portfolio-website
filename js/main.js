@@ -94,7 +94,8 @@ const translations = {
       profession_3: '<strong class="font-bold">Data</strong> Analysis',
     },
     about: {
-      heading_main: "Tentang",
+      heading: "Tentang Saya",
+      heading_main: "Tentang Saya",
       heading_script: "Saya",
       slogan: '<span class="font-miracle">Tempat</span> ide menjadi karya bermakna.',
       p1: "Perkenalkan, saya Wisnu Agus Wicaksono, lulusan S1 Informatika Universitas Sanata Dharma dengan fokus pada System Development dan IPK 3,52. Saya memiliki minat pada software development, pengembangan web, serta pengolahan dan analisis data. Ketertarikan tersebut terus saya kembangkan melalui pendidikan, pelatihan, dan berbagai kegiatan yang mendukung peningkatan kemampuan teknis saya.",
@@ -199,7 +200,8 @@ const translations = {
       profession_3: '<strong class="font-bold">Data</strong> Analysis',
     },
     about: {
-      heading_main: "About",
+      heading: "About Me",
+      heading_main: "About Me",
       heading_script: "Me",
       slogan: '<span class="font-miracle">Where</span> ideas become meaningful work.',
       p1: "Hello, I am Wisnu Agus Wicaksono, a Bachelor of Informatics graduate from Sanata Dharma University with a focus on System Development and a GPA of 3.52. I have a passion for software development, web engineering, as well as data processing and analytics. I continuously cultivate this interest through academic education, specialized training, and various initiatives that bolster my technical skills.",
