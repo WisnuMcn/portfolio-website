@@ -1592,7 +1592,7 @@ const initAboutModal = () => {
                 <img
                   id="about-org-doc-img"
                   class="about-org-doc-img"
-                  src="assets/images/TechnoFest/1.png"
+                  src="assets/images/TechnoFest/1.webp"
                   alt="Foto dokumentasi organisasi"
                   loading="lazy"
                 />
@@ -1916,7 +1916,7 @@ const initAboutModal = () => {
                 <img
                   id="about-org-doc-img"
                   class="about-org-doc-img"
-                  src="assets/images/TechnoFest/1.png"
+                  src="assets/images/TechnoFest/1.webp"
                   alt="Organization documentation photo"
                   loading="lazy"
                 />
@@ -1975,10 +1975,10 @@ const initAboutModal = () => {
       ratioClass: "is-ratio-3-4",
       aspectRatio: "3/4",
       photos: [
-        "assets/images/TechnoFest/1.png",
-        "assets/images/TechnoFest/2.png",
-        "assets/images/TechnoFest/3.png",
-        "assets/images/TechnoFest/4.png",
+        "assets/images/TechnoFest/1.webp",
+        "assets/images/TechnoFest/2.webp",
+        "assets/images/TechnoFest/3.webp",
+        "assets/images/TechnoFest/4.webp",
       ],
     },
     magisfest: {
@@ -1990,14 +1990,14 @@ const initAboutModal = () => {
       ratioClass: "is-ratio-1-1",
       aspectRatio: "1/1",
       photos: [
-        "assets/images/MagisFest/5.png",
-        "assets/images/MagisFest/6.png",
-        "assets/images/MagisFest/7.png",
-        "assets/images/MagisFest/8.png",
-        "assets/images/MagisFest/9.png",
-        "assets/images/MagisFest/10.png",
-        "assets/images/MagisFest/11.png",
-        "assets/images/MagisFest/12.png",
+        "assets/images/MagisFest/5.webp",
+        "assets/images/MagisFest/6.webp",
+        "assets/images/MagisFest/7.webp",
+        "assets/images/MagisFest/8.webp",
+        "assets/images/MagisFest/9.webp",
+        "assets/images/MagisFest/10.webp",
+        "assets/images/MagisFest/11.webp",
+        "assets/images/MagisFest/12.webp",
       ],
     },
     ngupitfest: {
@@ -2009,13 +2009,13 @@ const initAboutModal = () => {
       ratioClass: "is-ratio-3-4",
       aspectRatio: "3/4",
       photos: [
-        "assets/images/NgupitFest/13.png",
-        "assets/images/NgupitFest/14.png",
-        "assets/images/NgupitFest/15.png",
-        "assets/images/NgupitFest/16.png",
-        "assets/images/NgupitFest/17.png",
-        "assets/images/NgupitFest/18.png",
-        "assets/images/NgupitFest/19.png",
+        "assets/images/NgupitFest/13.webp",
+        "assets/images/NgupitFest/14.webp",
+        "assets/images/NgupitFest/15.webp",
+        "assets/images/NgupitFest/16.webp",
+        "assets/images/NgupitFest/17.webp",
+        "assets/images/NgupitFest/18.webp",
+        "assets/images/NgupitFest/19.webp",
       ],
     },
   };
