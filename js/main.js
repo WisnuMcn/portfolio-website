@@ -217,6 +217,12 @@ const translations = {
     modal: {
       close_aria: "Tutup jendela informasi",
       view_certificate: "Lihat Sertifikat",
+      view_docs: "Lihat Dokumentasi",
+      close_docs: "Tutup Dokumentasi",
+      docs_badge: "Dokumentasi",
+      close_docs_aria: "Tutup panel dokumentasi",
+      prev_photo_aria: "Foto sebelumnya",
+      next_photo_aria: "Foto berikutnya",
     },
   },
   en: {
@@ -326,6 +332,12 @@ const translations = {
     modal: {
       close_aria: "Close information modal",
       view_certificate: "View Certificate",
+      view_docs: "View Documentation",
+      close_docs: "Close Documentation",
+      docs_badge: "Documentation",
+      close_docs_aria: "Close documentation panel",
+      prev_photo_aria: "Previous photo",
+      next_photo_aria: "Next photo",
     },
   },
 };
@@ -1421,86 +1433,205 @@ const initAboutModal = () => {
         </div>
       `,
       organisasi: `
-        <div class="flex flex-col gap-4 text-left">
-          <!-- Panitia Technofest 6.0 – Keamanan -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+        <div class="about-org-split-wrapper" id="about-org-split-wrapper">
+          <!-- Left Panel: Daftar Informasi Organisasi -->
+          <div class="about-org-info-panel" id="about-org-info-panel">
+            <div class="flex flex-col gap-4 text-left">
+              <!-- Panitia Technofest 6.0 – Keamanan -->
+              <div class="about-modal-card-item group" data-org-card="technofest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      11 Oktober 2024 – 12 Oktober 2024
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="technofest"
+                      aria-label="Lihat Dokumentasi Panitia Technofest 6.0"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">Lihat Dokumentasi</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Bertanggung jawab menjaga keamanan dan ketertiban selama kegiatan berlangsung.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Membantu mengatur kelancaran aktivitas peserta dan panitia.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Berkoordinasi dengan anggota tim untuk memastikan kegiatan berjalan dengan aman dan tertib.</span>
+                  </li>
+                </ul>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                11 Oktober 2024 – 12 Oktober 2024
+
+              <!-- Panitia Magisfest 2024 – Keamanan -->
+              <div class="about-modal-card-item group" data-org-card="magisfest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="magisfest"
+                      aria-label="Lihat Dokumentasi Panitia Magisfest 2024"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">Lihat Dokumentasi</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Menjaga keamanan dan kenyamanan lingkungan selama pelaksanaan kegiatan.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Membantu pengawasan serta pengaturan jalannya acara.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Bekerja sama dengan tim dalam menjaga ketertiban dan kelancaran kegiatan.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Panitia Ngupit Fest 2025 – Penanggung Jawab Media -->
+              <div class="about-modal-card-item group" data-org-card="ngupitfest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      31 Agustus 2025 – 13 Desember 2025
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="ngupitfest"
+                      aria-label="Lihat Dokumentasi Panitia Ngupit Fest 2025"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">Lihat Dokumentasi</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Bertanggung jawab mengelola kebutuhan media dan publikasi kegiatan.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Menyiapkan serta mengoordinasikan materi informasi untuk mendukung publikasi acara.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Berkoordinasi dengan tim untuk memastikan informasi kegiatan tersampaikan secara jelas dan konsisten.</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Bertanggung jawab menjaga keamanan dan ketertiban selama kegiatan berlangsung.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Membantu mengatur kelancaran aktivitas peserta dan panitia.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Berkoordinasi dengan anggota tim untuk memastikan kegiatan berjalan dengan aman dan tertib.</span>
-              </li>
-            </ul>
           </div>
 
-          <!-- Panitia Magisfest 2024 – Keamanan -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+          <!-- Right Panel: Dokumentasi Foto (Hidden by default, shown when doc opened) -->
+          <div class="about-org-doc-panel" id="about-org-doc-panel" style="display: none;" aria-hidden="true">
+            <div class="about-org-doc-header">
+              <div class="about-org-doc-header-text">
+                <span class="about-org-doc-badge" data-i18n="modal.docs_badge">Dokumentasi</span>
+                <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
               </div>
+              <button
+                type="button"
+                class="about-org-doc-close-btn"
+                id="about-org-doc-close-btn"
+                aria-label="Tutup panel dokumentasi"
+                data-i18n-aria="modal.close_docs_aria"
+                title="Tutup dokumentasi"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Menjaga keamanan dan kenyamanan lingkungan selama pelaksanaan kegiatan.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Membantu pengawasan serta pengaturan jalannya acara.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Bekerja sama dengan tim dalam menjaga ketertiban dan kelancaran kegiatan.</span>
-              </li>
-            </ul>
-          </div>
 
-          <!-- Panitia Ngupit Fest 2025 – Penanggung Jawab Media -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
+            <div class="about-org-doc-stage">
+              <div class="about-org-doc-frame is-ratio-3-4" id="about-org-doc-frame">
+                <img
+                  id="about-org-doc-img"
+                  class="about-org-doc-img"
+                  src="assets/images/TechnoFest/1.png"
+                  alt="Foto dokumentasi organisasi"
+                  loading="lazy"
+                />
+                <div class="about-org-doc-glow" aria-hidden="true"></div>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                31 Agustus 2025 – 13 Desember 2025
-              </div>
+
+              <button
+                type="button"
+                class="about-org-doc-nav-btn about-org-doc-nav-btn--prev"
+                id="about-org-doc-prev"
+                aria-label="Foto sebelumnya"
+                data-i18n-aria="modal.prev_photo_aria"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                class="about-org-doc-nav-btn about-org-doc-nav-btn--next"
+                id="about-org-doc-next"
+                aria-label="Foto berikutnya"
+                data-i18n-aria="modal.next_photo_aria"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Bertanggung jawab mengelola kebutuhan media dan publikasi kegiatan.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Menyiapkan serta mengoordinasikan materi informasi untuk mendukung publikasi acara.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Berkoordinasi dengan tim untuk memastikan informasi kegiatan tersampaikan secara jelas dan konsisten.</span>
-              </li>
-            </ul>
+
+            <div class="about-org-doc-footer">
+              <div class="about-org-doc-counter font-helvetica" id="about-org-doc-counter">
+                <span class="about-org-doc-current" id="about-org-doc-current">01</span>
+                <span class="about-org-doc-sep text-white/40">/</span>
+                <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
+              </div>
+              <div class="about-org-doc-dots" id="about-org-doc-dots" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       `,
@@ -1627,86 +1758,205 @@ const initAboutModal = () => {
         </div>
       `,
       organisasi: `
-        <div class="flex flex-col gap-4 text-left">
-          <!-- Panitia Technofest 6.0 – Security -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+        <div class="about-org-split-wrapper" id="about-org-split-wrapper">
+          <!-- Left Panel: Organization Information Cards -->
+          <div class="about-org-info-panel" id="about-org-info-panel">
+            <div class="flex flex-col gap-4 text-left">
+              <!-- Panitia Technofest 6.0 – Security -->
+              <div class="about-modal-card-item group" data-org-card="technofest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      11 October 2024 – 12 October 2024
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="technofest"
+                      aria-label="View Documentation Panitia Technofest 6.0"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">View Documentation</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Responsible for maintaining security, safety, and order during all event sessions.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Assisted in coordinating smooth crowd flow for participants and committee members.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Coordinated with security team members to ensure the event ran securely and smoothly.</span>
+                  </li>
+                </ul>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                11 October 2024 – 12 October 2024
+
+              <!-- Panitia Magisfest 2024 – Security -->
+              <div class="about-modal-card-item group" data-org-card="magisfest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="magisfest"
+                      aria-label="View Documentation Panitia Magisfest 2024"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">View Documentation</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Ensured security, order, and a safe venue environment throughout the event.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Assisted in crowd supervision and scheduled program coordination.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Collaborated with cross-functional committees to preserve event order.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Panitia Ngupit Fest 2025 – Media Coordinator -->
+              <div class="about-modal-card-item group" data-org-card="ngupitfest">
+                <div class="about-modal-card-glow"></div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
+                  <div>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
+                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Media & Publication Coordinator</p>
+                  </div>
+                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      31 August 2025 – 13 December 2025
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-emerald-pill about-modal-doc-btn"
+                      data-org="ngupitfest"
+                      aria-label="View Documentation Panitia Ngupit Fest 2025"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-emerald-pill-icon about-modal-doc-icon" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <span data-i18n="modal.view_docs">View Documentation</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Led and managed all media requirements, branding, and event publication campaigns.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Prepared and coordinated multimedia content to drive strong event public awareness.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
+                    <span>Liaised with committee leads to ensure all event details were communicated clearly and consistently.</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Responsible for maintaining security, safety, and order during all event sessions.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Assisted in coordinating smooth crowd flow for participants and committee members.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Coordinated with security team members to ensure the event ran securely and smoothly.</span>
-              </li>
-            </ul>
           </div>
 
-          <!-- Panitia Magisfest 2024 – Security -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+          <!-- Right Panel: Photo Documentation Stage (Hidden by default, shown when doc opened) -->
+          <div class="about-org-doc-panel" id="about-org-doc-panel" style="display: none;" aria-hidden="true">
+            <div class="about-org-doc-header">
+              <div class="about-org-doc-header-text">
+                <span class="about-org-doc-badge" data-i18n="modal.docs_badge">Documentation</span>
+                <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
               </div>
+              <button
+                type="button"
+                class="about-org-doc-close-btn"
+                id="about-org-doc-close-btn"
+                aria-label="Close documentation panel"
+                data-i18n-aria="modal.close_docs_aria"
+                title="Close documentation"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Ensured security, order, and a safe venue environment throughout the event.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Assisted in crowd supervision and scheduled program coordination.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Collaborated with cross-functional committees to preserve event order.</span>
-              </li>
-            </ul>
-          </div>
 
-          <!-- Panitia Ngupit Fest 2025 – Media Coordinator -->
-          <div class="about-modal-card-item group">
-            <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Media & Publication Coordinator</p>
+            <div class="about-org-doc-stage">
+              <div class="about-org-doc-frame is-ratio-3-4" id="about-org-doc-frame">
+                <img
+                  id="about-org-doc-img"
+                  class="about-org-doc-img"
+                  src="assets/images/TechnoFest/1.png"
+                  alt="Organization documentation photo"
+                  loading="lazy"
+                />
+                <div class="about-org-doc-glow" aria-hidden="true"></div>
               </div>
-              <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit sm:self-start transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
-                31 August 2025 – 13 December 2025
-              </div>
+
+              <button
+                type="button"
+                class="about-org-doc-nav-btn about-org-doc-nav-btn--prev"
+                id="about-org-doc-prev"
+                aria-label="Previous photo"
+                data-i18n-aria="modal.prev_photo_aria"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                class="about-org-doc-nav-btn about-org-doc-nav-btn--next"
+                id="about-org-doc-next"
+                aria-label="Next photo"
+                data-i18n-aria="modal.next_photo_aria"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Led and managed all media requirements, branding, and event publication campaigns.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Prepared and coordinated multimedia content to drive strong event public awareness.</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
-                <span>Liaised with committee leads to ensure all event details were communicated clearly and consistently.</span>
-              </li>
-            </ul>
+
+            <div class="about-org-doc-footer">
+              <div class="about-org-doc-counter font-helvetica" id="about-org-doc-counter">
+                <span class="about-org-doc-current" id="about-org-doc-current">01</span>
+                <span class="about-org-doc-sep text-white/40">/</span>
+                <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
+              </div>
+              <div class="about-org-doc-dots" id="about-org-doc-dots" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       `,
@@ -1716,7 +1966,239 @@ const initAboutModal = () => {
   let activeCategory = null;
   let lastFocusedElement = null;
 
+  // Organization Documentation Data
+  const orgDocsData = {
+    technofest: {
+      id: "technofest",
+      title: {
+        id: "Panitia TechnoFest 6.0",
+        en: "TechnoFest 6.0 Committee",
+      },
+      ratioClass: "is-ratio-3-4",
+      aspectRatio: "3/4",
+      photos: [
+        "assets/images/TechnoFest/1.png",
+        "assets/images/TechnoFest/2.png",
+        "assets/images/TechnoFest/3.png",
+        "assets/images/TechnoFest/4.png",
+      ],
+    },
+    magisfest: {
+      id: "magisfest",
+      title: {
+        id: "Panitia MagisFest 2024",
+        en: "MagisFest 2024 Committee",
+      },
+      ratioClass: "is-ratio-1-1",
+      aspectRatio: "1/1",
+      photos: [
+        "assets/images/MagisFest/5.png",
+        "assets/images/MagisFest/6.png",
+        "assets/images/MagisFest/7.png",
+        "assets/images/MagisFest/8.png",
+        "assets/images/MagisFest/9.png",
+        "assets/images/MagisFest/10.png",
+        "assets/images/MagisFest/11.png",
+        "assets/images/MagisFest/12.png",
+      ],
+    },
+    ngupitfest: {
+      id: "ngupitfest",
+      title: {
+        id: "Panitia Ngupit Fest 2025",
+        en: "Ngupit Fest 2025 Committee",
+      },
+      ratioClass: "is-ratio-3-4",
+      aspectRatio: "3/4",
+      photos: [
+        "assets/images/NgupitFest/13.png",
+        "assets/images/NgupitFest/14.png",
+        "assets/images/NgupitFest/15.png",
+        "assets/images/NgupitFest/16.png",
+        "assets/images/NgupitFest/17.png",
+        "assets/images/NgupitFest/18.png",
+        "assets/images/NgupitFest/19.png",
+      ],
+    },
+  };
+
+  let activeOrgId = null;
+  let currentPhotoIndex = 0;
+  let autoplayTimer = null;
+
+  const stopAutoplay = () => {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    if (!activeOrgId) return;
+    const org = orgDocsData[activeOrgId];
+    if (!org || org.photos.length <= 1) return;
+
+    autoplayTimer = setInterval(() => {
+      goToPhoto(currentPhotoIndex + 1, false);
+    }, 4500);
+  };
+
+  const restartAutoplay = () => {
+    stopAutoplay();
+    if (!activeOrgId) return;
+    const org = orgDocsData[activeOrgId];
+    if (!org || org.photos.length <= 1) return;
+
+    autoplayTimer = setInterval(() => {
+      goToPhoto(currentPhotoIndex + 1, false);
+    }, 4500);
+  };
+
+  const updateDocViewerUI = () => {
+    if (!activeOrgId) return;
+    const org = orgDocsData[activeOrgId];
+    if (!org) return;
+
+    const frame = document.getElementById("about-org-doc-frame");
+    const img = document.getElementById("about-org-doc-img");
+    const title = document.getElementById("about-org-doc-title");
+    const currentEl = document.getElementById("about-org-doc-current");
+    const totalEl = document.getElementById("about-org-doc-total");
+    const dotsContainer = document.getElementById("about-org-doc-dots");
+    const prevBtn = document.getElementById("about-org-doc-prev");
+    const nextBtn = document.getElementById("about-org-doc-next");
+
+    if (!frame || !img) return;
+
+    if (title) {
+      title.textContent = org.title[currentPortfolioLang] || org.title.id;
+    }
+
+    frame.classList.remove("is-ratio-3-4", "is-ratio-1-1");
+    frame.classList.add(org.ratioClass);
+
+    const total = org.photos.length;
+    if (totalEl) totalEl.textContent = String(total).padStart(2, "0");
+    if (currentEl) currentEl.textContent = String(currentPhotoIndex + 1).padStart(2, "0");
+
+    const hasMultiple = total > 1;
+    if (prevBtn) {
+      prevBtn.disabled = !hasMultiple;
+      prevBtn.style.opacity = hasMultiple ? "1" : "0.35";
+      prevBtn.style.pointerEvents = hasMultiple ? "auto" : "none";
+    }
+    if (nextBtn) {
+      nextBtn.disabled = !hasMultiple;
+      nextBtn.style.opacity = hasMultiple ? "1" : "0.35";
+      nextBtn.style.pointerEvents = hasMultiple ? "auto" : "none";
+    }
+
+    if (dotsContainer) {
+      dotsContainer.innerHTML = "";
+      if (hasMultiple) {
+        org.photos.forEach((_, idx) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = `about-org-doc-dot${idx === currentPhotoIndex ? " is-active" : ""}`;
+          dot.setAttribute("data-dot-index", String(idx));
+          dot.setAttribute(
+            "aria-label",
+            currentPortfolioLang === "en"
+              ? `Go to photo ${idx + 1}`
+              : `Buka foto ke-${idx + 1}`
+          );
+          dotsContainer.appendChild(dot);
+        });
+      }
+    }
+
+    const nextSrc = org.photos[currentPhotoIndex];
+    if (img.getAttribute("src") !== nextSrc) {
+      img.style.opacity = "0.2";
+      img.style.transform = "scale(0.96)";
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        img.src = nextSrc;
+        img.style.opacity = "1";
+        img.style.transform = "scale(1)";
+      };
+      tempImg.onerror = () => {
+        img.src = nextSrc;
+        img.style.opacity = "1";
+        img.style.transform = "scale(1)";
+      };
+      tempImg.src = nextSrc;
+    } else {
+      img.style.opacity = "1";
+      img.style.transform = "scale(1)";
+    }
+
+    document.querySelectorAll("[data-org-card]").forEach((card) => {
+      const cardOrg = card.getAttribute("data-org-card");
+      card.classList.toggle("is-active-org-card", cardOrg === activeOrgId);
+    });
+  };
+
+  const goToPhoto = (index, isUserAction = false) => {
+    if (!activeOrgId) return;
+    const org = orgDocsData[activeOrgId];
+    if (!org) return;
+
+    const total = org.photos.length;
+    currentPhotoIndex = ((index % total) + total) % total;
+
+    updateDocViewerUI();
+
+    if (isUserAction) {
+      restartAutoplay();
+    }
+  };
+
+  const openDocumentation = (orgId) => {
+    if (!orgDocsData[orgId]) return;
+
+    activeOrgId = orgId;
+    currentPhotoIndex = 0;
+
+    const splitWrapper = document.getElementById("about-org-split-wrapper");
+    const docPanel = document.getElementById("about-org-doc-panel");
+    const modalDialog = aboutModal.querySelector(".about-modal-dialog");
+
+    if (modalDialog) modalDialog.classList.add("is-doc-expanded");
+    if (splitWrapper) splitWrapper.classList.add("is-split-active");
+    if (docPanel) {
+      docPanel.style.display = "flex";
+      docPanel.setAttribute("aria-hidden", "false");
+    }
+
+    updateDocViewerUI();
+    startAutoplay();
+  };
+
+  const closeDocumentation = () => {
+    stopAutoplay();
+    activeOrgId = null;
+
+    const splitWrapper = document.getElementById("about-org-split-wrapper");
+    const docPanel = document.getElementById("about-org-doc-panel");
+    const modalDialog = aboutModal.querySelector(".about-modal-dialog");
+
+    if (modalDialog) modalDialog.classList.remove("is-doc-expanded");
+    if (splitWrapper) splitWrapper.classList.remove("is-split-active");
+    if (docPanel) {
+      docPanel.style.display = "none";
+      docPanel.setAttribute("aria-hidden", "true");
+    }
+
+    document.querySelectorAll("[data-org-card]").forEach((card) => {
+      card.classList.remove("is-active-org-card");
+    });
+  };
+
   const openModal = (category) => {
+    closeDocumentation();
+
     const langMeta = categoryMeta[currentPortfolioLang] || categoryMeta.id;
     const langData = aboutInfoData[currentPortfolioLang] || aboutInfoData.id;
     const meta = langMeta[category];
@@ -1766,6 +2248,8 @@ const initAboutModal = () => {
   const closeModal = () => {
     if (!aboutModal.classList.contains("is-open")) return;
 
+    closeDocumentation();
+
     aboutModal.classList.remove("is-open");
     aboutModal.setAttribute("aria-hidden", "true");
 
@@ -1800,9 +2284,60 @@ const initAboutModal = () => {
     });
   });
 
+  // Delegated click handler on aboutModalBody for doc viewer buttons
+  aboutModalBody.addEventListener("click", (e) => {
+    const docBtn = e.target.closest(".about-modal-doc-btn");
+    if (docBtn) {
+      e.preventDefault();
+      const orgId = docBtn.getAttribute("data-org");
+      if (orgId) {
+        if (activeOrgId === orgId) {
+          closeDocumentation();
+        } else {
+          openDocumentation(orgId);
+        }
+      }
+      return;
+    }
+
+    const closeDocBtn = e.target.closest("#about-org-doc-close-btn");
+    if (closeDocBtn) {
+      e.preventDefault();
+      closeDocumentation();
+      return;
+    }
+
+    const prevBtn = e.target.closest("#about-org-doc-prev");
+    if (prevBtn) {
+      e.preventDefault();
+      goToPhoto(currentPhotoIndex - 1, true);
+      return;
+    }
+
+    const nextBtn = e.target.closest("#about-org-doc-next");
+    if (nextBtn) {
+      e.preventDefault();
+      goToPhoto(currentPhotoIndex + 1, true);
+      return;
+    }
+
+    const dotBtn = e.target.closest(".about-org-doc-dot");
+    if (dotBtn) {
+      e.preventDefault();
+      const dotIdx = parseInt(dotBtn.getAttribute("data-dot-index"), 10);
+      if (!isNaN(dotIdx)) {
+        goToPhoto(dotIdx, true);
+      }
+      return;
+    }
+  });
+
   // Refresh open modal when language switches
   window.__refreshAboutModal = () => {
     if (activeCategory && aboutModal.classList.contains("is-open")) {
+      const prevOrgId = activeOrgId;
+      const prevPhotoIdx = currentPhotoIndex;
+
       const langMeta = categoryMeta[currentPortfolioLang] || categoryMeta.id;
       const langData = aboutInfoData[currentPortfolioLang] || aboutInfoData.id;
       const meta = langMeta[activeCategory];
@@ -1810,6 +2345,12 @@ const initAboutModal = () => {
       if (meta && content) {
         if (aboutModalTitle) aboutModalTitle.textContent = meta.title;
         aboutModalBody.innerHTML = content;
+
+        if (activeCategory === "organisasi" && prevOrgId) {
+          openDocumentation(prevOrgId);
+          currentPhotoIndex = prevPhotoIdx;
+          updateDocViewerUI();
+        }
       }
     }
   };
@@ -1825,10 +2366,24 @@ const initAboutModal = () => {
     }
   });
 
-  // Keyboard Escape listener
+  // Keyboard Escape and Arrow listeners
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && aboutModal.classList.contains("is-open")) {
-      closeModal();
+    if (!aboutModal.classList.contains("is-open")) return;
+
+    if (event.key === "Escape") {
+      if (activeOrgId) {
+        closeDocumentation();
+      } else {
+        closeModal();
+      }
+    } else if (activeOrgId) {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goToPhoto(currentPhotoIndex - 1, true);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goToPhoto(currentPhotoIndex + 1, true);
+      }
     }
   });
 };
