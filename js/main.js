@@ -1318,9 +1318,9 @@ const initAboutModal = () => {
           <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
             <div class="relative z-10 flex-1 pr-20 sm:pr-28">
-              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">SMK Leonardo Klaten</h4>
-              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h4>
+              <p class="font-jakarta text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70"></span>
                 Teknik Mekatronika
               </p>
             </div>
@@ -1331,9 +1331,9 @@ const initAboutModal = () => {
           <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
             <div class="relative z-10 flex-1 pr-20 sm:pr-28">
-              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">Universitas Sanata Dharma</h4>
-              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h4>
+              <p class="font-jakarta text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70"></span>
                 S1-Informatika
               </p>
             </div>
@@ -1346,15 +1346,15 @@ const initAboutModal = () => {
           <!-- PT. Chemco Harapan Nusantara -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+              <div class="min-w-0 flex-1">
+                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">PT. Chemco Harapan Nusantara</h4>
+                <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
               </div>
-              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+              <div class="flex flex-col items-end gap-2 shrink-0">
+                <span class="about-modal-card-date">
                   15 Januari 2020 – 14 Maret 2020
-                </div>
+                </span>
                 <a
                   href="assets/documents/sertifikat_Chemco.pdf"
                   target="_blank"
@@ -1373,7 +1373,7 @@ const initAboutModal = () => {
                 </a>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+            <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
               <li class="flex items-start gap-2.5">
                 <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                 <span>Melakukan proses finishing pada hasil produksi sesuai standar kerja perusahaan.</span>
@@ -1388,15 +1388,15 @@ const initAboutModal = () => {
           <!-- PT. Panacipta Seinan Components -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing dan Packing</p>
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+              <div class="min-w-0 flex-1">
+                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">PT. Panacipta Seinan Components</h4>
+                <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Finishing dan Packing</p>
               </div>
-              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+              <div class="flex flex-col items-end gap-2 shrink-0">
+                <span class="about-modal-card-date">
                   29 Juni 2021 – 18 April 2022
-                </div>
+                </span>
                 <a
                   href="assets/documents/sertifikat_Panacipta.pdf"
                   target="_blank"
@@ -1415,7 +1415,7 @@ const initAboutModal = () => {
                 </a>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+            <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
               <li class="flex items-start gap-2.5">
                 <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                 <span>Melakukan proses finishing produk sesuai standar operasional perusahaan.</span>
@@ -1442,13 +1442,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Technofest 6.0</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Keamanan</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       11 Oktober 2024 – 12 Oktober 2024
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1464,7 +1464,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Bertanggung jawab menjaga keamanan dan ketertiban selama kegiatan berlangsung.</span>
@@ -1485,13 +1485,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Magisfest 2024</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Keamanan</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       23 November 2024
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1507,7 +1507,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Menjaga keamanan dan kenyamanan lingkungan selama pelaksanaan kegiatan.</span>
@@ -1528,13 +1528,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Ngupit Fest 2025</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       31 Agustus 2025 – 13 Desember 2025
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1550,7 +1550,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Bertanggung jawab mengelola kebutuhan media dan publikasi kegiatan.</span>
@@ -1625,7 +1625,7 @@ const initAboutModal = () => {
             </div>
 
             <div class="about-org-doc-footer">
-              <div class="about-org-doc-counter font-helvetica" id="about-org-doc-counter">
+              <div class="about-org-doc-counter font-jakarta" id="about-org-doc-counter">
                 <span class="about-org-doc-current" id="about-org-doc-current">01</span>
                 <span class="about-org-doc-sep text-white/40">/</span>
                 <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
@@ -1642,9 +1642,9 @@ const initAboutModal = () => {
           <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
             <div class="relative z-10 flex-1 pr-20 sm:pr-28">
-              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">SMK Leonardo Klaten</h4>
-              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug">SMK Leonardo Klaten</h4>
+              <p class="font-jakarta text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70"></span>
                 Mechatronics Engineering
               </p>
             </div>
@@ -1655,9 +1655,9 @@ const initAboutModal = () => {
           <div class="about-modal-card-item about-modal-card-item--edu group">
             <div class="about-modal-card-glow"></div>
             <div class="relative z-10 flex-1 pr-20 sm:pr-28">
-              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug group-hover:text-leaf transition-colors duration-300">Universitas Sanata Dharma</h4>
-              <p class="font-helvetica text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2 group-hover:text-leaf transition-colors duration-300">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70 group-hover:bg-leaf transition-colors duration-300"></span>
+              <h4 class="font-jakarta text-[17px] sm:text-[18px] font-bold text-white tracking-wide leading-snug">Universitas Sanata Dharma</h4>
+              <p class="font-jakarta text-sm font-medium text-white/80 mt-1.5 flex items-center gap-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-leaf/70"></span>
                 Bachelor of Informatics
               </p>
             </div>
@@ -1670,15 +1670,15 @@ const initAboutModal = () => {
           <!-- PT. Chemco Harapan Nusantara -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Chemco Harapan Nusantara</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+              <div class="min-w-0 flex-1">
+                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">PT. Chemco Harapan Nusantara</h4>
+                <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Finishing – Casting F2</p>
               </div>
-              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+              <div class="flex flex-col items-end gap-2 shrink-0">
+                <span class="about-modal-card-date">
                   15 January 2020 – 14 March 2020
-                </div>
+                </span>
                 <a
                   href="assets/documents/sertifikat_Chemco.pdf"
                   target="_blank"
@@ -1697,7 +1697,7 @@ const initAboutModal = () => {
                 </a>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+            <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
               <li class="flex items-start gap-2.5">
                 <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                 <span>Executed finishing processes on manufacturing output adhering strictly to corporate standards.</span>
@@ -1712,15 +1712,15 @@ const initAboutModal = () => {
           <!-- PT. Panacipta Seinan Components -->
           <div class="about-modal-card-item group">
             <div class="about-modal-card-glow"></div>
-            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-              <div>
-                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">PT. Panacipta Seinan Components</h4>
-                <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Finishing and Packaging</p>
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+              <div class="min-w-0 flex-1">
+                <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">PT. Panacipta Seinan Components</h4>
+                <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Finishing and Packaging</p>
               </div>
-              <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+              <div class="flex flex-col items-end gap-2 shrink-0">
+                <span class="about-modal-card-date">
                   29 June 2021 – 18 April 2022
-                </div>
+                </span>
                 <a
                   href="assets/documents/sertifikat_Panacipta.pdf"
                   target="_blank"
@@ -1739,7 +1739,7 @@ const initAboutModal = () => {
                 </a>
               </div>
             </div>
-            <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+            <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
               <li class="flex items-start gap-2.5">
                 <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                 <span>Carried out product finishing according to standard operating procedures.</span>
@@ -1766,13 +1766,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Technofest 6.0</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Security Division</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       11 October 2024 – 12 October 2024
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1788,7 +1788,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Responsible for maintaining security, safety, and order during all event sessions.</span>
@@ -1809,13 +1809,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Magisfest 2024</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Security Division</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       23 November 2024
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1831,7 +1831,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Ensured security, order, and a safe venue environment throughout the event.</span>
@@ -1852,13 +1852,13 @@ const initAboutModal = () => {
                 <div class="about-modal-card-glow"></div>
                 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
                   <div class="min-w-0 flex-1">
-                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
-                    <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Media & Publication Coordinator</p>
+                    <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide">Panitia Ngupit Fest 2025</h4>
+                    <p class="font-jakarta text-sm font-medium text-white/80 mt-1">Media & Publication Coordinator</p>
                   </div>
                   <div class="flex flex-col items-end gap-2 shrink-0">
-                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                    <span class="about-modal-card-date">
                       31 August 2025 – 13 December 2025
-                    </div>
+                    </span>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1874,7 +1874,7 @@ const initAboutModal = () => {
                     </button>
                   </div>
                 </div>
-                <ul class="font-helvetica space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
+                <ul class="font-jakarta space-y-2 text-[14px] text-white/85 leading-relaxed pl-0">
                   <li class="flex items-start gap-2.5">
                     <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-leaf"></span>
                     <span>Led and managed all media requirements, branding, and event publication campaigns.</span>
@@ -1949,7 +1949,7 @@ const initAboutModal = () => {
             </div>
 
             <div class="about-org-doc-footer">
-              <div class="about-org-doc-counter font-helvetica" id="about-org-doc-counter">
+              <div class="about-org-doc-counter font-jakarta" id="about-org-doc-counter">
                 <span class="about-org-doc-current" id="about-org-doc-current">01</span>
                 <span class="about-org-doc-sep text-white/40">/</span>
                 <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
@@ -2210,6 +2210,7 @@ const initAboutModal = () => {
 
     // Show modal with transition
     aboutModal.style.display = "flex";
+    void aboutModal.offsetWidth;
     requestAnimationFrame(() => {
       aboutModal.setAttribute("aria-hidden", "false");
       aboutModal.classList.add("is-open");
@@ -2249,7 +2250,7 @@ const initAboutModal = () => {
       ) {
         lastFocusedElement.focus();
       }
-    }, 280);
+    }, 380);
   };
 
   // Bind click on about pills

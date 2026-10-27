@@ -179,6 +179,11 @@ body {
   transform: translateY(-1px);
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 3px;
+}
+
 .site-nav {
   width: min(96vw, 690px) !important;
   pointer-events: auto;
@@ -250,14 +255,14 @@ body {
   color: #ffffff;
   background: linear-gradient(
     135deg,
-    rgba(25, 214, 111, 0.25) 0%,
-    rgba(25, 214, 111, 0.12) 100%
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.08) 100%
   );
-  border-color: rgba(25, 214, 111, 0.45);
+  border-color: rgba(255, 255, 255, 0.38);
   box-shadow:
-    0 0 12px rgba(25, 214, 111, 0.28),
-    inset 0 1px 0.5px rgba(255, 255, 255, 0.35);
-  text-shadow: 0 0 8px rgba(25, 214, 111, 0.5);
+    0 0 10px rgba(255, 255, 255, 0.18),
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.45);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 .lang-sep {
@@ -713,45 +718,34 @@ body {
 }
 
 .about-pill:hover,
-.about-portfolio-button:hover {
-  border-color: rgba(25, 214, 111, 0.35);
+.about-pill:focus-visible {
+  border-color: rgba(255, 255, 255, 0.32) !important;
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(24, 34, 27, 0.68) 0%,
-      rgba(12, 18, 14, 0.78) 100%
-    );
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
+    ) !important;
   box-shadow:
     0 14px 30px -4px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
-    0 0 16px rgba(25, 214, 111, 0.15);
-  transform: translateY(-2px);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 12px rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+.about-pill:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75) !important;
+  outline-offset: 3px !important;
 }
 
 .about-pill.active {
-  border-color: rgba(25, 214, 111, 0.5);
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.16) 0%,
-      rgba(255, 255, 255, 0.04) 50%,
-      transparent 100%
-    ),
-    rgba(25, 214, 111, 0.08);
-  box-shadow:
-    0 12px 28px -4px rgba(0, 0, 0, 0.45),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.4),
-    0 0 18px rgba(25, 214, 111, 0.22);
-}
-
-.about-pill.active:hover {
-  border-color: rgba(25, 214, 111, 0.65);
+  border-color: rgba(255, 255, 255, 0.42);
   background:
     linear-gradient(
       135deg,
@@ -759,11 +753,48 @@ body {
       rgba(255, 255, 255, 0.06) 50%,
       transparent 100%
     ),
-    rgba(25, 214, 111, 0.12);
+    rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 12px 28px -4px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 14px rgba(255, 255, 255, 0.1);
+}
+
+.about-pill.active:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.24) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 100%
+    ),
+    rgba(255, 255, 255, 0.1);
   box-shadow:
     0 14px 32px -4px rgba(0, 0, 0, 0.52),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.48),
-    0 0 20px rgba(25, 214, 111, 0.28);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5),
+    0 0 16px rgba(255, 255, 255, 0.14);
+}
+
+.about-portfolio-button:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    ),
+    linear-gradient(
+      165deg,
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
+    );
+  box-shadow:
+    0 14px 30px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    0 0 12px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 .about-info-container {
@@ -1172,48 +1203,12 @@ body {
 .tech-stack-bottom {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   margin-top: 24px;
   margin-bottom: 6px;
   position: relative;
   z-index: 2;
-}
-
-.tech-cards-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0 0 clamp(48px, 4.2vw, 56px) clamp(2px, 0.8vw, 8px);
-  padding: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  pointer-events: none;
-  text-align: left;
-}
-
-.tech-hint-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #19d66f;
-  box-shadow: 0 0 6px #19d66f;
-  animation: pulseHintDot 2.2s infinite ease-in-out;
-}
-
-@keyframes pulseHintDot {
-  0%,
-  100% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.3);
-    opacity: 1;
-    box-shadow: 0 0 12px #19d66f;
-  }
 }
 
 .tech-portfolio-cta {
@@ -1610,28 +1605,28 @@ body {
 
 .portfolio-certification-button:hover,
 .portfolio-certification-button:focus-visible {
-  border-color: rgba(25, 214, 111, 0.38);
+  border-color: rgba(255, 255, 255, 0.32);
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(24, 34, 27, 0.72) 0%,
-      rgba(12, 18, 14, 0.82) 100%
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
     );
   box-shadow:
     0 16px 36px -6px rgba(0, 0, 0, 0.55),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
-    0 0 18px rgba(25, 214, 111, 0.16);
+    0 0 12px rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .portfolio-certification-button:focus-visible {
-  outline: 2px solid rgba(25, 214, 111, 0.5);
+  outline: 2px solid rgba(255, 255, 255, 0.75);
   outline-offset: 3px;
 }
 
@@ -2754,28 +2749,28 @@ body {
 
 .certification-contact-button:hover,
 .certification-contact-button:focus-visible {
-  border-color: rgba(25, 214, 111, 0.38);
+  border-color: rgba(255, 255, 255, 0.32);
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(24, 34, 27, 0.72) 0%,
-      rgba(12, 18, 14, 0.82) 100%
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
     );
   box-shadow:
     0 16px 36px -6px rgba(0, 0, 0, 0.55),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
-    0 0 18px rgba(25, 214, 111, 0.16);
+    0 0 12px rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .certification-contact-button:focus-visible {
-  outline: 2px solid rgba(25, 214, 111, 0.5);
+  outline: 2px solid rgba(255, 255, 255, 0.75);
   outline-offset: 3px;
 }
 
@@ -2948,11 +2943,6 @@ body {
     gap: 16px;
     margin-top: 20px;
     margin-bottom: 0;
-  }
-
-  .tech-cards-hint {
-    margin: 0 0 0 2px;
-    font-size: 11px;
   }
 
   .tech-portfolio-cta {
@@ -3506,23 +3496,28 @@ body {
     box-shadow 0.35s ease;
 }
 
-/* Hover Interaction (Elevated lift, subtle emerald light, specular glow) */
+/* Hover Interaction (Elevated lift, subtle transparent white glass light, specular glow) */
 .kontak-btn:hover,
 .kontak-btn:focus-visible {
   transform: translateY(-4px) scale(1.06);
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
       transparent 100%
     ),
-    rgba(25, 214, 111, 0.06);
-  border-color: rgba(25, 214, 111, 0.38);
+    rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.36);
   box-shadow:
     0 16px 36px -4px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
-    0 0 20px rgba(25, 214, 111, 0.18);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.48),
+    0 0 16px rgba(255, 255, 255, 0.1);
+}
+
+.kontak-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 3px;
 }
 
 /* Icons Inside Button (Figma ~44-47px prop) */
@@ -3763,7 +3758,6 @@ body {
 
 .glass-button:hover,
 .glass-button:focus-visible,
-.about-pill:hover,
 .about-portfolio-button:hover,
 .about-tech-button:hover,
 .tech-portfolio-button:hover,
@@ -3771,24 +3765,32 @@ body {
 .portfolio-certification-button:focus-visible,
 .certification-contact-button:hover,
 .certification-contact-button:focus-visible {
-  border-color: rgba(25, 214, 111, 0.38) !important;
+  border-color: rgba(255, 255, 255, 0.32) !important;
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.17) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(24, 34, 27, 0.72) 0%,
-      rgba(12, 18, 14, 0.82) 100%
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
     ) !important;
   box-shadow:
     0 16px 36px -6px rgba(0, 0, 0, 0.55),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
-    0 0 18px rgba(25, 214, 111, 0.16) !important;
+    0 0 12px rgba(255, 255, 255, 0.08) !important;
   transform: translateY(-2px) !important;
+}
+
+.glass-button:focus-visible,
+.about-portfolio-button:focus-visible,
+.about-tech-button:focus-visible,
+.tech-portfolio-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75) !important;
+  outline-offset: 3px !important;
 }
 
 .portfolio-icon-btn,
@@ -3815,46 +3817,54 @@ body {
   -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
 }
 
-.portfolio-icon-btn:hover {
-  border-color: rgba(25, 214, 111, 0.38) !important;
+.portfolio-icon-btn:hover,
+.portfolio-icon-btn:focus-visible {
+  border-color: rgba(255, 255, 255, 0.32) !important;
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.04) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(30, 42, 34, 0.8) 0%,
-      rgba(16, 24, 18, 0.9) 100%
+      rgba(28, 34, 30, 0.8) 0%,
+      rgba(14, 18, 16, 0.9) 100%
     ) !important;
   box-shadow:
     0 12px 28px -4px rgba(0, 0, 0, 0.5),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
-    0 0 18px rgba(25, 214, 111, 0.18) !important;
+    0 0 12px rgba(255, 255, 255, 0.08) !important;
   transform: scale(1.08) !important;
 }
 
-.portfolio-back-btn:hover {
-  border-color: rgba(25, 214, 111, 0.38) !important;
+.portfolio-back-btn:hover,
+.portfolio-back-btn:focus-visible {
+  border-color: rgba(255, 255, 255, 0.32) !important;
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0.05) 50%,
       transparent 100%
     ),
     linear-gradient(
       165deg,
-      rgba(24, 34, 27, 0.72) 0%,
-      rgba(12, 18, 14, 0.82) 100%
+      rgba(28, 34, 30, 0.72) 0%,
+      rgba(14, 18, 16, 0.82) 100%
     ) !important;
   box-shadow:
     0 16px 36px -6px rgba(0, 0, 0, 0.55),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
-    0 0 18px rgba(25, 214, 111, 0.16) !important;
+    0 0 12px rgba(255, 255, 255, 0.08) !important;
   transform: translateY(-2px) !important;
+}
+
+.portfolio-icon-btn:focus-visible,
+.portfolio-back-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75) !important;
+  outline-offset: 3px !important;
 }
 
 .portfolio-action-btn {
@@ -4372,8 +4382,8 @@ body {
   visibility: hidden;
   pointer-events: none;
   transition:
-    opacity 280ms cubic-bezier(0.16, 1, 0.3, 1),
-    visibility 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 380ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-modal.is-open {
@@ -4387,15 +4397,23 @@ body {
 .about-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   opacity: 0;
-  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 380ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, backdrop-filter;
 }
 
 .about-modal.is-open .about-modal-backdrop {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Modal Dialog Wrapper */
@@ -4449,15 +4467,19 @@ body {
     inset 0 0 24px 0 rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
-  transform: scale(0.95) translateY(14px);
+  transform: scale(0.96) translateY(12px);
+  opacity: 0;
   transition:
-    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 280ms ease,
-    box-shadow 280ms ease;
+    transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 380ms ease,
+    box-shadow 380ms ease;
+  will-change: transform, opacity;
 }
 
 .about-modal.is-open .about-modal-card {
   transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 /* Ambient Top Line Accent (Crisp Glass Edge Highlight) */
@@ -4569,7 +4591,7 @@ body {
   overflow-y: auto;
   max-height: calc(82vh - 120px);
   overscroll-behavior: contain;
-  font-family: "Helvetica", Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Custom Glass Scrollbar */
@@ -4613,30 +4635,30 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 4px 16px rgba(0, 0, 0, 0.25);
   transition:
-    border-color 240ms ease,
-    background 240ms ease,
-    transform 240ms ease,
-    box-shadow 240ms ease;
+    border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-modal-card-item:hover {
-  border-color: rgba(25, 214, 111, 0.28);
+  border-color: rgba(255, 255, 255, 0.22);
   background:
     linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.06) 0%,
-      rgba(255, 255, 255, 0.02) 50%,
+      rgba(255, 255, 255, 0.075) 0%,
+      rgba(255, 255, 255, 0.025) 50%,
       transparent 100%
     ),
-    rgba(25, 214, 111, 0.025);
+    rgba(255, 255, 255, 0.035);
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 8px 24px rgba(0, 0, 0, 0.4),
-    0 0 16px rgba(25, 214, 111, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 10px 26px -4px rgba(0, 0, 0, 0.45),
+    0 2px 10px rgba(255, 255, 255, 0.03);
 }
 
-/* Ambient Subtle Card Item Line Glow */
+/* Ambient Subtle Card Item Line Glow (Crisp Neutral White/Silver Highlight) */
 .about-modal-card-glow {
   position: absolute;
   top: 0;
@@ -4646,17 +4668,40 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
-    rgba(25, 214, 111, 0.25),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
   opacity: 0;
-  transition: opacity 240ms ease;
+  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
 .about-modal-card-item:hover .about-modal-card-glow {
   opacity: 1;
+}
+
+/* Modal Card Plain Date (Clean Typography, Border-free, Background-free) */
+.about-modal-card-date {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.01em;
+  text-align: right;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0;
+  user-select: text;
+  transition: color 240ms ease;
+}
+
+.about-modal-card-item:hover .about-modal-card-date {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Education History Card & Artistic Background Logos */
@@ -4712,11 +4757,16 @@ body {
 
 /* Work Experience Certificate Button (Compact Modal Specific Variant) */
 .about-modal-cert-btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-end;
   gap: 6px;
   padding: 5px 13px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.01em;
+  margin-top: 0;
+  cursor: pointer;
 }
 
 .about-modal-cert-icon {
@@ -4816,20 +4866,35 @@ body {
   border-radius: 999px;
 }
 
-/* Refined Active Organization Card (Self-Contained Left Accent, No Outward Bleed) */
+/* Refined Active Organization Card (Harmonious White/Silver Highlight with Subtle Edge Indicator) */
 .about-modal-card-item.is-active-org-card {
-  border-color: rgba(25, 214, 111, 0.45);
+  border-color: rgba(255, 255, 255, 0.28);
   background:
     linear-gradient(
       135deg,
-      rgba(25, 214, 111, 0.08) 0%,
-      rgba(255, 255, 255, 0.03) 100%
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.02) 100%
     ),
-    rgba(13, 18, 15, 0.65);
+    rgba(18, 22, 20, 0.72);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 2px 0 0 rgba(25, 214, 111, 0.8),
-    0 6px 16px -4px rgba(0, 0, 0, 0.45);
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 3px 0 0 rgba(255, 255, 255, 0.85),
+    0 8px 22px -4px rgba(0, 0, 0, 0.5);
+}
+
+.about-modal-card-item.is-active-org-card:hover {
+  border-color: rgba(255, 255, 255, 0.36);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.035) 100%
+    ),
+    rgba(22, 26, 24, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 3px 0 0 #ffffff,
+    0 10px 26px -4px rgba(0, 0, 0, 0.55);
 }
 
 /* Organization Documentation Right Panel (Independent Sticky Container) */
@@ -5172,6 +5237,11 @@ body.about-modal-open {
     transform: translateY(-50%) rotate(8deg) scale(1.04);
   }
 
+  .about-modal-card-date {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
   .about-modal-cert-btn {
     padding: 4px 10px;
     font-size: 11px;
@@ -5331,10 +5401,12 @@ body.about-modal-open {
     opacity: 1 !important;
   }
 
-  .tech-hint-dot {
-    animation: none !important;
-  }
-
+  .about-modal,
+  .about-modal-backdrop,
+  .about-modal-card,
+  .about-modal-card-item,
+  .about-modal-card-glow,
+  .about-modal-cert-btn,
   .about-modal-dialog,
   .about-org-doc-panel,
   .about-org-doc-img,
