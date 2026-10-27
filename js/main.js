@@ -1440,12 +1440,12 @@ const initAboutModal = () => {
               <!-- Panitia Technofest 6.0 – Keamanan -->
               <div class="about-modal-card-item group" data-org-card="technofest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
                     <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
                       11 Oktober 2024 – 12 Oktober 2024
                     </div>
@@ -1483,12 +1483,15 @@ const initAboutModal = () => {
               <!-- Panitia Magisfest 2024 – Keamanan -->
               <div class="about-modal-card-item group" data-org-card="magisfest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Keamanan</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      23 November 2024
+                    </div>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1523,12 +1526,12 @@ const initAboutModal = () => {
               <!-- Panitia Ngupit Fest 2025 – Penanggung Jawab Media -->
               <div class="about-modal-card-item group" data-org-card="ngupitfest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Penanggung Jawab Media</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
                     <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
                       31 Agustus 2025 – 13 Desember 2025
                     </div>
@@ -1568,10 +1571,7 @@ const initAboutModal = () => {
           <!-- Right Panel: Dokumentasi Foto (Hidden by default, shown when doc opened) -->
           <div class="about-org-doc-panel" id="about-org-doc-panel" style="display: none;" aria-hidden="true">
             <div class="about-org-doc-header">
-              <div class="about-org-doc-header-text">
-                <span class="about-org-doc-badge" data-i18n="modal.docs_badge">Dokumentasi</span>
-                <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
-              </div>
+              <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
               <button
                 type="button"
                 class="about-org-doc-close-btn"
@@ -1630,7 +1630,6 @@ const initAboutModal = () => {
                 <span class="about-org-doc-sep text-white/40">/</span>
                 <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
               </div>
-              <div class="about-org-doc-dots" id="about-org-doc-dots" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -1765,12 +1764,12 @@ const initAboutModal = () => {
               <!-- Panitia Technofest 6.0 – Security -->
               <div class="about-modal-card-item group" data-org-card="technofest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Technofest 6.0</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
                     <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
                       11 October 2024 – 12 October 2024
                     </div>
@@ -1808,12 +1807,15 @@ const initAboutModal = () => {
               <!-- Panitia Magisfest 2024 – Security -->
               <div class="about-modal-card-item group" data-org-card="magisfest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Magisfest 2024</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Security Division</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
+                    <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
+                      23 November 2024
+                    </div>
                     <button
                       type="button"
                       class="btn-emerald-pill about-modal-doc-btn"
@@ -1848,12 +1850,12 @@ const initAboutModal = () => {
               <!-- Panitia Ngupit Fest 2025 – Media Coordinator -->
               <div class="about-modal-card-item group" data-org-card="ngupitfest">
                 <div class="about-modal-card-glow"></div>
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 sm:gap-4 border-b border-white/10 pb-3 mb-3">
-                  <div>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                  <div class="min-w-0 flex-1">
                     <h4 class="font-jakarta text-[17px] font-bold text-white tracking-wide group-hover:text-leaf transition-colors duration-300">Panitia Ngupit Fest 2025</h4>
                     <p class="font-helvetica text-sm font-medium text-white/80 mt-1">Media & Publication Coordinator</p>
                   </div>
-                  <div class="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+                  <div class="flex flex-col items-end gap-2 shrink-0">
                     <div class="font-helvetica px-3 py-1 text-xs font-medium text-white/70 bg-white/[0.06] border border-white/10 rounded-full w-fit transition-colors duration-300 group-hover:border-leaf/30 group-hover:text-white/95">
                       31 August 2025 – 13 December 2025
                     </div>
@@ -1893,10 +1895,7 @@ const initAboutModal = () => {
           <!-- Right Panel: Photo Documentation Stage (Hidden by default, shown when doc opened) -->
           <div class="about-org-doc-panel" id="about-org-doc-panel" style="display: none;" aria-hidden="true">
             <div class="about-org-doc-header">
-              <div class="about-org-doc-header-text">
-                <span class="about-org-doc-badge" data-i18n="modal.docs_badge">Documentation</span>
-                <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
-              </div>
+              <h4 class="about-org-doc-title font-jakarta" id="about-org-doc-title">Panitia TechnoFest 6.0</h4>
               <button
                 type="button"
                 class="about-org-doc-close-btn"
@@ -1955,7 +1954,6 @@ const initAboutModal = () => {
                 <span class="about-org-doc-sep text-white/40">/</span>
                 <span class="about-org-doc-total text-white/70" id="about-org-doc-total">04</span>
               </div>
-              <div class="about-org-doc-dots" id="about-org-doc-dots" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -2065,7 +2063,6 @@ const initAboutModal = () => {
     const title = document.getElementById("about-org-doc-title");
     const currentEl = document.getElementById("about-org-doc-current");
     const totalEl = document.getElementById("about-org-doc-total");
-    const dotsContainer = document.getElementById("about-org-doc-dots");
     const prevBtn = document.getElementById("about-org-doc-prev");
     const nextBtn = document.getElementById("about-org-doc-next");
 
@@ -2092,25 +2089,6 @@ const initAboutModal = () => {
       nextBtn.disabled = !hasMultiple;
       nextBtn.style.opacity = hasMultiple ? "1" : "0.35";
       nextBtn.style.pointerEvents = hasMultiple ? "auto" : "none";
-    }
-
-    if (dotsContainer) {
-      dotsContainer.innerHTML = "";
-      if (hasMultiple) {
-        org.photos.forEach((_, idx) => {
-          const dot = document.createElement("button");
-          dot.type = "button";
-          dot.className = `about-org-doc-dot${idx === currentPhotoIndex ? " is-active" : ""}`;
-          dot.setAttribute("data-dot-index", String(idx));
-          dot.setAttribute(
-            "aria-label",
-            currentPortfolioLang === "en"
-              ? `Go to photo ${idx + 1}`
-              : `Buka foto ke-${idx + 1}`
-          );
-          dotsContainer.appendChild(dot);
-        });
-      }
     }
 
     const nextSrc = org.photos[currentPhotoIndex];
@@ -2318,16 +2296,6 @@ const initAboutModal = () => {
     if (nextBtn) {
       e.preventDefault();
       goToPhoto(currentPhotoIndex + 1, true);
-      return;
-    }
-
-    const dotBtn = e.target.closest(".about-org-doc-dot");
-    if (dotBtn) {
-      e.preventDefault();
-      const dotIdx = parseInt(dotBtn.getAttribute("data-dot-index"), 10);
-      if (!isNaN(dotIdx)) {
-        goToPhoto(dotIdx, true);
-      }
       return;
     }
   });
